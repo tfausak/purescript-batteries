@@ -25,6 +25,7 @@
     "purescript-sets": "^0.5.1",
     "purescript-st": "^0.1.1",
     "purescript-strings": "^0.7.0",
+    "purescript-tailrec": "^0.3.1",
     "purescript-tuples": "^0.4.0",
     "purescript-unfoldable": "^0.4.1"
   },

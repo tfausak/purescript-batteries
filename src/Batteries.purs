@@ -13,6 +13,7 @@ module Batteries
   , module Control.Monad.Eff
   , module Control.Monad.Eff.Class
   , module Control.Monad.Eff.Console
+  , module Control.Monad.Rec.Class
   , module Control.Monad.ST
   , module Control.MonadPlus
   , module Control.Plus
@@ -70,6 +71,7 @@ import Control.Monad
 import Control.Monad.Eff
 import Control.Monad.Eff.Class
 import Control.Monad.Eff.Console hiding (log)
+import Control.Monad.Rec.Class
 import Control.Monad.ST
 import Control.MonadPlus
 import Control.Plus
