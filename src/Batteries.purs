@@ -58,6 +58,7 @@ module Batteries
   , module Data.Foldable
   , module Data.Function
   , module Data.Functor
+  , module Data.Functor.Coproduct
   , module Data.Functor.Invariant
   , module Data.Generic
   , module Data.Identity
@@ -139,6 +140,7 @@ import Data.Exists
 import Data.Foldable
 import Data.Function
 import Data.Functor
+import Data.Functor.Coproduct
 import Data.Functor.Invariant
 import Data.Generic
 import Data.Identity
