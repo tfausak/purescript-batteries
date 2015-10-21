@@ -54,6 +54,7 @@ module Batteries
   , module Data.Bifunctor.Wrap
   , module Data.Bitraversable
   , module Data.Char
+  , module Data.Comparison
   , module Data.Coyoneda
   , module Data.Date
   , module Data.Date.UTC
@@ -62,12 +63,15 @@ module Batteries
   , module Data.Either.Nested
   , module Data.Either.Unsafe
   , module Data.Enum
+  , module Data.Equivalence
   , module Data.Exists
   , module Data.Foldable
   , module Data.Foreign
   , module Data.Foreign.Class
   , module Data.Function
   , module Data.Functor
+  , module Data.Functor.Contravariant
+  , module Data.Functor.Contravariant.Divisible
   , module Data.Functor.Coproduct
   , module Data.Functor.Invariant
   , module Data.Generic
@@ -84,6 +88,8 @@ module Batteries
   , module Data.Monoid.Dual
   , module Data.Monoid.Endo
   , module Data.NaturalTransformation
+  , module Data.Op
+  , module Data.Predicate
   , module Data.String
   , module Data.String.Regex
   , module Data.Time
@@ -152,6 +158,7 @@ import Data.Bifunctor.Product
 import Data.Bifunctor.Wrap
 import Data.Bitraversable
 import Data.Char hiding (toLower, toUpper)
+import Data.Comparison
 import Data.Coyoneda
 import Data.Date
 import Data.Date.UTC
@@ -160,12 +167,15 @@ import Data.Either
 import Data.Either.Nested
 import Data.Either.Unsafe
 import Data.Enum
+import Data.Equivalence
 import Data.Exists
 import Data.Foldable
 import Data.Foreign
 import Data.Foreign.Class
 import Data.Function
 import Data.Functor
+import Data.Functor.Contravariant
+import Data.Functor.Contravariant.Divisible
 import Data.Functor.Coproduct
 import Data.Functor.Invariant
 import Data.Generic
@@ -182,6 +192,8 @@ import Data.Monoid
 import Data.Monoid.Dual
 import Data.Monoid.Endo
 import Data.NaturalTransformation
+import Data.Op
+import Data.Predicate
 import Data.String hiding (replace, singleton, split)
 import Data.String.Regex
 import Data.Time
