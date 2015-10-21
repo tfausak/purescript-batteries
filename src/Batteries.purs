@@ -207,4 +207,5 @@ import Data.Yoneda
 import Global hiding (readInt)
 import Math hiding (ceil, floor, round)
 import Prelude
+import Type.Proxy hiding (Proxy (Proxy))
 import Unsafe.Coerce
