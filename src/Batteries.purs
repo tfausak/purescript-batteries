@@ -37,6 +37,7 @@ module Batteries
   , module Control.Monad.Writer.Class
   , module Control.Monad.Writer.Trans
   , module Control.MonadPlus
+  , module Control.Parallel
   , module Control.Plus
   , module Data.Bifoldable
   , module Data.Bifunctor
@@ -116,6 +117,7 @@ import Control.Monad.Writer
 import Control.Monad.Writer.Class
 import Control.Monad.Writer.Trans
 import Control.MonadPlus
+import Control.Parallel
 import Control.Plus
 import Data.Bifoldable
 import Data.Bifunctor
