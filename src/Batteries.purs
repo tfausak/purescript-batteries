@@ -85,6 +85,7 @@ module Batteries
   , module Data.Tuple.Nested
   , module Data.Unfoldable
   , module Data.Yoneda
+  , module Global
   , module Math
   , module Prelude
   , module Unsafe.Coerce
@@ -175,6 +176,7 @@ import Data.Tuple
 import Data.Tuple.Nested
 import Data.Unfoldable
 import Data.Yoneda
+import Global
 import Math hiding (ceil, floor, round)
 import Prelude
 import Unsafe.Coerce
