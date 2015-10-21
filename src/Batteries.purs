@@ -3,6 +3,8 @@ module Batteries
   , module Control.Alt
   , module Control.Alternative
   , module Control.Apply
+  , module Control.Biapplicative
+  , module Control.Biapply
   , module Control.Bind
   , module Control.Comonad
   , module Control.Extend
@@ -13,6 +15,13 @@ module Batteries
   , module Control.Monad.Eff.Console
   , module Control.MonadPlus
   , module Control.Plus
+  , module Data.Bifunctor
+  , module Data.Bifunctor.Clown
+  , module Data.Bifunctor.Flip
+  , module Data.Bifunctor.Join
+  , module Data.Bifunctor.Joker
+  , module Data.Bifunctor.Product
+  , module Data.Bifunctor.Wrap
   , module Data.Functor
   , module Data.Functor.Invariant
   , module Data.Maybe
@@ -28,6 +37,8 @@ module Batteries
 import Control.Alt
 import Control.Alternative
 import Control.Apply
+import Control.Biapplicative
+import Control.Biapply
 import Control.Bind
 import Control.Comonad
 import Control.Extend
@@ -38,6 +49,13 @@ import Control.Monad.Eff.Class
 import Control.Monad.Eff.Console
 import Control.MonadPlus
 import Control.Plus
+import Data.Bifunctor
+import Data.Bifunctor.Clown
+import Data.Bifunctor.Flip
+import Data.Bifunctor.Join
+import Data.Bifunctor.Joker
+import Data.Bifunctor.Product
+import Data.Bifunctor.Wrap
 import Data.Functor
 import Data.Functor.Invariant
 import Data.Maybe
