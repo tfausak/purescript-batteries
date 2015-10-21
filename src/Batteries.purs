@@ -35,6 +35,7 @@ module Batteries
   , module Data.Functor.Invariant
   , module Data.Int
   , module Data.Int.Bits
+  , module Data.Lazy
   , module Data.Maybe
   , module Data.Maybe.First
   , module Data.Maybe.Last
@@ -87,6 +88,7 @@ import Data.Functor
 import Data.Functor.Invariant
 import Data.Int
 import Data.Int.Bits
+import Data.Lazy hiding (Lazy (), defer)
 import Data.Maybe
 import Data.Maybe.First
 import Data.Maybe.Last
