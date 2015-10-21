@@ -9,6 +9,7 @@
     "purescript-eff": "^0.1.1",
     "purescript-either": "^0.2.3",
     "purescript-enums": "^0.7.0",
+    "purescript-exists": "^0.2.0",
     "purescript-foldable-traversable": "^0.4.0",
     "purescript-functions": "^0.1.0",
     "purescript-generics": "^0.6.2",

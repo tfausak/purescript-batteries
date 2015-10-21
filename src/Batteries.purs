@@ -54,6 +54,7 @@ module Batteries
   , module Data.Either.Nested
   , module Data.Either.Unsafe
   , module Data.Enum
+  , module Data.Exists
   , module Data.Foldable
   , module Data.Function
   , module Data.Functor
@@ -134,6 +135,7 @@ import Data.Either
 import Data.Either.Nested
 import Data.Either.Unsafe
 import Data.Enum
+import Data.Exists
 import Data.Foldable
 import Data.Function
 import Data.Functor
