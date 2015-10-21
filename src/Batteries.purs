@@ -29,6 +29,7 @@ module Batteries
   , module Data.Either
   , module Data.Either.Nested
   , module Data.Either.Unsafe
+  , module Data.Enum
   , module Data.Foldable
   , module Data.Functor
   , module Data.Functor.Invariant
@@ -77,6 +78,7 @@ import Data.Char hiding (toLower, toUpper)
 import Data.Either
 import Data.Either.Nested
 import Data.Either.Unsafe
+import Data.Enum
 import Data.Foldable
 import Data.Functor
 import Data.Functor.Invariant
