@@ -61,6 +61,8 @@ module Batteries
   , module Data.Enum
   , module Data.Exists
   , module Data.Foldable
+  , module Data.Foreign
+  , module Data.Foreign.Class
   , module Data.Function
   , module Data.Functor
   , module Data.Functor.Coproduct
@@ -153,6 +155,8 @@ import Data.Either.Unsafe
 import Data.Enum
 import Data.Exists
 import Data.Foldable
+import Data.Foreign
+import Data.Foreign.Class
 import Data.Function
 import Data.Functor
 import Data.Functor.Coproduct
@@ -178,7 +182,7 @@ import Data.Tuple
 import Data.Tuple.Nested
 import Data.Unfoldable
 import Data.Yoneda
-import Global
+import Global hiding (readInt)
 import Math hiding (ceil, floor, round)
 import Prelude
 import Unsafe.Coerce
