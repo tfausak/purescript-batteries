@@ -15,6 +15,7 @@ module Batteries
   , module Control.Monad.Eff.Console
   , module Control.MonadPlus
   , module Control.Plus
+  , module Data.Bifoldable
   , module Data.Bifunctor
   , module Data.Bifunctor.Clown
   , module Data.Bifunctor.Flip
@@ -22,6 +23,8 @@ module Batteries
   , module Data.Bifunctor.Joker
   , module Data.Bifunctor.Product
   , module Data.Bifunctor.Wrap
+  , module Data.Bitraversable
+  , module Data.Foldable
   , module Data.Functor
   , module Data.Functor.Invariant
   , module Data.Maybe
@@ -31,6 +34,7 @@ module Batteries
   , module Data.Monoid
   , module Data.Monoid.Dual
   , module Data.Monoid.Endo
+  , module Data.Traversable
   , module Prelude
   ) where
 
@@ -49,6 +53,7 @@ import Control.Monad.Eff.Class
 import Control.Monad.Eff.Console
 import Control.MonadPlus
 import Control.Plus
+import Data.Bifoldable
 import Data.Bifunctor
 import Data.Bifunctor.Clown
 import Data.Bifunctor.Flip
@@ -56,6 +61,8 @@ import Data.Bifunctor.Join
 import Data.Bifunctor.Joker
 import Data.Bifunctor.Product
 import Data.Bifunctor.Wrap
+import Data.Bitraversable
+import Data.Foldable
 import Data.Functor
 import Data.Functor.Invariant
 import Data.Maybe
@@ -65,4 +72,5 @@ import Data.Maybe.Unsafe
 import Data.Monoid
 import Data.Monoid.Dual
 import Data.Monoid.Endo
+import Data.Traversable
 import Prelude
