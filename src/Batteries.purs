@@ -104,6 +104,7 @@ module Batteries
   , module Global
   , module Math
   , module Prelude
+  , module Test.Assert
   , module Unsafe.Coerce
   ) where
 
@@ -211,5 +212,6 @@ import Data.Yoneda
 import Global hiding (readInt)
 import Math hiding (ceil, floor, round)
 import Prelude
+import Test.Assert
 import Type.Proxy hiding (Proxy (Proxy))
 import Unsafe.Coerce
