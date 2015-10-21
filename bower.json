@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "purescript-prelude": "^0.1.3"
   },
   "name": "purescript-batteries"
 }
