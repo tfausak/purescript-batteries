@@ -24,6 +24,9 @@ module Batteries
   , module Data.Bifunctor.Product
   , module Data.Bifunctor.Wrap
   , module Data.Bitraversable
+  , module Data.Either
+  , module Data.Either.Nested
+  , module Data.Either.Unsafe
   , module Data.Foldable
   , module Data.Functor
   , module Data.Functor.Invariant
@@ -62,6 +65,9 @@ import Data.Bifunctor.Joker
 import Data.Bifunctor.Product
 import Data.Bifunctor.Wrap
 import Data.Bitraversable
+import Data.Either
+import Data.Either.Nested
+import Data.Either.Unsafe
 import Data.Foldable
 import Data.Functor
 import Data.Functor.Invariant
