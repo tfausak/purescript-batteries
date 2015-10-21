@@ -11,6 +11,7 @@
     "purescript-foldable-traversable": "^0.4.0",
     "purescript-functions": "^0.1.0",
     "purescript-generics": "^0.6.2",
+    "purescript-identity": "^0.4.0",
     "purescript-integers": "^0.2.1",
     "purescript-invariant": "^0.3.0",
     "purescript-lazy": "^0.4.0",

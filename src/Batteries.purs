@@ -35,6 +35,7 @@ module Batteries
   , module Data.Functor
   , module Data.Functor.Invariant
   , module Data.Generic
+  , module Data.Identity
   , module Data.Int
   , module Data.Int.Bits
   , module Data.Lazy
@@ -90,6 +91,7 @@ import Data.Function
 import Data.Functor
 import Data.Functor.Invariant
 import Data.Generic
+import Data.Identity
 import Data.Int
 import Data.Int.Bits
 import Data.Lazy hiding (Lazy (), defer)
