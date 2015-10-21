@@ -2,6 +2,7 @@
   "dependencies": {
     "purescript-arrays": "^0.4.2",
     "purescript-bifunctors": "^0.4.0",
+    "purescript-catenable-lists": "^0.1.0",
     "purescript-console": "^0.1.1",
     "purescript-control": "^0.3.1",
     "purescript-eff": "^0.1.1",
