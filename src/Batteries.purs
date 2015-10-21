@@ -7,6 +7,7 @@ module Batteries
   , module Control.Biapply
   , module Control.Bind
   , module Control.Comonad
+  , module Control.Comonad.Cofree
   , module Control.Extend
   , module Control.Lazy
   , module Control.Monad
@@ -20,6 +21,7 @@ module Batteries
   , module Control.Monad.Error.Class
   , module Control.Monad.Except
   , module Control.Monad.Except.Trans
+  , module Control.Monad.Free
   , module Control.Monad.Maybe.Trans
   , module Control.Monad.Reader
   , module Control.Monad.Reader.Class
@@ -32,6 +34,7 @@ module Batteries
   , module Control.Monad.State
   , module Control.Monad.State.Class
   , module Control.Monad.State.Trans
+  , module Control.Monad.Trampoline
   , module Control.Monad.Trans
   , module Control.Monad.Writer
   , module Control.Monad.Writer.Class
@@ -49,6 +52,7 @@ module Batteries
   , module Data.Bifunctor.Wrap
   , module Data.Bitraversable
   , module Data.Char
+  , module Data.Coyoneda
   , module Data.Distributive
   , module Data.Either
   , module Data.Either.Nested
@@ -73,12 +77,14 @@ module Batteries
   , module Data.Monoid
   , module Data.Monoid.Dual
   , module Data.Monoid.Endo
+  , module Data.NaturalTransformation
   , module Data.String
   , module Data.String.Regex
   , module Data.Traversable
   , module Data.Tuple
   , module Data.Tuple.Nested
   , module Data.Unfoldable
+  , module Data.Yoneda
   , module Math
   , module Prelude
   , module Unsafe.Coerce
@@ -91,6 +97,7 @@ import Control.Biapplicative
 import Control.Biapply
 import Control.Bind
 import Control.Comonad
+import Control.Comonad.Cofree
 import Control.Extend
 import Control.Lazy
 import Control.Monad
@@ -104,6 +111,7 @@ import Control.Monad.Eff.Ref.Unsafe
 import Control.Monad.Error.Class
 import Control.Monad.Except
 import Control.Monad.Except.Trans
+import Control.Monad.Free
 import Control.Monad.Maybe.Trans
 import Control.Monad.Reader
 import Control.Monad.Reader.Class
@@ -116,6 +124,7 @@ import Control.Monad.ST
 import Control.Monad.State
 import Control.Monad.State.Class
 import Control.Monad.State.Trans
+import Control.Monad.Trampoline
 import Control.Monad.Trans
 import Control.Monad.Writer
 import Control.Monad.Writer.Class
@@ -133,6 +142,7 @@ import Data.Bifunctor.Product
 import Data.Bifunctor.Wrap
 import Data.Bitraversable
 import Data.Char hiding (toLower, toUpper)
+import Data.Coyoneda
 import Data.Distributive
 import Data.Either
 import Data.Either.Nested
@@ -157,12 +167,14 @@ import Data.Maybe.Unsafe
 import Data.Monoid
 import Data.Monoid.Dual
 import Data.Monoid.Endo
+import Data.NaturalTransformation
 import Data.String hiding (replace, singleton, split)
 import Data.String.Regex
 import Data.Traversable
 import Data.Tuple
 import Data.Tuple.Nested
 import Data.Unfoldable
+import Data.Yoneda
 import Math hiding (ceil, floor, round)
 import Prelude
 import Unsafe.Coerce
