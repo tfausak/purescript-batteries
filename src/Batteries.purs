@@ -14,6 +14,7 @@ module Batteries
   , module Control.MonadPlus
   , module Control.Plus
   , module Data.Functor
+  , module Data.Functor.Invariant
   , module Prelude
   ) where
 
@@ -31,4 +32,5 @@ import Control.Monad.Eff.Console
 import Control.MonadPlus
 import Control.Plus
 import Data.Functor
+import Data.Functor.Invariant
 import Prelude
