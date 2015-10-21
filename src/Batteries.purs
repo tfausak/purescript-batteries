@@ -93,6 +93,7 @@ module Batteries
   , module Data.Predicate
   , module Data.String
   , module Data.String.Regex
+  , module Data.These
   , module Data.Time
   , module Data.Traversable
   , module Data.Tuple
@@ -198,6 +199,7 @@ import Data.Op
 import Data.Predicate
 import Data.String hiding (replace, singleton, split)
 import Data.String.Regex
+import Data.These
 import Data.Time
 import Data.Traversable
 import Data.Tuple
