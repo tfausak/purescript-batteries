@@ -15,6 +15,9 @@ module Batteries
   , module Control.Plus
   , module Data.Functor
   , module Data.Functor.Invariant
+  , module Data.Monoid
+  , module Data.Monoid.Dual
+  , module Data.Monoid.Endo
   , module Prelude
   ) where
 
@@ -33,4 +36,7 @@ import Control.MonadPlus
 import Control.Plus
 import Data.Functor
 import Data.Functor.Invariant
+import Data.Monoid
+import Data.Monoid.Dual
+import Data.Monoid.Endo
 import Prelude
