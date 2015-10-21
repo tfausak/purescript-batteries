@@ -10,11 +10,30 @@ module Batteries
   , module Control.Extend
   , module Control.Lazy
   , module Control.Monad
+  , module Control.Monad.Cont.Class
+  , module Control.Monad.Cont.Trans
   , module Control.Monad.Eff
   , module Control.Monad.Eff.Class
   , module Control.Monad.Eff.Console
+  , module Control.Monad.Error.Class
+  , module Control.Monad.Except
+  , module Control.Monad.Except.Trans
+  , module Control.Monad.Maybe.Trans
+  , module Control.Monad.Reader
+  , module Control.Monad.Reader.Class
+  , module Control.Monad.Reader.Trans
   , module Control.Monad.Rec.Class
+  , module Control.Monad.RWS
+  , module Control.Monad.RWS.Class
+  , module Control.Monad.RWS.Trans
   , module Control.Monad.ST
+  , module Control.Monad.State
+  , module Control.Monad.State.Class
+  , module Control.Monad.State.Trans
+  , module Control.Monad.Trans
+  , module Control.Monad.Writer
+  , module Control.Monad.Writer.Class
+  , module Control.Monad.Writer.Trans
   , module Control.MonadPlus
   , module Control.Plus
   , module Data.Bifoldable
@@ -68,11 +87,30 @@ import Control.Comonad
 import Control.Extend
 import Control.Lazy
 import Control.Monad
+import Control.Monad.Cont.Class
+import Control.Monad.Cont.Trans
 import Control.Monad.Eff
 import Control.Monad.Eff.Class
 import Control.Monad.Eff.Console hiding (log)
+import Control.Monad.Error.Class
+import Control.Monad.Except
+import Control.Monad.Except.Trans
+import Control.Monad.Maybe.Trans
+import Control.Monad.Reader
+import Control.Monad.Reader.Class
+import Control.Monad.Reader.Trans
 import Control.Monad.Rec.Class
+import Control.Monad.RWS
+import Control.Monad.RWS.Class
+import Control.Monad.RWS.Trans
 import Control.Monad.ST
+import Control.Monad.State
+import Control.Monad.State.Class
+import Control.Monad.State.Trans
+import Control.Monad.Trans
+import Control.Monad.Writer
+import Control.Monad.Writer.Class
+import Control.Monad.Writer.Trans
 import Control.MonadPlus
 import Control.Plus
 import Data.Bifoldable
