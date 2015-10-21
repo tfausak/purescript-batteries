@@ -33,7 +33,8 @@
     "purescript-tailrec": "^0.3.1",
     "purescript-transformers": "^0.8.1",
     "purescript-tuples": "^0.4.0",
-    "purescript-unfoldable": "^0.4.1"
+    "purescript-unfoldable": "^0.4.1",
+    "purescript-unsafe-coerce": "^0.1.0"
   },
   "name": "purescript-batteries"
 }

@@ -81,6 +81,7 @@ module Batteries
   , module Data.Unfoldable
   , module Math
   , module Prelude
+  , module Unsafe.Coerce
   ) where
 
 import Control.Alt
@@ -164,3 +165,4 @@ import Data.Tuple.Nested
 import Data.Unfoldable
 import Math hiding (ceil, floor, round)
 import Prelude
+import Unsafe.Coerce
