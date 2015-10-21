@@ -26,6 +26,7 @@ module Batteries
   , module Data.Bifunctor.Wrap
   , module Data.Bitraversable
   , module Data.Char
+  , module Data.Distributive
   , module Data.Either
   , module Data.Either.Nested
   , module Data.Either.Unsafe
@@ -82,6 +83,7 @@ import Data.Bifunctor.Product
 import Data.Bifunctor.Wrap
 import Data.Bitraversable
 import Data.Char hiding (toLower, toUpper)
+import Data.Distributive
 import Data.Either
 import Data.Either.Nested
 import Data.Either.Unsafe
