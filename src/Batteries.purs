@@ -11,6 +11,7 @@ module Batteries
   , module Control.Extend
   , module Control.Lazy
   , module Control.Monad
+  , module Control.Monad.Aff
   , module Control.Monad.Cont.Class
   , module Control.Monad.Cont.Trans
   , module Control.Monad.Eff
@@ -119,6 +120,7 @@ import Control.Comonad.Cofree
 import Control.Extend
 import Control.Lazy
 import Control.Monad
+import Control.Monad.Aff
 import Control.Monad.Cont.Class
 import Control.Monad.Cont.Trans
 import Control.Monad.Eff
