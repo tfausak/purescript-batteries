@@ -55,6 +55,7 @@ module Batteries
   , module Data.Bitraversable
   , module Data.Char
   , module Data.Comparison
+  , module Data.Const
   , module Data.Coyoneda
   , module Data.Date
   , module Data.Date.UTC
@@ -159,6 +160,7 @@ import Data.Bifunctor.Wrap
 import Data.Bitraversable
 import Data.Char hiding (toLower, toUpper)
 import Data.Comparison
+import Data.Const
 import Data.Coyoneda
 import Data.Date
 import Data.Date.UTC
