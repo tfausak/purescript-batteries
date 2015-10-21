@@ -89,6 +89,7 @@ module Batteries
   , module Data.Monoid.Dual
   , module Data.Monoid.Endo
   , module Data.NaturalTransformation
+  , module Data.Nullable
   , module Data.Op
   , module Data.Predicate
   , module Data.String
@@ -195,6 +196,7 @@ import Data.Monoid
 import Data.Monoid.Dual
 import Data.Monoid.Endo
 import Data.NaturalTransformation
+import Data.Nullable
 import Data.Op
 import Data.Predicate
 import Data.String hiding (replace, singleton, split)
