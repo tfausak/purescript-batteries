@@ -16,6 +16,7 @@ module Batteries
   , module Control.Monad.Eff
   , module Control.Monad.Eff.Class
   , module Control.Monad.Eff.Console
+  , module Control.Monad.Eff.Exception
   , module Control.Monad.Eff.Ref
   , module Control.Monad.Eff.Ref.Unsafe
   , module Control.Monad.Error.Class
@@ -106,7 +107,8 @@ import Control.Monad.Cont.Class
 import Control.Monad.Cont.Trans
 import Control.Monad.Eff
 import Control.Monad.Eff.Class
-import Control.Monad.Eff.Console hiding (log)
+import Control.Monad.Eff.Console hiding (error, log)
+import Control.Monad.Eff.Exception
 import Control.Monad.Eff.Ref
 import Control.Monad.Eff.Ref.Unsafe
 import Control.Monad.Error.Class
