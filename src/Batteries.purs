@@ -13,6 +13,7 @@ module Batteries
   , module Control.Monad.Eff
   , module Control.Monad.Eff.Class
   , module Control.Monad.Eff.Console
+  , module Control.Monad.ST
   , module Control.MonadPlus
   , module Control.Plus
   , module Data.Bifoldable
@@ -59,6 +60,7 @@ import Control.Monad
 import Control.Monad.Eff
 import Control.Monad.Eff.Class
 import Control.Monad.Eff.Console
+import Control.Monad.ST
 import Control.MonadPlus
 import Control.Plus
 import Data.Bifoldable
