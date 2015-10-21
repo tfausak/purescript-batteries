@@ -13,6 +13,7 @@
     "purescript-invariant": "^0.3.0",
     "purescript-lazy": "^0.4.0",
     "purescript-lists": "^0.7.6",
+    "purescript-maps": "^0.5.2",
     "purescript-math": "^0.2.0",
     "purescript-maybe": "^0.3.4",
     "purescript-monoid": "^0.3.1",
