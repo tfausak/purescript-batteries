@@ -33,6 +33,8 @@ module Batteries
   , module Data.Foldable
   , module Data.Functor
   , module Data.Functor.Invariant
+  , module Data.Int
+  , module Data.Int.Bits
   , module Data.Maybe
   , module Data.Maybe.First
   , module Data.Maybe.Last
@@ -83,6 +85,8 @@ import Data.Enum
 import Data.Foldable
 import Data.Functor
 import Data.Functor.Invariant
+import Data.Int
+import Data.Int.Bits
 import Data.Maybe
 import Data.Maybe.First
 import Data.Maybe.Last
@@ -96,5 +100,5 @@ import Data.Traversable
 import Data.Tuple
 import Data.Tuple.Nested
 import Data.Unfoldable
-import Math
+import Math hiding (ceil, floor, round)
 import Prelude

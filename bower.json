@@ -8,6 +8,7 @@
     "purescript-either": "^0.2.3",
     "purescript-enums": "^0.7.0",
     "purescript-foldable-traversable": "^0.4.0",
+    "purescript-integers": "^0.2.1",
     "purescript-invariant": "^0.3.0",
     "purescript-math": "^0.2.0",
     "purescript-maybe": "^0.3.4",
