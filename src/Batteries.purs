@@ -46,6 +46,7 @@ module Batteries
   , module Data.Tuple
   , module Data.Tuple.Nested
   , module Data.Unfoldable
+  , module Math
   , module Prelude
   ) where
 
@@ -61,7 +62,7 @@ import Control.Lazy
 import Control.Monad
 import Control.Monad.Eff
 import Control.Monad.Eff.Class
-import Control.Monad.Eff.Console
+import Control.Monad.Eff.Console hiding (log)
 import Control.Monad.ST
 import Control.MonadPlus
 import Control.Plus
@@ -95,4 +96,5 @@ import Data.Traversable
 import Data.Tuple
 import Data.Tuple.Nested
 import Data.Unfoldable
+import Math
 import Prelude
