@@ -44,6 +44,7 @@ module Batteries
   , module Data.Traversable
   , module Data.Tuple
   , module Data.Tuple.Nested
+  , module Data.Unfoldable
   , module Prelude
   ) where
 
@@ -86,9 +87,10 @@ import Data.Maybe.Unsafe
 import Data.Monoid
 import Data.Monoid.Dual
 import Data.Monoid.Endo
-import Data.String hiding (replace, split)
+import Data.String hiding (replace, singleton, split)
 import Data.String.Regex
 import Data.Traversable
 import Data.Tuple
 import Data.Tuple.Nested
+import Data.Unfoldable
 import Prelude
