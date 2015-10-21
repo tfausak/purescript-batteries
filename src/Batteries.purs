@@ -15,6 +15,10 @@ module Batteries
   , module Control.Plus
   , module Data.Functor
   , module Data.Functor.Invariant
+  , module Data.Maybe
+  , module Data.Maybe.First
+  , module Data.Maybe.Last
+  , module Data.Maybe.Unsafe
   , module Data.Monoid
   , module Data.Monoid.Dual
   , module Data.Monoid.Endo
@@ -36,6 +40,10 @@ import Control.MonadPlus
 import Control.Plus
 import Data.Functor
 import Data.Functor.Invariant
+import Data.Maybe
+import Data.Maybe.First
+import Data.Maybe.Last
+import Data.Maybe.Unsafe
 import Data.Monoid
 import Data.Monoid.Dual
 import Data.Monoid.Endo
