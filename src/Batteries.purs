@@ -54,6 +54,8 @@ module Batteries
   , module Data.Bitraversable
   , module Data.Char
   , module Data.Coyoneda
+  , module Data.Date
+  , module Data.Date.UTC
   , module Data.Distributive
   , module Data.Either
   , module Data.Either.Nested
@@ -83,6 +85,7 @@ module Batteries
   , module Data.NaturalTransformation
   , module Data.String
   , module Data.String.Regex
+  , module Data.Time
   , module Data.Traversable
   , module Data.Tuple
   , module Data.Tuple.Nested
@@ -148,6 +151,8 @@ import Data.Bifunctor.Wrap
 import Data.Bitraversable
 import Data.Char hiding (toLower, toUpper)
 import Data.Coyoneda
+import Data.Date
+import Data.Date.UTC
 import Data.Distributive
 import Data.Either
 import Data.Either.Nested
@@ -164,7 +169,7 @@ import Data.Functor.Invariant
 import Data.Generic
 import Data.Identity
 import Data.Inject
-import Data.Int
+import Data.Int hiding (fromString)
 import Data.Int.Bits
 import Data.Lazy hiding (Lazy (), defer)
 import Data.Maybe
@@ -177,6 +182,7 @@ import Data.Monoid.Endo
 import Data.NaturalTransformation
 import Data.String hiding (replace, singleton, split)
 import Data.String.Regex
+import Data.Time
 import Data.Traversable
 import Data.Tuple
 import Data.Tuple.Nested
