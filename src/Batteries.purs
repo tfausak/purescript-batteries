@@ -24,6 +24,7 @@ module Batteries
   , module Data.Bifunctor.Product
   , module Data.Bifunctor.Wrap
   , module Data.Bitraversable
+  , module Data.Char
   , module Data.Either
   , module Data.Either.Nested
   , module Data.Either.Unsafe
@@ -37,6 +38,8 @@ module Batteries
   , module Data.Monoid
   , module Data.Monoid.Dual
   , module Data.Monoid.Endo
+  , module Data.String
+  , module Data.String.Regex
   , module Data.Traversable
   , module Prelude
   ) where
@@ -65,6 +68,7 @@ import Data.Bifunctor.Joker
 import Data.Bifunctor.Product
 import Data.Bifunctor.Wrap
 import Data.Bitraversable
+import Data.Char hiding (toLower, toUpper)
 import Data.Either
 import Data.Either.Nested
 import Data.Either.Unsafe
@@ -78,5 +82,7 @@ import Data.Maybe.Unsafe
 import Data.Monoid
 import Data.Monoid.Dual
 import Data.Monoid.Endo
+import Data.String hiding (replace, split)
+import Data.String.Regex
 import Data.Traversable
 import Prelude
