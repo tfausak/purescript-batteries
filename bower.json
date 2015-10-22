@@ -1,4 +1,11 @@
 {
+  "authors": [
+    {
+      "email": "taylor@fausak.me",
+      "homepage": "http://taylor.fausak.me",
+      "name": "Taylor Fausak"
+    }
+  ],
   "dependencies": {
     "purescript-aff": "^0.13.0",
     "purescript-arrays": "^0.4.2",
@@ -49,5 +56,24 @@
     "purescript-unfoldable": "^0.4.1",
     "purescript-unsafe-coerce": "^0.1.0"
   },
-  "name": "purescript-batteries"
+  "description": "A PureScript prelude with more features.",
+  "homepage": "https://github.com/tfausak/purescript-batteries",
+  "ignore": [
+    "/.psci",
+    "/.psci_modules/",
+    "/bower_components/",
+    "/node_modules/",
+    "/npm-debug.log",
+    "/output/"
+  ],
+  "keywords": [
+    "prelude",
+    "purescript"
+  ],
+  "license": "MIT",
+  "name": "purescript-batteries",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tfausak/purescript-batteries.git"
+  }
 }
