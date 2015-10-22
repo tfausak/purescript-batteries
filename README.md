@@ -27,11 +27,11 @@ import them qualified:
 import qualified Batteries.Array as Array
 ```
 
-That's it! If you know of a library that should be included, please open a pull
+That's it! If you know of a package that should be included, please open a pull
 request. And if Batteries doesn't export something that you need from one of
-the included libraries, please open an issue.
+the included packages, please open an issue.
 
-Batteries includes the following libraries:
+Batteries includes the following packages:
 
 - [purescript-aff](https://github.com/slamdata/purescript-aff)
 - [purescript-arrays](https://github.com/purescript/purescript-arrays)
