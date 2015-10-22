@@ -5,7 +5,7 @@
 A PureScript prelude with more features.
 
 PureScript is a powerful language with a granular package ecosystem. It can
-take tens of lines of imports do accomplish trivial tasks. Batteries makes
+take tens of lines of imports to accomplish trivial tasks. Batteries makes
 things better by giving you more functionality from a single import.
 
 To get started, add Batteries as a dependency to your `bower.json`:
