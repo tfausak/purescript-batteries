@@ -11,7 +11,7 @@ things better by giving you more functionality from a single import.
 To get started, add Batteries as a dependency to your `bower.json`:
 
 ``` json
-{ "dependencies": { "purescript-batteries": "~0.0.0" } }
+{ "dependencies": { "purescript-batteries": "~0.1.0" } }
 ```
 
 Once you install it, use it by importing it unqualified:
