@@ -707,7 +707,9 @@ import Data.Char
   -- , toUpper
   )
 import Data.Comparison
-  (
+  ( Comparison (Comparison)
+  , defaultComparison
+  , runComparison
   )
 import Data.Const
   (
@@ -877,7 +879,10 @@ import Data.Enum
   , toEnum
   )
 import Data.Equivalence
-  (
+  ( Equivalence (Equivalence)
+  , comparisonEquivalence
+  , defaultEquivalence
+  , runEquivalence
   )
 import Data.Exists
   ( Exists ()
@@ -1001,10 +1006,22 @@ import Data.Functor
   , ($>)
   )
 import Data.Functor.Contravariant
-  (
+  ( Contravariant
+  , cmap
+  , (>#<)
+  , (>$<)
   )
 import Data.Functor.Contravariant.Divisible
-  (
+  ( Decidable
+  , Decide
+  , Divide
+  , Divisible
+  , conquer
+  , decide
+  , decided
+  , divide
+  , divided
+  , lose
   )
 import Data.Functor.Coproduct
   ( Coproduct (Coproduct)
@@ -1277,10 +1294,12 @@ import Data.Nullable
   (
   )
 import Data.Op
-  (
+  ( Op (Op)
+  , runOp
   )
 import Data.Predicate
-  (
+  ( Predicate (Predicate)
+  , runPredicate
   )
 import Data.Set
   ( Set ()
