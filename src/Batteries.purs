@@ -1485,5 +1485,5 @@ import Type.Proxy
   (
   )
 import Unsafe.Coerce
-  (
+  ( unsafeCoerce
   )
