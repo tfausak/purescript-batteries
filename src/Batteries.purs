@@ -243,10 +243,17 @@ import Control.Monad.Cont.Trans
   (
   )
 import Control.Monad.Eff
-  (
+  ( Eff ()
+  , Pure ()
+  , forE
+  , foreachE
+  , runPure
+  , untilE
+  , whileE
   )
 import Control.Monad.Eff.Class
-  (
+  ( MonadEff
+  , liftEff
   )
 import Control.Monad.Eff.Console
   (
@@ -267,7 +274,7 @@ import Control.Monad.Eff.Ref.Unsafe
   (
   )
 import Control.Monad.Eff.Unsafe
-  (
+  ( unsafeInterleaveEff
   )
 import Control.Monad.Error.Class
   (
