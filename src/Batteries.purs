@@ -564,7 +564,10 @@ import Data.Date.UTC
   (
   )
 import Data.Distributive
-  (
+  ( Distributive
+  , collect
+  , cotraverse
+  , distribute
   )
 import Data.Either
   ( Either (Left, Right)
