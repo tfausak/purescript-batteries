@@ -429,7 +429,7 @@ import Data.Array
   , nubBy
   -- , null
   , range
-  , replicate
+  -- , replicate
   , replicateM
   , reverse
   -- , singleton
@@ -838,7 +838,7 @@ import Data.String
   , localeCompare
   , null
   -- , replace
-  , singleton
+  -- , singleton
   -- , split
   , stripPrefix
   , stripSuffix
@@ -938,7 +938,12 @@ import Data.Tuple.Nested
   , (/\)
   )
 import Data.Unfoldable
-  (
+  ( Unfoldable
+  , none
+  , replicate
+  , replicateA
+  , singleton
+  , unfoldr
   )
 import Data.Yoneda
   (
