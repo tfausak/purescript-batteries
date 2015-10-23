@@ -1413,7 +1413,13 @@ import Data.String.Unsafe
   -- , charCodeAt
   )
 import Data.These
-  (
+  ( These (Both, That, This)
+  , fromThese
+  , thatOrBoth
+  , these
+  , theseLeft
+  , theseRight
+  , thisOrBoth
   )
 import Data.Time
   ( HourOfDay (HourOfDay)
