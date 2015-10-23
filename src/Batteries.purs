@@ -553,25 +553,32 @@ import Data.Maybe.Unsafe
   (
   )
 import Data.Monoid
-  (
+  ( Monoid
+  , mempty
   )
 import Data.Monoid.Additive
-  (
+  ( Additive (Additive)
+  , runAdditive
   )
 import Data.Monoid.Conj
-  (
+  ( Conj (Conj)
+  , runConj
   )
 import Data.Monoid.Disj
-  (
+  ( Disj (Disj)
+  , runDisj
   )
 import Data.Monoid.Dual
-  (
+  ( Dual (Dual)
+  , runDual
   )
 import Data.Monoid.Endo
-  (
+  ( Endo (Endo)
+  , runEndo
   )
 import Data.Monoid.Multiplicative
-  (
+  ( Multiplicative (Multiplicative)
+  , runMultiplicative
   )
 import Data.NaturalTransformation
   (
