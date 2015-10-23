@@ -761,7 +761,18 @@ import Data.Functor.Invariant
   , imapF
   )
 import Data.Generic
-  (
+  ( Generic
+  , GenericSignature (SigArray, SigBoolean, SigChar, SigInt, SigNumber, SigProd, SigRecord, SigString)
+  , GenericSpine (SArray, SBoolean, SChar, SInt, SNumber, SProd, SRecord, SString)
+  , Proxy (Proxy)
+  , anyProxy
+  , fromSpine
+  , gCompare
+  , gEq
+  , gShow
+  , isValidSpine
+  , toSignature
+  , toSpine
   )
 import Data.Identity
   (
