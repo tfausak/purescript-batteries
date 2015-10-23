@@ -1292,7 +1292,9 @@ import Data.NaturalTransformation
   , Natural ()
   )
 import Data.Nullable
-  (
+  ( Nullable ()
+  , toMaybe
+  , toNullable
   )
 import Data.Op
   ( Op (Op)
