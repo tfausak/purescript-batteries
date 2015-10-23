@@ -331,10 +331,16 @@ import Control.Monad.Eff.Random
   (
   )
 import Control.Monad.Eff.Ref
-  (
+  ( REF ()
+  , Ref ()
+  , modifyRef
+  , modifyRef'
+  , newRef
+  , readRef
+  , writeRef
   )
 import Control.Monad.Eff.Ref.Unsafe
-  (
+  ( unsafeRunRef
   )
 import Control.Monad.Eff.Unsafe
   ( unsafeInterleaveEff
