@@ -718,13 +718,51 @@ import Data.Coyoneda
   , lowerCoyoneda
   )
 import Data.Date
-  (
+  ( Date ()
+  , DayOfMonth (DayOfMonth)
+  , DayOfWeek (Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday)
+  , JSDate ()
+  , LocaleOffset (LocaleOffset)
+  , Month (April, August, December, February, January, July, June, March, May, November, October, September)
+  , Now ()
+  , Year (Year)
+  , fromEpochMilliseconds
+  , fromJSDate
+  -- , fromString
+  , fromStringStrict
+  , now
+  , nowEpochMilliseconds
+  , timezoneOffset
+  , toEpochMilliseconds
+  , toJSDate
   )
 import Data.Date.Locale
-  (
+  ( Locale ()
+  -- , date
+  -- , dateTime
+  -- , dayOfMonth
+  -- , dayOfWeek
+  -- , hourOfDay
+  -- , millisecondOfSecond
+  -- , minuteOfHour
+  -- , month
+  -- , secondOfMinute
+  , toLocaleDateString
+  , toLocaleString
+  , toLocaleTimeString
+  -- , year
   )
 import Data.Date.UTC
-  (
+  ( date
+  , dateTime
+  , dayOfMonth
+  , dayOfWeek
+  , hourOfDay
+  , millisecondOfSecond
+  , minuteOfHour
+  , month
+  , secondOfMinute
+  , year
   )
 import Data.Distributive
   ( Distributive
@@ -1354,7 +1392,23 @@ import Data.These
   (
   )
 import Data.Time
-  (
+  ( HourOfDay (HourOfDay)
+  , Hours (Hours)
+  , MillisecondOfSecond (MillisecondOfSecond)
+  , Milliseconds (Milliseconds)
+  , MinuteOfHour (MinuteOfHour)
+  , Minutes (Minutes)
+  , SecondOfMinute (SecondOfMinute)
+  , Seconds (Seconds)
+  , TimeValue
+  , fromHours
+  , fromMilliseconds
+  , fromMinutes
+  , fromSeconds
+  , toHours
+  , toMilliseconds
+  , toMinutes
+  , toSeconds
   )
 import Data.Traversable
   ( Accum ()
