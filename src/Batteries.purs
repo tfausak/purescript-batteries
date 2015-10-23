@@ -336,7 +336,11 @@ import Control.Monad.Eff.Exception
   , throwException
   )
 import Control.Monad.Eff.Random
-  (
+  ( RANDOM ()
+  , random
+  , randomBool
+  , randomInt
+  , randomRange
   )
 import Control.Monad.Eff.Ref
   ( REF ()
