@@ -277,22 +277,50 @@ import Control.Monad
   , when
   )
 import Control.Monad.Aff
-  (
+  ( Aff()
+  , Canceler (Canceler)
+  , PureAff ()
+  , apathize
+  , attempt
+  , cancel
+  , cancelWith
+  , finally
+  , forkAff
+  , later
+  , later'
+  , launchAff
+  , liftEff'
+  , makeAff
+  , makeAff'
+  , nonCanceler
+  , runAff
   )
 import Control.Monad.Aff.AVar
-  (
+  ( AffAVar ()
+  , AVAR ()
+  , AVar ()
+  , killVar
+  , makeVar
+  , makeVar'
+  , modifyVar
+  , putVar
+  , takeVar
   )
 import Control.Monad.Aff.Class
-  (
+  ( MonadAff
+  , liftAff
   )
 import Control.Monad.Aff.Console
-  (
+  ( -- log
+  -- , print
   )
 import Control.Monad.Aff.Par
-  (
+  ( Par (Par)
+  , runPar
   )
 import Control.Monad.Aff.Unsafe
-  (
+  ( unsafeInterleaveAff
+  , unsafeTrace
   )
 import Control.Monad.Cont.Class
   ( MonadCont
