@@ -21,16 +21,11 @@ Once you install it, use it by importing it unqualified:
 import Batteries
 ```
 
-Batteries includes a few modules that clash with each other. To use them,
-import them qualified:
+That's it!
 
-``` purescript
-import qualified Batteries.Array as Array
-```
-
-That's it! If you know of a package that should be included, please open a pull
-request. And if Batteries doesn't export something that you need from one of
-the included packages, please open an issue.
+If you know of a package that should be included, please open a pull request.
+And if Batteries doesn't export something that you need from one of the
+included packages, please open an issue.
 
 Batteries includes the following packages:
 
