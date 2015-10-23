@@ -515,7 +515,13 @@ import Control.MonadPlus
   , guard
   )
 import Control.Parallel
-  (
+  ( Parallel ()
+  , inParallel
+  , par
+  , race
+  , runParallel
+  , runParallelWith
+  , withCallback
   )
 import Control.Plus
   ( Plus
