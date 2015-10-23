@@ -347,7 +347,14 @@ import Control.Monad.Rec.Class
   (
   )
 import Control.Monad.ST
-  (
+  ( ST ()
+  , STRef ()
+  , modifySTRef
+  , newSTRef
+  , pureST
+  , readSTRef
+  , runST
+  , writeSTRef
   )
 import Control.Monad.State
   (
