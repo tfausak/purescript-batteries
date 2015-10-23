@@ -227,9 +227,9 @@ import Control.Comonad
   )
 import Control.Comonad.Cofree
   ( Cofree ()
-  -- , head
+  -- , head -- TODO
   , mkCofree
-  -- , tail
+  -- , tail -- TODO
   )
 import Control.Comonad.Env
   ( Env ()
@@ -240,9 +240,9 @@ import Control.Comonad.Env
   )
 import Control.Comonad.Env.Class
   ( ComonadEnv
-  -- , ask
-  -- , asks
-  -- , local
+  -- , ask -- TODO
+  , asks
+  -- , local -- TODO
   )
 import Control.Comonad.Env.Trans
   ( EnvT (EnvT)
@@ -257,12 +257,12 @@ import Control.Comonad.Store
   )
 import Control.Comonad.Store.Class
   ( ComonadStore
-  -- , experiment
-  -- , peek
-  -- , peeks
-  -- , pos
-  -- , seek
-  -- , seeks
+  , experiment
+  -- , peek -- TODO
+  , peeks
+  , pos
+  , seek
+  , seeks
   )
 import Control.Comonad.Store.Trans
   ( StoreT (StoreT)
@@ -275,11 +275,11 @@ import Control.Comonad.Traced
   )
 import Control.Comonad.Traced.Class
   ( ComonadTraced
-  -- , censor
-  -- , listen
-  -- , listens
-  -- , track
-  -- , tracks
+  -- , censor -- TODO
+  -- , listen -- TODO
+  -- , listens -- TODO
+  , track
+  , tracks
   )
 import Control.Comonad.Traced.Trans
   ( TracedT (TracedT)
@@ -287,7 +287,7 @@ import Control.Comonad.Traced.Trans
   )
 import Control.Comonad.Trans
   ( ComonadTrans
-  -- , lower
+  , lower
   )
 import Control.Extend
   ( Extend
@@ -342,8 +342,8 @@ import Control.Monad.Aff.Class
   , liftAff
   )
 import Control.Monad.Aff.Console
-  ( -- log
-  -- , print
+  ( -- log -- NOTE: Math
+  -- , print -- NOTE: Control.Monad.Eff.Console
   )
 import Control.Monad.Aff.Par
   ( Par (Par)
@@ -378,8 +378,8 @@ import Control.Monad.Eff.Class
   )
 import Control.Monad.Eff.Console
   ( CONSOLE ()
-  -- , error
-  -- , log
+  -- , error -- NOTE: Control.Monad.Eff.Exception
+  -- , log -- NOTE: Math
   , print
   )
 import Control.Monad.Eff.Console.Unsafe
@@ -448,32 +448,32 @@ import Control.Monad.Free
   )
 import Control.Monad.List.Trans
   ( ListT ()
-  -- , catMaybes
-  -- , cons
-  -- , drop
-  -- , dropWhile
-  -- , filter
-  -- , foldl
-  -- , foldl'
-  -- , fromEffect
-  -- , head
-  -- , iterate
-  -- , mapMaybe
-  -- , nil
-  -- , prepend
-  -- , prepend'
-  -- , repeat
-  -- , scanl
-  -- , singleton
-  -- , tail
-  -- , take
-  -- , takeWhile
-  -- , uncons
-  -- , unfold
-  -- , wrapEffect
-  -- , wrapLazy
-  -- , zipWith
-  -- , zipWith'
+  -- , catMaybes -- TODO
+  -- , cons -- TODO
+  -- , drop -- TODO
+  -- , dropWhile -- TODO
+  -- , filter -- TODO
+  -- , foldl -- NOTE: Data.Foldable
+  -- , foldl' -- NOTE: Data.Foldable
+  , fromEffect
+  -- , head -- TODO
+  -- , iterate -- TODO
+  -- , mapMaybe -- TODO
+  -- , nil -- TODO
+  , prepend
+  , prepend'
+  -- , repeat -- TODO
+  -- , scanl -- NOTE: Data.Traversable
+  -- , singleton -- NOTE: Data.Unfoldable
+  -- , tail -- TODO
+  -- , take -- TODO
+  -- , takeWhile -- TODO
+  -- , uncons -- TODO
+  , unfold
+  , wrapEffect
+  , wrapLazy
+  -- , zipWith -- TODO
+  , zipWith'
   )
 import Control.Monad.Maybe.Trans
   ( MaybeT (MaybeT)
@@ -509,9 +509,9 @@ import Control.Monad.Reader
   )
 import Control.Monad.Reader.Class
   ( MonadReader
-  -- , ask
-  -- , local
-  -- , reader
+  -- , ask -- TODO
+  -- , local -- TODO
+  , reader
   )
 import Control.Monad.Reader.Trans
   ( ReaderT (ReaderT)
@@ -547,11 +547,11 @@ import Control.Monad.State
   )
 import Control.Monad.State.Class
   ( MonadState
-  -- , get
-  -- , gets
-  -- , modify
-  -- , put
-  -- , state
+  , get
+  , gets
+  , modify
+  , put
+  , state
   )
 import Control.Monad.State.Trans
   ( StateT (StateT)
@@ -581,12 +581,12 @@ import Control.Monad.Writer
   )
 import Control.Monad.Writer.Class
   ( MonadWriter
-  -- , censor
-  -- , listen
-  -- , listens
-  -- , pass
-  -- , tell
-  -- , writer
+  -- , censor -- TODO
+  -- , listen -- TODO
+  -- , listens -- TODO
+  , pass
+  , tell
+  , writer
   )
 import Control.Monad.Writer.Trans
   ( WriterT (WriterT)
@@ -612,68 +612,68 @@ import Control.Plus
   , empty
   )
 import Data.Array
-  ( alterAt
-  , catMaybes
-  , concat
-  , concatMap
-  , cons
-  , delete
-  , deleteAt
-  , deleteBy
-  -- , drop
-  -- , dropWhile
-  , elemIndex
-  , elemLastIndex
-  , filter
-  , filterM
-  , findIndex
-  , findLastIndex
-  , foldM
-  , group
-  , group'
-  , groupBy
-  , head
-  , index
-  , init
-  , insert
-  , insertAt
-  , insertBy
-  , intersect
-  , intersectBy
-  , last
-  -- , length
-  , many
-  , mapMaybe
-  , modifyAt
-  , nub
-  , nubBy
-  -- , null
-  , range
-  -- , replicate
-  , replicateM
-  , reverse
-  -- , singleton
-  , slice
-  , snoc
-  , some
-  , sort
-  , sortBy
-  , span
-  , tail
-  -- , take
-  -- , takeWhile
-  -- , uncons
-  , union
-  , unionBy
-  , unzip
-  , updateAt
-  , zip
-  , zipWith
-  , zipWithA
-  , (:)
-  , (!!)
-  , (..)
-  , (\\)
+  ( -- alterAt -- TODO
+  -- , catMaybes -- TODO
+  -- , concat -- TODO
+  -- , concatMap -- TODO
+  -- , cons -- TODO
+  -- , delete -- TODO
+  -- , deleteAt -- TODO
+  -- , deleteBy -- TODO
+  -- , drop -- TODO
+  -- , dropWhile -- TODO
+  -- , elemIndex -- TODO
+  -- , elemLastIndex -- TODO
+  -- , filter -- TODO
+  -- , filterM -- TODO
+  -- , findIndex -- TODO
+  -- , findLastIndex -- TODO
+  -- , foldM -- TODO
+  -- , group -- TODO
+  -- , group' -- TODO
+  -- , groupBy -- TODO
+  -- , head -- TODO
+  -- , index -- TODO
+  -- , init -- TODO
+  -- , insert -- TODO
+  -- , insertAt -- TODO
+  -- , insertBy -- TODO
+  -- , intersect -- TODO
+  -- , intersectBy -- TODO
+  -- , last -- TODO
+  -- , length -- TODO
+  -- , many -- TODO
+  -- , mapMaybe -- TODO
+  -- , modifyAt -- TODO
+  -- , nub -- TODO
+  -- , nubBy -- TODO
+  -- , null -- TODO
+  -- , range -- TODO
+  -- , replicate -- NOTE: Data.Unfoldable
+  -- , replicateM -- TODO
+  -- , reverse -- TODO
+  -- , singleton -- NOTE: Data.Unfoldable
+  -- , slice -- TODO
+  -- , snoc -- TODO
+  -- , some -- TODO
+  -- , sort -- TODO
+  -- , sortBy -- TODO
+  -- , span -- TODO
+  -- , tail -- TODO
+  -- , take -- TODO
+  -- , takeWhile -- TODO
+  -- , uncons -- TODO
+  -- , union -- TODO
+  -- , unionBy -- TODO
+  -- , unzip -- TODO
+  -- , updateAt -- TODO
+  -- , zip -- TODO
+  -- , zipWith -- TODO
+  -- , zipWithA -- TODO
+  -- , (:) -- TODO
+  -- , (!!) -- TODO
+  -- , (..) -- TODO
+  -- , (\\) -- TODO
   )
 import Data.Array.ST
   ( Assoc ()
@@ -690,11 +690,11 @@ import Data.Array.ST
   , toAssocArray
   )
 import Data.Array.Unsafe
-  ( unsafeIndex
-  -- , head
-  -- , init
-  -- , last
-  -- , tail
+  ( -- unsafeIndex -- TODO
+  -- , head -- TODO
+  -- , init -- TODO
+  -- , last -- TODO
+  -- , tail -- TODO
   )
 import Data.Bifoldable
   ( Bifoldable
@@ -744,26 +744,26 @@ import Data.Bitraversable
   )
 import Data.CatList
   ( CatList (CatCons, CatNil)
-  -- , append
-  -- , cons
-  -- , empty
-  -- , null
-  -- , snoc
-  -- , uncons
+  -- , append -- NOTE: Prelude
+  -- , cons -- TODO
+  -- , empty -- NOTE: Control.Plus
+  -- , null -- TODO
+  -- , snoc -- TODO
+  -- , uncons -- TODO
   )
 import Data.CatQueue
   ( CatQueue (CatQueue)
-  -- , empty
-  -- , null
-  -- , snoc
-  -- , uncons
+  -- , empty -- NOTE: Control.Plus
+  -- , null -- TODO
+  -- , snoc -- TODO
+  -- , uncons -- TODO
   )
 import Data.Char
   ( fromCharCode
   , toCharCode
-  -- , toLower
+  -- , toLower -- NOTE: Data.String
   , toString
-  -- , toUpper
+  -- , toUpper -- NOTE: Data.String
   )
 import Data.Comparison
   ( Comparison (Comparison)
@@ -794,7 +794,7 @@ import Data.Date
   , Year (Year)
   , fromEpochMilliseconds
   , fromJSDate
-  -- , fromString
+  -- , fromString -- TODO
   , fromStringStrict
   , now
   , nowEpochMilliseconds
@@ -804,19 +804,19 @@ import Data.Date
   )
 import Data.Date.Locale
   ( Locale ()
-  -- , date
-  -- , dateTime
-  -- , dayOfMonth
-  -- , dayOfWeek
-  -- , hourOfDay
-  -- , millisecondOfSecond
-  -- , minuteOfHour
-  -- , month
-  -- , secondOfMinute
+  -- , date -- NOTE: Data.Date.UTC
+  -- , dateTime -- NOTE: Data.Date.UTC
+  -- , dayOfMonth -- NOTE: Data.Date.UTC
+  -- , dayOfWeek -- NOTE: Data.Date.UTC
+  -- , hourOfDay -- NOTE: Data.Date.UTC
+  -- , millisecondOfSecond -- NOTE: Data.Date.UTC
+  -- , minuteOfHour -- NOTE: Data.Date.UTC
+  -- , month -- NOTE: Data.Date.UTC
+  -- , secondOfMinute -- NOTE: Data.Date.UTC
   , toLocaleDateString
   , toLocaleString
   , toLocaleTimeString
-  -- , year
+  -- , year -- NOTE: Data.Date.UTC
   )
 import Data.Date.UTC
   ( date
@@ -1002,13 +1002,13 @@ import Data.Foreign.Index
   , errorAt
   , hasOwnProperty
   , hasProperty
-  -- , index
+  -- , index -- TODO
   , ix
   , prop
   , (!)
   )
 import Data.Foreign.Keys
-  ( -- keys
+  ( -- keys -- TODO
   )
 import Data.Foreign.Null
   ( Null (Null)
@@ -1086,8 +1086,8 @@ import Data.Functor.Contravariant.Divisible
 import Data.Functor.Coproduct
   ( Coproduct (Coproduct)
   , coproduct
-  -- , left
-  -- , right
+  , left
+  , right
   , runCoproduct
   )
 import Data.Functor.Invariant
@@ -1123,7 +1123,7 @@ import Data.Int
   , even
   , floor
   , fromNumber
-  , fromString
+  -- , fromString -- TODO
   , odd
   , round
   , toNumber
@@ -1138,138 +1138,138 @@ import Data.Int.Bits
   , (.|.)
   )
 import Data.Lazy
-  ( force
-  -- , Lazy ()
-  -- , defer
+  ( -- Lazy () -- NOTE: Control.Lazy
+  -- , defer -- NOTE: Control.Lazy
+    force
   )
 import Data.List
   ( List (Cons, Nil)
-  -- , alterAt
-  -- , catMaybes
-  -- , concat
-  -- , concatMap
-  -- , delete
-  -- , deleteAt
-  -- , deleteBy
-  -- , drop
-  -- , dropWhile
-  -- , elemIndex
-  -- , elemLastIndex
-  -- , filter
-  -- , filterM
-  -- , findIndex
-  -- , findLastIndex
-  -- , foldM
-  , fromList
-  -- , group
-  -- , group'
-  -- , groupBy
-  -- , head
-  -- , index
-  -- , init
-  -- , insert
-  -- , insertAt
-  -- , insertBy
-  -- , intersect
-  -- , intersectBy
-  -- , last
-  -- , length
-  -- , many
-  -- , mapMaybe
-  -- , modifyAt
-  -- , nub
-  -- , nubBy
-  -- , null
-  -- , range
-  -- , replicate
-  -- , replicateM
-  -- , reverse
-  -- , singleton
-  -- , slice
-  -- , snoc
-  -- , some
-  -- , sort
-  -- , sortBy
-  -- , span
-  -- , tail
-  -- , take
-  -- , takeWhile
-  , toList
-  -- , uncons
-  -- , union
-  -- , unionBy
-  -- , unzip
-  -- , updateAt
-  -- , zip
-  -- , zipWith
-  -- , zipWithA
-  -- , (:)
-  -- , (!!)
-  -- , (..)
-  -- , (\\)
+  -- , alterAt -- TODO
+  -- , catMaybes -- TODO
+  -- , concat -- TODO
+  -- , concatMap -- TODO
+  -- , delete -- TODO
+  -- , deleteAt -- TODO
+  -- , deleteBy -- TODO
+  -- , drop -- TODO
+  -- , dropWhile -- TODO
+  -- , elemIndex -- TODO
+  -- , elemLastIndex -- TODO
+  -- , filter -- TODO
+  -- , filterM -- TODO
+  -- , findIndex -- TODO
+  -- , findLastIndex -- TODO
+  -- , foldM -- TODO
+  -- , fromList -- TODO
+  -- , group -- TODO
+  -- , group' -- TODO
+  -- , groupBy -- TODO
+  -- , head -- TODO
+  -- , index -- TODO
+  -- , init -- TODO
+  -- , insert -- TODO
+  -- , insertAt -- TODO
+  -- , insertBy -- TODO
+  -- , intersect -- TODO
+  -- , intersectBy -- TODO
+  -- , last -- TODO
+  -- , length -- TODO
+  -- , many -- TODO
+  -- , mapMaybe -- TODO
+  -- , modifyAt -- TODO
+  -- , nub -- TODO
+  -- , nubBy -- TODO
+  -- , null -- TODO
+  -- , range -- TODO
+  -- , replicate -- NOTE: Data.Unfoldable
+  -- , replicateM -- TODO
+  -- , reverse -- TODO
+  -- , singleton -- NOTE: Data.Unfoldable
+  -- , slice -- TODO
+  -- , snoc -- TODO
+  -- , some -- TODO
+  -- , sort -- TODO
+  -- , sortBy -- TODO
+  -- , span -- TODO
+  -- , tail -- TODO
+  -- , take -- TODO
+  -- , takeWhile -- TODO
+  -- , toList -- TODO
+  -- , uncons -- TODO
+  -- , union -- TODO
+  -- , unionBy -- TODO
+  -- , unzip -- TODO
+  -- , updateAt -- TODO
+  -- , zip -- TODO
+  -- , zipWith -- TODO
+  -- , zipWithA -- TODO
+  -- , (:) -- TODO
+  -- , (!!) -- TODO
+  -- , (..) -- TODO
+  -- , (\\) -- TODO
   )
 import Data.List.Lazy
-  ( -- List (..)
-  -- , Step (..)
-  -- , alterAt
-  -- , catMaybes
-  -- , concat
-  -- , concatMap
-  -- , cons
-  -- , cycle
-  -- , delete
-  -- , deleteAt
-  -- , deleteBy
-  -- , drop
-  -- , dropWhile
-  -- , filter
-  -- , fromList
-  -- , group
-  -- , groupBy
-  -- , head
-  -- , index
-  -- , init
-  -- , insert
-  -- , insertAt
-  -- , insertBy
-  -- , intersect
-  -- , intersectBy
-  -- , iterate
-  -- , last
-  -- , length
-  -- , mapMaybe
-  -- , modifyAt
-  -- , nil
-  -- , nub
-  -- , nubBy
-  -- , null
-  -- , range
-  -- , repeat
-  -- , reverse
-  -- , runList
-  -- , singleton
-  -- , span
-  -- , step
-  -- , tail
-  -- , take
-  -- , takeWhile
-  -- , toList
-  -- , uncons
-  -- , union
-  -- , unionBy
-  -- , updateAt
-  -- , zip
-  -- , zipWith
-  -- , (:)
-  -- , (!!)
-  -- , (..)
-  -- , (\\)
+  ( -- List (List) -- NOTE: Data.List
+  -- , Step (Cons, NIl) -- NOTE: Data.List
+  -- , alterAt -- TODO
+  -- , catMaybes -- TODO
+  -- , concat -- TODO
+  -- , concatMap -- TODO
+  -- , cons -- TODO
+    cycle
+  -- , delete -- TODO
+  -- , deleteAt -- TODO
+  -- , deleteBy -- TODO
+  -- , drop -- TODO
+  -- , dropWhile -- TODO
+  -- , filter -- TODO
+  -- , fromList -- TODO
+  -- , group -- TODO
+  -- , groupBy -- TODO
+  -- , head -- TODO
+  -- , index -- TODO
+  -- , init -- TODO
+  -- , insert -- TODO
+  -- , insertAt -- TODO
+  -- , insertBy -- TODO
+  -- , intersect -- TODO
+  -- , intersectBy -- TODO
+  -- , iterate -- TODO
+  -- , last -- TODO
+  -- , length -- TODO
+  -- , mapMaybe -- TODO
+  -- , modifyAt -- TODO
+  -- , nil -- TODO
+  -- , nub -- TODO
+  -- , nubBy -- TODO
+  -- , null -- TODO
+  -- , range -- TODO
+  -- , repeat -- TODO
+  -- , reverse -- TODO
+  , runList
+  -- , singleton -- NOTE: Data.Unfoldable
+  -- , span -- TODO
+  , step
+  -- , tail -- TODO
+  -- , take -- TODO
+  -- , takeWhile -- TODO
+  -- , toList -- TODO
+  -- , uncons -- TODO
+  -- , union -- TODO
+  -- , unionBy -- TODO
+  -- , updateAt -- TODO
+  -- , zip -- TODO
+  -- , zipWith -- TODO
+  -- , (:) -- TODO
+  -- , (!!) -- TODO
+  -- , (..) -- TODO
+  -- , (\\) -- TODO
   )
 import Data.List.Unsafe
-  ( -- head
-  -- , init
-  -- , last
-  -- , tail
+  ( -- head -- TODO
+  -- , init -- TODO
+  -- , last -- TODO
+  -- , tail -- TODO
   )
 import Data.List.ZipList
   ( ZipList (ZipList)
@@ -1277,26 +1277,26 @@ import Data.List.ZipList
   )
 import Data.Map
   ( Map ()
-  -- , alter
-  , checkValid
-  -- , delete
-  -- , empty
-  -- , fromList
-  -- , fromListWith
-  -- , insert
-  -- , isEmpty
-  -- , keys
-  -- , lookup
-  -- , member
+  -- , alter -- TODO
+  -- , checkValid -- TODO
+  -- , delete -- TODO
+  -- , empty -- NOTE: Control.Plus
+  -- , fromList -- TODO
+  -- , fromListWith -- TODO
+  -- , insert -- TODO
+  -- , isEmpty -- TODO
+  -- , keys -- TODO
+  -- , lookup -- TODO
+  -- , member -- TODO
   , showTree
-  -- , singleton
-  -- , size
-  -- , toList
-  -- , union
-  -- , unions
+  -- , singleton -- NOTE: Data.Unfoldable
+  -- , size -- TODO
+  -- , toList -- TODO
+  -- , union -- TODO
+  -- , unions -- TODO
   , unionWith
-  -- , update
-  -- , values
+  -- , update -- TODO
+  -- , values -- TODO
   )
 import Data.Maybe
   ( Maybe (Nothing, Just)
@@ -1316,7 +1316,7 @@ import Data.Maybe.Last
   )
 import Data.Maybe.Unsafe
   ( fromJust
-  -- , unsafeThrow
+  , unsafeThrow
   )
 import Data.Monoid
   ( Monoid
@@ -1366,8 +1366,8 @@ import Data.Predicate
 import Data.Profunctor
   ( Profunctor
   , arr
-  -- , lmap
-  -- , rmap
+  -- , lmap -- NOTE: Data.Bifunctor
+  -- , rmap -- NOTE: Data.Bifunctor
   )
 import Data.Profunctor.Choice
   ( Choice
@@ -1384,77 +1384,77 @@ import Data.Profunctor.Strong
   , (&&&)
   )
 import Data.Semiring.Free
-  ( -- Free ()
-  -- , free
-  -- , liftFree
-  -- , lowerFree
-  -- , runFree
+  ( -- Free () -- NOTE: Control.Monad.Free
+    free
+  , liftFree
+  , lowerFree
+  -- , runFree -- NOTE: Control.Monad.Free
   )
 import Data.Set
   ( Set ()
-  -- , checkValid
-  -- , delete
+  -- , checkValid -- TODO
+  -- , delete -- TODO
   , difference
-  -- , empty
-  -- , fromList
-  -- , insert
-  -- , isEmpty
-  -- , member
-  -- , singleton
-  -- , size
-  -- , toList
-  -- , union
-  -- , unions
+  -- , empty -- NOTE: Control.Plus
+  -- , fromList -- TODO
+  -- , insert -- TODO
+  -- , isEmpty -- TODO
+  -- , member -- TODO
+  -- , singleton -- NOTE: Data.Unfoldable
+  -- , size -- TODO
+  -- , toList -- TODO
+  -- , union -- TODO
+  -- , unions -- TODO
   )
 import Data.StrMap
   ( StrMap ()
-  -- , all
-  , alter
-  -- , delete
-  -- , empty
-  -- , fold
-  -- , foldM
-  -- , foldMap
+  -- , all -- NOTE: Data.Foldable
+  -- , alter -- TODO
+  -- , delete -- TODO
+  -- , empty -- NOTE: Control.Plus
+  -- , fold -- NOTE: Data.Foldable
+  -- , foldM -- TODO
+  -- , foldMap -- NOTE: Data.Foldable
   , foldMaybe
   , freezeST
-  -- , fromList
-  , fromListWith
-  -- , insert
-  , isEmpty
+  -- , fromList -- TODO
+  -- , fromListWith -- TODO
+  -- , insert -- TODO
+  -- , isEmpty -- TODO
   , isSubmap
-  , keys
-  , lookup
-  , member
-  -- , runST
-  -- , singleton
-  , size
+  -- , keys -- TODO
+  -- , lookup -- TODO
+  -- , member -- TODO
+  -- , runST -- NOTE: Control.Monad.ST
+  -- , singleton -- NOTE: Data.Unfoldable
+  -- , size -- TODO
   , thawST
-  -- , toList
-  -- , union
-  , unions
-  , update
-  , values
+  -- , toList -- TODO
+  -- , union -- TODO
+  -- , unions -- TODO
+  -- , update -- TODO
+  -- , values -- TODO
   )
 import Data.StrMap.ST
   ( STStrMap ()
-  -- , delete
+  -- , delete -- TODO
   , new
-  , peek
+  -- , peek -- TODO
   , poke
   )
 import Data.StrMap.ST.Unsafe
   ( unsafeGet
   )
 import Data.StrMap.Unsafe
-  ( -- unsafeIndex
+  ( -- unsafeIndex -- TODO
   )
 import Data.String
   ( charAt
   , charCodeAt
   , contains
   , count
-  , drop
-  , dropWhile
+  -- , drop -- TODO
+  -- , dropWhile -- TODO
   , fromChar
   , fromCharArray
   , indexOf
@@ -1462,22 +1462,22 @@ import Data.String
   , joinWith
   , lastIndexOf
   , lastIndexOf'
-  , length
+  -- , length -- TODO
   , localeCompare
-  , null
-  -- , replace
-  -- , singleton
-  -- , split
+  -- , null -- TODO
+  -- , replace -- NOTE: Data.String.Regex
+  -- , singleton -- NOTE: Data.Unfoldable
+  -- , split -- NOTE: Data.String.Regex
   , stripPrefix
   , stripSuffix
-  , take
-  , takeWhile
+  -- , take -- TODO
+  -- , takeWhile -- TODO
   , toChar
   , toCharArray
   , toLower
   , toUpper
   , trim
-  , uncons
+  -- , uncons -- TODO
   )
 import Data.String.Regex
   ( Regex ()
@@ -1497,8 +1497,8 @@ import Data.String.Regex
   )
 import Data.String.Unsafe
   ( char
-  -- , charAt
-  -- , charCodeAt
+  -- , charAt -- NOTE: Data.String
+  -- , charCodeAt -- NOTE: Data.String
   )
 import Data.These
   ( These (Both, That, This)
@@ -1543,7 +1543,7 @@ import Data.Tuple
   ( Tuple (Tuple)
   , curry
   , fst
-  -- , lookup
+  -- , lookup -- TODO
   , snd
   , swap
   , uncurry
@@ -1602,10 +1602,10 @@ import Data.Validation
   , runV
   )
 import Data.Validation.Semiring
-  ( -- V ()
-  -- , invalid
-  -- , isValid
-  -- , runV
+  ( -- V () -- NOTE: Data.Validation
+  -- , invalid -- NOTE: Data.Validation
+  -- , isValid -- NOTE: Data.Validation
+  -- , runV -- NOTE: Data.Validation
   )
 import Data.Yoneda
   ( Yoneda (Yoneda)
@@ -1619,7 +1619,7 @@ import Global
   , isNaN
   , nan
   , readFloat
-  -- , readInt
+  -- , readInt -- NOTE: Data.Foreign
   )
 import Global.Unsafe
   ( unsafeStringify
@@ -1631,11 +1631,11 @@ import Math
   , asin
   , atan
   , atan2
-  -- , ceil
+  -- , ceil -- NOTE: Data.Int
   , cos
   , e
   , exp
-  -- , floor
+  -- , floor -- NOTE: Data.Int
   , ln10
   , ln2
   , log
@@ -1645,7 +1645,7 @@ import Math
   , min
   , pi
   , pow
-  -- , round
+  -- , round -- NOTE: Data.Int
   , sin
   , sqrt
   , sqrt1_2
@@ -1740,7 +1740,7 @@ import Test.Assert
   , assertThrows'
   )
 import Type.Proxy
-  ( -- Proxy (Proxy)
+  ( -- Proxy (Proxy) -- NOTE: Data.Generic
   Proxy2 (Proxy2)
   , Proxy3 (Proxy3)
   )
