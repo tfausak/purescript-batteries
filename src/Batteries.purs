@@ -864,25 +864,59 @@ import Data.Foldable
   , traverse_
   )
 import Data.Foreign
-  (
+  ( Foreign ()
+  , ForeignError (ErrorAtIndex, ErrorAtProperty, JSONError, TypeMismatch)
+  , F ()
+  , isArray
+  , isNull
+  , isUndefined
+  , parseJSON
+  , readArray
+  , readBoolean
+  , readChar
+  , readInt
+  , readNumber
+  , readString
+  , tagOf
+  , toForeign
+  , typeOf
+  , unsafeFromForeign
+  , unsafeReadTagged
   )
 import Data.Foreign.Class
-  (
+  ( IsForeign
+  , read
+  , readJSON
+  , readProp
+  , readWith
   )
 import Data.Foreign.Index
-  (
+  ( Index
+  , errorAt
+  , hasOwnProperty
+  , hasProperty
+  -- , index
+  , ix
+  , prop
+  , (!)
   )
 import Data.Foreign.Keys
-  (
+  ( -- keys
   )
 import Data.Foreign.Null
-  (
+  ( Null (Null)
+  , readNull
+  , runNull
   )
 import Data.Foreign.NullOrUndefined
-  (
+  ( NullOrUndefined (NullOrUndefined)
+  , readNullOrUndefined
+  , runNullOrUndefined
   )
 import Data.Foreign.Undefined
-  (
+  ( Undefined (Undefined)
+  , readUndefined
+  , runUndefined
   )
 import Data.Function
   ( Fn0 ()
@@ -1401,7 +1435,7 @@ import Global
   , isNaN
   , nan
   , readFloat
-  , readInt
+  -- , readInt
   )
 import Global.Unsafe
   ( unsafeStringify
