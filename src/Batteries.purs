@@ -785,7 +785,8 @@ import Data.Generic
   , toSpine
   )
 import Data.Identity
-  (
+  ( Identity (Identity)
+  , runIdentity
   )
 import Data.Inject
   (
