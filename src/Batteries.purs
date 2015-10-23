@@ -1031,7 +1031,20 @@ import Data.Predicate
   (
   )
 import Data.Set
-  (
+  ( Set ()
+  -- , checkValid
+  -- , delete
+  , difference
+  -- , empty
+  -- , fromList
+  -- , insert
+  -- , isEmpty
+  -- , member
+  -- , singleton
+  -- , size
+  -- , toList
+  -- , union
+  -- , unions
   )
 import Data.StrMap
   ( StrMap ()
