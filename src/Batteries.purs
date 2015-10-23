@@ -156,13 +156,20 @@ module Batteries
   ) where
 
 import Control.Alt
-  (
+  ( Alt
+  , alt
+  , (<|>)
   )
 import Control.Alternative
-  (
+  ( Alternative
   )
 import Control.Apply
-  (
+  ( lift2
+  , lift3
+  , lift4
+  , lift5
+  , (*>)
+  , (<*)
   )
 import Control.Biapplicative
   (
@@ -171,10 +178,15 @@ import Control.Biapply
   (
   )
 import Control.Bind
-  (
+  ( ifM
+  , join
+  , (<=<)
+  , (=<<)
+  , (>=>)
   )
 import Control.Comonad
-  (
+  ( Comonad
+  , extract
   )
 import Control.Comonad.Cofree
   (
@@ -210,13 +222,22 @@ import Control.Comonad.Trans
   (
   )
 import Control.Extend
-  (
+  ( Extend
+  , duplicate
+  , extend
+  , (<<=)
+  , (=<=)
+  , (=>=)
+  , (=>>)
   )
 import Control.Lazy
-  (
+  ( Lazy
+  , defer
+  , fix
   )
 import Control.Monad
-  (
+  ( unless
+  , when
   )
 import Control.Monad.Aff
   (
@@ -347,13 +368,15 @@ import Control.Monad.Writer.Trans
   (
   )
 import Control.MonadPlus
-  (
+  ( MonadPlus
+  , guard
   )
 import Control.Parallel
   (
   )
 import Control.Plus
-  (
+  ( Plus
+  , empty
   )
 import Data.Array
   (
@@ -467,7 +490,8 @@ import Data.Function
   (
   )
 import Data.Functor
-  (
+  ( (<$)
+  , ($>)
   )
 import Data.Functor.Contravariant
   (
