@@ -256,10 +256,14 @@ import Control.Monad.Eff.Class
   , liftEff
   )
 import Control.Monad.Eff.Console
-  (
+  ( CONSOLE ()
+  , error
+  , log
+  , print
   )
 import Control.Monad.Eff.Console.Unsafe
-  (
+  ( errorAny
+  , logAny
   )
 import Control.Monad.Eff.Exception
   (
