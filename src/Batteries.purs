@@ -392,13 +392,89 @@ import Control.Plus
   , empty
   )
 import Data.Array
-  (
+  ( alterAt
+  , catMaybes
+  , concat
+  , concatMap
+  , cons
+  , delete
+  , deleteAt
+  , deleteBy
+  -- , drop
+  -- , dropWhile
+  , elemIndex
+  , elemLastIndex
+  , filter
+  , filterM
+  , findIndex
+  , findLastIndex
+  , foldM
+  , group
+  , group'
+  , groupBy
+  , head
+  , index
+  , init
+  , insert
+  , insertAt
+  , insertBy
+  , intersect
+  , intersectBy
+  , last
+  -- , length
+  , many
+  , mapMaybe
+  , modifyAt
+  , nub
+  , nubBy
+  -- , null
+  , range
+  , replicate
+  , replicateM
+  , reverse
+  -- , singleton
+  , slice
+  , snoc
+  , some
+  , sort
+  , sortBy
+  , span
+  , tail
+  -- , take
+  -- , takeWhile
+  -- , uncons
+  , union
+  , unionBy
+  , unzip
+  , updateAt
+  , zip
+  , zipWith
+  , zipWithA
+  , (:)
+  , (!!)
+  , (..)
+  , (\\)
   )
 import Data.Array.ST
-  (
+  ( Assoc ()
+  , STArray ()
+  , emptySTArray
+  , freeze
+  , peekSTArray
+  , pokeSTArray
+  , pushAllSTArray
+  , pushSTArray
+  , runSTArray
+  , spliceSTArray
+  , thaw
+  , toAssocArray
   )
 import Data.Array.Unsafe
-  (
+  ( unsafeIndex
+  -- , head
+  -- , init
+  -- , last
+  -- , tail
   )
 import Data.Bifoldable
   ( Bifoldable
