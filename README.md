@@ -92,7 +92,7 @@ Batteries includes the following packages:
 - [transformers](https://github.com/purescript/purescript-transformers)
 - [tuples](https://github.com/purescript/purescript-tuples)
 - [unfoldable](https://github.com/purescript/purescript-unfoldable)
-- [unsafe-coerce](https://github.com/purescript_TODO_contrib/purescript-unsafe-coerce)
+- [unsafe-coerce](https://github.com/purescript-contrib/purescript-unsafe-coerce)
 - [validation](https://github.com/purescript/purescript-validation)
 
 To see the exact versions that Batteries depends on, look at the
