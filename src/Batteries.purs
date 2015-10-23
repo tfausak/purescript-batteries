@@ -737,10 +737,23 @@ import Data.Inject
   (
   )
 import Data.Int
-  (
+  ( ceil
+  , even
+  , floor
+  , fromNumber
+  , fromString
+  , odd
+  , round
+  , toNumber
   )
 import Data.Int.Bits
-  (
+  ( complement
+  , shl
+  , shr
+  , zshr
+  , (.&.)
+  , (.^.)
+  , (.|.)
   )
 import Data.Lazy
   (
@@ -976,11 +989,11 @@ import Math
   , asin
   , atan
   , atan2
-  , ceil
+  -- , ceil
   , cos
   , e
   , exp
-  , floor
+  -- , floor
   , ln10
   , ln2
   , log
@@ -990,7 +1003,7 @@ import Math
   , min
   , pi
   , pow
-  , round
+  -- , round
   , sin
   , sqrt
   , sqrt1_2
