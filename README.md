@@ -1,5 +1,6 @@
 # Batteries
 
+[![Build status](https://img.shields.io/travis/tfausak/purescript-batteries.svg)](https://travis-ci.org/tfausak/purescript-batteries)
 [![Package version](https://img.shields.io/bower/v/purescript-batteries.svg)](https://github.com/tfausak/purescript-batteries/releases)
 
 A PureScript prelude with more features.
