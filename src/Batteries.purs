@@ -446,7 +446,11 @@ import Data.CatQueue
   (
   )
 import Data.Char
-  (
+  ( fromCharCode
+  , toCharCode
+  -- , toLower
+  , toString
+  -- , toUpper
   )
 import Data.Comparison
   (
@@ -734,13 +738,56 @@ import Data.StrMap.Unsafe
   (
   )
 import Data.String
-  (
+  ( charAt
+  , charCodeAt
+  , contains
+  , count
+  , drop
+  , dropWhile
+  , fromChar
+  , fromCharArray
+  , indexOf
+  , indexOf'
+  , joinWith
+  , lastIndexOf
+  , lastIndexOf'
+  , length
+  , localeCompare
+  , null
+  -- , replace
+  , singleton
+  -- , split
+  , stripPrefix
+  , stripSuffix
+  , take
+  , takeWhile
+  , toChar
+  , toCharArray
+  , toLower
+  , toUpper
+  , trim
+  , uncons
   )
 import Data.String.Regex
-  (
+  ( Regex ()
+  , RegexFlags ()
+  , flags
+  , match
+  , noFlags
+  , parseFlags
+  , regex
+  , renderFlags
+  , replace
+  , replace'
+  , search
+  , source
+  , split
+  , test
   )
 import Data.String.Unsafe
-  (
+  ( char
+  -- , charAt
+  -- , charCodeAt
   )
 import Data.These
   (
