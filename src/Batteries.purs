@@ -807,10 +807,52 @@ import Data.Traversable
   , traverse
   )
 import Data.Tuple
-  (
+  ( Tuple (Tuple)
+  , curry
+  , fst
+  , lookup
+  , snd
+  , swap
+  , uncurry
   )
 import Data.Tuple.Nested
-  (
+  ( Tuple10 ()
+  , Tuple2 ()
+  , Tuple3 ()
+  , Tuple4 ()
+  , Tuple5 ()
+  , Tuple6 ()
+  , Tuple7 ()
+  , Tuple8 ()
+  , Tuple9 ()
+  , curry10
+  , curry2
+  , curry3
+  , curry4
+  , curry5
+  , curry6
+  , curry7
+  , curry8
+  , curry9
+  , tuple10
+  , tuple2
+  , tuple3
+  , tuple4
+  , tuple5
+  , tuple6
+  , tuple7
+  , tuple8
+  , tuple9
+  , uncurry10
+  , uncurry2
+  , uncurry3
+  , uncurry4
+  , uncurry5
+  , uncurry6
+  , uncurry7
+  , uncurry8
+  , uncurry9
+  , (/\)
   )
 import Data.Unfoldable
   (
