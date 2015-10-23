@@ -319,7 +319,7 @@ import Control.Monad.Eff.Class
   )
 import Control.Monad.Eff.Console
   ( CONSOLE ()
-  , error
+  -- , error
   -- , log
   , print
   )
@@ -328,7 +328,12 @@ import Control.Monad.Eff.Console.Unsafe
   , logAny
   )
 import Control.Monad.Eff.Exception
-  (
+  ( EXCEPTION ()
+  , Error ()
+  , catchException
+  , error
+  , message
+  , throwException
   )
 import Control.Monad.Eff.Random
   (
