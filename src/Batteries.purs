@@ -927,7 +927,27 @@ import Data.List.ZipList
   , runZipList
   )
 import Data.Map
-  (
+  ( Map ()
+  -- , alter
+  , checkValid
+  -- , delete
+  -- , empty
+  -- , fromList
+  -- , fromListWith
+  -- , insert
+  -- , isEmpty
+  -- , keys
+  -- , lookup
+  -- , member
+  , showTree
+  -- , singleton
+  -- , size
+  -- , toList
+  -- , union
+  -- , unions
+  , unionWith
+  -- , update
+  -- , values
   )
 import Data.Maybe
   ( Maybe (Nothing, Just)
@@ -993,16 +1013,46 @@ import Data.Set
   (
   )
 import Data.StrMap
-  (
+  ( StrMap ()
+  -- , all
+  , alter
+  -- , delete
+  -- , empty
+  -- , fold
+  -- , foldM
+  -- , foldMap
+  , foldMaybe
+  , freezeST
+  -- , fromList
+  , fromListWith
+  -- , insert
+  , isEmpty
+  , isSubmap
+  , keys
+  , lookup
+  , member
+  -- , runST
+  -- , singleton
+  , size
+  , thawST
+  -- , toList
+  -- , union
+  , unions
+  , update
+  , values
   )
 import Data.StrMap.ST
-  (
+  ( STStrMap ()
+  -- , delete
+  , new
+  , peek
+  , poke
   )
 import Data.StrMap.ST.Unsafe
-  (
+  ( unsafeGet
   )
 import Data.StrMap.Unsafe
-  (
+  ( -- unsafeIndex
   )
 import Data.String
   ( charAt
@@ -1077,7 +1127,7 @@ import Data.Tuple
   ( Tuple (Tuple)
   , curry
   , fst
-  , lookup
+  -- , lookup
   , snd
   , swap
   , uncurry
