@@ -6,6 +6,7 @@
   },
   "scripts": {
     "postinstall": "pulp dep install",
+    "psc-publish": "psc-publish",
     "pulp": "pulp",
     "test": "pulp build"
   }
