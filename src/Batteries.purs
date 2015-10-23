@@ -195,7 +195,10 @@ import Control.Comonad
   , extract
   )
 import Control.Comonad.Cofree
-  (
+  ( Cofree ()
+  -- , head
+  , mkCofree
+  -- , tail
   )
 import Control.Comonad.Env
   ( Env ()
@@ -365,7 +368,15 @@ import Control.Monad.Except.Trans
   , withExceptT
   )
 import Control.Monad.Free
-  (
+  ( Free ()
+  , foldFree
+  , injF
+  , liftF
+  , liftFI
+  , mapF
+  , runFree
+  , runFreeM
+  , suspendF
   )
 import Control.Monad.List.Trans
   ( ListT ()
@@ -483,7 +494,12 @@ import Control.Monad.State.Trans
   , withStateT
   )
 import Control.Monad.Trampoline
-  (
+  ( Trampoline()
+  , delay
+  , delay'
+  , done
+  , runTrampoline
+  , suspend
   )
 import Control.Monad.Trans
   ( MonadTrans
@@ -688,7 +704,13 @@ import Data.Const
   (
   )
 import Data.Coyoneda
-  (
+  ( Coyoneda (Coyoneda)
+  , CoyonedaF (CoyonedaF)
+  , coyoneda
+  , liftCoyoneda
+  , liftCoyonedaT
+  , liftCoyonedaTF
+  , lowerCoyoneda
   )
 import Data.Date
   (
@@ -1167,7 +1189,8 @@ import Data.Monoid.Multiplicative
   , runMultiplicative
   )
 import Data.NaturalTransformation
-  (
+  ( NaturalTransformation ()
+  , Natural ()
   )
 import Data.Nullable
   (
@@ -1362,7 +1385,10 @@ import Data.Unfoldable
   , unfoldr
   )
 import Data.Yoneda
-  (
+  ( Yoneda (Yoneda)
+  , runYoneda
+  , liftYoneda
+  , lowerYoneda
   )
 import Global
   (
