@@ -344,7 +344,12 @@ import Control.Monad.Reader.Trans
   (
   )
 import Control.Monad.Rec.Class
-  (
+  ( MonadRec
+  , forever
+  , tailRec
+  , tailRecM
+  , tailRecM2
+  , tailRecM3
   )
 import Control.Monad.ST
   ( ST ()
