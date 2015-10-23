@@ -198,34 +198,62 @@ import Control.Comonad.Cofree
   (
   )
 import Control.Comonad.Env
-  (
+  ( Env ()
+  , env
+  , mapEnv
+  , runEnv
+  , withEnv
   )
 import Control.Comonad.Env.Class
-  (
+  ( ComonadEnv
+  -- , ask
+  -- , asks
+  -- , local
   )
 import Control.Comonad.Env.Trans
-  (
+  ( EnvT (EnvT)
+  , mapEnvT
+  , runEnvT
+  , withEnvT
   )
 import Control.Comonad.Store
-  (
+  ( Store ()
+  , runStore
+  , store
   )
 import Control.Comonad.Store.Class
-  (
+  ( ComonadStore
+  -- , experiment
+  -- , peek
+  -- , peeks
+  -- , pos
+  -- , seek
+  -- , seeks
   )
 import Control.Comonad.Store.Trans
-  (
+  ( StoreT (StoreT)
+  , runStoreT
   )
 import Control.Comonad.Traced
-  (
+  ( Traced ()
+  , runTraced
+  , traced
   )
 import Control.Comonad.Traced.Class
-  (
+  ( ComonadTraced
+  -- , censor
+  -- , listen
+  -- , listens
+  -- , track
+  -- , tracks
   )
 import Control.Comonad.Traced.Trans
-  (
+  ( TracedT (TracedT)
+  , runTracedT
   )
 import Control.Comonad.Trans
-  (
+  ( ComonadTrans
+  -- , lower
   )
 import Control.Extend
   ( Extend
@@ -264,10 +292,14 @@ import Control.Monad.Aff.Unsafe
   (
   )
 import Control.Monad.Cont.Class
-  (
+  ( MonadCont
+  , callCC
   )
 import Control.Monad.Cont.Trans
-  (
+  ( ContT (ContT)
+  , mapContT
+  , runContT
+  , withContT
   )
 import Control.Monad.Eff
   ( Eff ()
@@ -308,40 +340,99 @@ import Control.Monad.Eff.Unsafe
   ( unsafeInterleaveEff
   )
 import Control.Monad.Error.Class
-  (
+  ( MonadError
+  , catchError
+  , catchJust
+  , throwError
   )
 import Control.Monad.Except
-  (
+  ( Except ()
+  , except
+  , mapExcept
+  , runExcept
+  , withExcept
   )
 import Control.Monad.Except.Trans
-  (
+  ( ExceptT (ExceptT)
+  , mapExceptT
+  , runExceptT
+  , withExceptT
   )
 import Control.Monad.Free
   (
   )
 import Control.Monad.List.Trans
-  (
+  ( ListT ()
+  -- , catMaybes
+  -- , cons
+  -- , drop
+  -- , dropWhile
+  -- , filter
+  -- , foldl
+  -- , foldl'
+  -- , fromEffect
+  -- , head
+  -- , iterate
+  -- , mapMaybe
+  -- , nil
+  -- , prepend
+  -- , prepend'
+  -- , repeat
+  -- , scanl
+  -- , singleton
+  -- , tail
+  -- , take
+  -- , takeWhile
+  -- , uncons
+  -- , unfold
+  -- , wrapEffect
+  -- , wrapLazy
+  -- , zipWith
+  -- , zipWith'
   )
 import Control.Monad.Maybe.Trans
-  (
+  ( MaybeT (MaybeT)
+  , mapMaybeT
+  , runMaybeT
   )
 import Control.Monad.RWS
-  (
+  ( RWS ()
+  , evalRWS
+  , execRWS
+  , mapRWS
+  , runRWS
+  , rws
+  , withRWS
   )
 import Control.Monad.RWS.Class
-  (
+  ( MonadRWS
   )
 import Control.Monad.RWS.Trans
-  (
+  ( RWSResult (RWSResult)
+  , RWST (RWST)
+  , evalRWST
+  , execRWST
+  , mapRWST
+  , runRWST
+  , withRWST
   )
 import Control.Monad.Reader
-  (
+  ( Reader ()
+  , mapReader
+  , runReader
+  , withReader
   )
 import Control.Monad.Reader.Class
-  (
+  ( MonadReader
+  -- , ask
+  -- , local
+  -- , reader
   )
 import Control.Monad.Reader.Trans
-  (
+  ( ReaderT (ReaderT)
+  , mapReaderT
+  , runReaderT
+  , withReaderT
   )
 import Control.Monad.Rec.Class
   ( MonadRec
@@ -362,28 +453,56 @@ import Control.Monad.ST
   , writeSTRef
   )
 import Control.Monad.State
-  (
+  ( State ()
+  , evalState
+  , execState
+  , mapState
+  , runState
+  , withState
   )
 import Control.Monad.State.Class
-  (
+  ( MonadState
+  -- , get
+  -- , gets
+  -- , modify
+  -- , put
+  -- , state
   )
 import Control.Monad.State.Trans
-  (
+  ( StateT (StateT)
+  , evalStateT
+  , execStateT
+  , mapStateT
+  , runStateT
+  , withStateT
   )
 import Control.Monad.Trampoline
   (
   )
 import Control.Monad.Trans
-  (
+  ( MonadTrans
+  , lift
   )
 import Control.Monad.Writer
-  (
+  ( Writer ()
+  , execWriter
+  , mapWriter
+  , runWriter
   )
 import Control.Monad.Writer.Class
-  (
+  ( MonadWriter
+  -- , censor
+  -- , listen
+  -- , listens
+  -- , pass
+  -- , tell
+  -- , writer
   )
 import Control.Monad.Writer.Trans
-  (
+  ( WriterT (WriterT)
+  , execWriterT
+  , mapWriterT
+  , runWriterT
   )
 import Control.MonadPlus
   ( MonadPlus
