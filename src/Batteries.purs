@@ -541,16 +541,24 @@ import Data.Map
   (
   )
 import Data.Maybe
-  (
+  ( Maybe (Nothing, Just)
+  , fromMaybe
+  , isJust
+  , isNothing
+  , maybe
+  , maybe'
   )
 import Data.Maybe.First
-  (
+  ( First (First)
+  , runFirst
   )
 import Data.Maybe.Last
-  (
+  ( Last (Last)
+  , runLast
   )
 import Data.Maybe.Unsafe
-  (
+  ( fromJust
+  -- , unsafeThrow
   )
 import Data.Monoid
   ( Monoid
