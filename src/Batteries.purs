@@ -756,7 +756,9 @@ import Data.Int.Bits
   , (.|.)
   )
 import Data.Lazy
-  (
+  ( force
+  -- , Lazy ()
+  -- , defer
   )
 import Data.List
   (
