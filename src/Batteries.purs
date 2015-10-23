@@ -811,7 +811,9 @@ import Data.Equivalence
   (
   )
 import Data.Exists
-  (
+  ( Exists ()
+  , mkExists
+  , runExists
   )
 import Data.Foldable
   ( Foldable
