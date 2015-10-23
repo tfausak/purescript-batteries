@@ -285,7 +285,7 @@ import Control.Monad.Eff.Class
 import Control.Monad.Eff.Console
   ( CONSOLE ()
   , error
-  , log
+  -- , log
   , print
   )
 import Control.Monad.Eff.Console.Unsafe
@@ -970,7 +970,33 @@ import Global.Unsafe
   (
   )
 import Math
-  (
+  ( Radians ()
+  , abs
+  , acos
+  , asin
+  , atan
+  , atan2
+  , ceil
+  , cos
+  , e
+  , exp
+  , floor
+  , ln10
+  , ln2
+  , log
+  , log10e
+  , log2e
+  , max
+  , min
+  , pi
+  , pow
+  , round
+  , sin
+  , sqrt
+  , sqrt1_2
+  , sqrt2
+  , tan
+  , (%)
   )
 import Prelude
   ( Applicative
