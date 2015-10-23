@@ -934,7 +934,9 @@ import Data.Identity
   , runIdentity
   )
 import Data.Inject
-  (
+  ( Inject
+  , inj
+  , prj
   )
 import Data.Int
   ( ceil
