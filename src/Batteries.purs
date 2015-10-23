@@ -154,6 +154,8 @@ module Batteries
   , module Data.Tuple
   , module Data.Tuple.Nested
   , module Data.Unfoldable
+  , module Data.Validation
+  , module Data.Validation.Semiring
   , module Data.Yoneda
   , module Global
   , module Global.Unsafe
@@ -1592,6 +1594,18 @@ import Data.Unfoldable
   , replicateA
   , singleton
   , unfoldr
+  )
+import Data.Validation
+  ( V ()
+  , invalid
+  , isValid
+  , runV
+  )
+import Data.Validation.Semiring
+  ( -- V ()
+  -- , invalid
+  -- , isValid
+  -- , runV
   )
 import Data.Yoneda
   ( Yoneda (Yoneda)

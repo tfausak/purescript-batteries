@@ -85,3 +85,4 @@ Batteries includes the following packages:
 - [purescript-tuples](https://github.com/purescript/purescript-tuples)
 - [purescript-unfoldable](https://github.com/purescript/purescript-unfoldable)
 - [purescript-unsafe-coerce](https://github.com/purescript-contrib/purescript-unsafe-coerce)
+- [purescript-validation](https://github.com/purescript/purescript-validation)
