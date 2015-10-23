@@ -172,10 +172,16 @@ import Control.Apply
   , (<*)
   )
 import Control.Biapplicative
-  (
+  ( Biapplicative
   )
 import Control.Biapply
-  (
+  ( Biapply
+  , bilift2
+  , bilift3
+  , (*>>)
+  , (<<*)
+  , (<<*>>)
+  , (<<$>>)
   )
 import Control.Bind
   ( ifM
@@ -391,25 +397,32 @@ import Data.Bifoldable
   (
   )
 import Data.Bifunctor
-  (
+  ( Bifunctor
+  , lmap
+  , rmap
   )
 import Data.Bifunctor.Clown
-  (
+  ( Clown (Clown)
+  , runClown
   )
 import Data.Bifunctor.Flip
-  (
+  ( Flip (Flip)
+  , runFlip
   )
 import Data.Bifunctor.Join
-  (
+  ( Join (Join)
+  , runJoin
   )
 import Data.Bifunctor.Joker
-  (
+  ( Joker (Joker)
+  , runJoker
   )
 import Data.Bifunctor.Product
-  (
+  ( Product (Pair)
   )
 import Data.Bifunctor.Wrap
-  (
+  ( Wrap (Wrap)
+  , unwrap
   )
 import Data.Bitraversable
   (
