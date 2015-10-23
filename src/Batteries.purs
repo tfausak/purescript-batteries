@@ -523,10 +523,20 @@ import Data.Bitraversable
   , bitraverse
   )
 import Data.CatList
-  (
+  ( CatList (CatCons, CatNil)
+  -- , append
+  -- , cons
+  -- , empty
+  -- , null
+  -- , snoc
+  -- , uncons
   )
 import Data.CatQueue
-  (
+  ( CatQueue (CatQueue)
+  -- , empty
+  -- , null
+  -- , snoc
+  -- , uncons
   )
 import Data.Char
   ( fromCharCode
