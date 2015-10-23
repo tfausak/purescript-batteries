@@ -707,7 +707,40 @@ import Data.Foreign.Undefined
   (
   )
 import Data.Function
-  (
+  ( Fn0 ()
+  , Fn1 ()
+  , Fn10 ()
+  , Fn2 ()
+  , Fn3 ()
+  , Fn4 ()
+  , Fn5 ()
+  , Fn6 ()
+  , Fn7 ()
+  , Fn8 ()
+  , Fn9 ()
+  , mkFn0
+  , mkFn1
+  , mkFn10
+  , mkFn2
+  , mkFn3
+  , mkFn4
+  , mkFn5
+  , mkFn6
+  , mkFn7
+  , mkFn8
+  , mkFn9
+  , on
+  , runFn0
+  , runFn1
+  , runFn10
+  , runFn2
+  , runFn3
+  , runFn4
+  , runFn5
+  , runFn6
+  , runFn7
+  , runFn8
+  , runFn9
   )
 import Data.Functor
   ( (<$)
