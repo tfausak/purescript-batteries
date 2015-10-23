@@ -11,6 +11,6 @@
   "scripts": {
     "postinstall": "pulp dep install",
     "pulp": "pulp",
-    "test": "pulp build"
+    "test": "pulp test"
   }
 }
