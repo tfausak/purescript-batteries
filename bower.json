@@ -48,6 +48,7 @@
     "purescript-proxy": "~0.1.0",
     "purescript-random": "~0.2.2",
     "purescript-refs": "~0.2.0",
+    "purescript-semirings": "~0.2.0",
     "purescript-sets": "~0.5.1",
     "purescript-st": "~0.1.1",
     "purescript-strings": "~0.7.0",

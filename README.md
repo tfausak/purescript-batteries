@@ -75,6 +75,7 @@ Batteries includes the following packages:
 - [purescript-proxy](https://github.com/purescript/purescript-proxy)
 - [purescript-random](https://github.com/purescript/purescript-random)
 - [purescript-refs](https://github.com/purescript/purescript-refs)
+- [purescript-semirings](https://github.com/purescript/purescript-semirings)
 - [purescript-sets](https://github.com/purescript/purescript-sets)
 - [purescript-st](https://github.com/purescript/purescript-st)
 - [purescript-strings](https://github.com/purescript/purescript-strings)

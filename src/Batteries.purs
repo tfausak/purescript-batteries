@@ -139,6 +139,7 @@ module Batteries
   , module Data.Profunctor.Choice
   , module Data.Profunctor.Star
   , module Data.Profunctor.Strong
+  , module Data.Semiring.Free
   , module Data.Set
   , module Data.StrMap
   , module Data.StrMap.ST
@@ -1379,6 +1380,13 @@ import Data.Profunctor.Strong
   ( Strong
   , (***)
   , (&&&)
+  )
+import Data.Semiring.Free
+  ( -- Free ()
+  -- , free
+  -- , liftFree
+  -- , lowerFree
+  -- , runFree
   )
 import Data.Set
   ( Set ()
