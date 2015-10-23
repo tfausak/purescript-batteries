@@ -503,7 +503,9 @@ import Data.Functor.Coproduct
   (
   )
 import Data.Functor.Invariant
-  (
+  ( Invariant
+  , imap
+  , imapF
   )
 import Data.Generic
   (
