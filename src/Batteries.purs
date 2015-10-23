@@ -1391,10 +1391,15 @@ import Data.Yoneda
   , lowerYoneda
   )
 import Global
-  (
+  ( infinity
+  , isFinite
+  , isNaN
+  , nan
+  , readFloat
+  , readInt
   )
 import Global.Unsafe
-  (
+  ( unsafeStringify
   )
 import Math
   ( Radians ()
