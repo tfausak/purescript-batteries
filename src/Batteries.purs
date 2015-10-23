@@ -1635,7 +1635,11 @@ import Prelude
   , ($)
   )
 import Test.Assert
-  (
+  ( ASSERT ()
+  , assert
+  , assert'
+  , assertThrows
+  , assertThrows'
   )
 import Type.Proxy
   ( -- Proxy (Proxy)
