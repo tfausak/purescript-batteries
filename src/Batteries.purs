@@ -470,13 +470,88 @@ import Data.Distributive
   (
   )
 import Data.Either
-  (
+  ( Either (Left, Right)
+  , either
+  , isLeft
+  , isRight
   )
 import Data.Either.Nested
-  (
+  ( Either10 ()
+  , Either2 ()
+  , Either3 ()
+  , Either4 ()
+  , Either5 ()
+  , Either6 ()
+  , Either7 ()
+  , Either8 ()
+  , Either9 ()
+  , either10
+  , either10of10
+  , either1of10
+  , either1of2
+  , either1of3
+  , either1of4
+  , either1of5
+  , either1of6
+  , either1of7
+  , either1of8
+  , either1of9
+  , either2
+  , either2of10
+  , either2of2
+  , either2of3
+  , either2of4
+  , either2of5
+  , either2of6
+  , either2of7
+  , either2of8
+  , either2of9
+  , either3
+  , either3of10
+  , either3of3
+  , either3of4
+  , either3of5
+  , either3of6
+  , either3of7
+  , either3of8
+  , either3of9
+  , either4
+  , either4of10
+  , either4of4
+  , either4of5
+  , either4of6
+  , either4of7
+  , either4of8
+  , either4of9
+  , either5
+  , either5of10
+  , either5of5
+  , either5of6
+  , either5of7
+  , either5of8
+  , either5of9
+  , either6
+  , either6of10
+  , either6of6
+  , either6of7
+  , either6of8
+  , either6of9
+  , either7
+  , either7of10
+  , either7of7
+  , either7of8
+  , either7of9
+  , either8
+  , either8of10
+  , either8of8
+  , either8of9
+  , either9
+  , either9of10
+  , either9of9
   )
 import Data.Either.Unsafe
-  (
+  ( fromLeft
+  , fromRight
   )
 import Data.Enum
   (
