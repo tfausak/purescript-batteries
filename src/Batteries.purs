@@ -712,7 +712,8 @@ import Data.Comparison
   , runComparison
   )
 import Data.Const
-  (
+  ( Const (Const)
+  , getConst
   )
 import Data.Coyoneda
   ( Coyoneda (Coyoneda)
