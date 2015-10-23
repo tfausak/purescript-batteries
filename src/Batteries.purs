@@ -394,7 +394,16 @@ import Data.Array.Unsafe
   (
   )
 import Data.Bifoldable
-  (
+  ( Bifoldable
+  , biall
+  , biany
+  , bifold
+  , bifoldl
+  , bifoldMap
+  , bifoldr
+  , bifor_
+  , bisequence_
+  , bitraverse_
   )
 import Data.Bifunctor
   ( Bifunctor
@@ -425,7 +434,10 @@ import Data.Bifunctor.Wrap
   , unwrap
   )
 import Data.Bitraversable
-  (
+  ( Bitraversable
+  , bifor
+  , bisequence
+  , bitraverse
   )
 import Data.CatList
   (
@@ -476,7 +488,25 @@ import Data.Exists
   (
   )
 import Data.Foldable
-  (
+  ( Foldable
+  , all
+  , and
+  , any
+  , elem
+  , find
+  , fold
+  , foldl
+  , foldMap
+  , foldr
+  , for_
+  , intercalate
+  , mconcat
+  , notElem
+  , or
+  , product
+  , sequence_
+  , sum
+  , traverse_
   )
 import Data.Foreign
   (
@@ -644,7 +674,15 @@ import Data.Time
   (
   )
 import Data.Traversable
-  (
+  ( Accum ()
+  , Traversable
+  , for
+  , mapAccumL
+  , mapAccumR
+  , scanl
+  , scanr
+  , sequence
+  , traverse
   )
 import Data.Tuple
   (
