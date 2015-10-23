@@ -904,7 +904,11 @@ import Data.Functor.Contravariant.Divisible
   (
   )
 import Data.Functor.Coproduct
-  (
+  ( Coproduct (Coproduct)
+  , coproduct
+  -- , left
+  -- , right
+  , runCoproduct
   )
 import Data.Functor.Invariant
   ( Invariant
