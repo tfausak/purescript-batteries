@@ -603,7 +603,83 @@ import Math
   (
   )
 import Prelude
-  (
+  ( Applicative
+  , Apply
+  , Bind
+  , BooleanAlgebra
+  , Bounded
+  , BoundedOrd
+  , Category
+  , DivisionRing
+  , Eq
+  , Functor
+  , ModuloSemiring
+  , Monad
+  , Num
+  , Ord
+  , Ordering (LT, EQ, GT)
+  , Ring
+  , Semigroup
+  , Semigroupoid
+  , Semiring
+  , Show
+  , Unit ()
+  , add
+  , ap
+  , append
+  , apply
+  , asTypeOf
+  , bind
+  , bottom
+  , compare
+  , compose
+  , conj
+  , const
+  , disj
+  , div
+  , eq
+  , flip
+  , id
+  , liftA1
+  , liftM1
+  , map
+  , mod
+  , mul
+  , negate
+  , not
+  , one
+  , otherwise
+  , pure
+  , return
+  , show
+  , sub
+  , top
+  , unit
+  , unsafeCompare
+  , void
+  , zero
+  , (-)
+  , (*)
+  , (/)
+  , (/=)
+  , (&&)
+  , (#)
+  , (+)
+  , (++)
+  , (<)
+  , (<*>)
+  , (<#>)
+  , (<<<)
+  , (<=)
+  , (<>)
+  , (<$>)
+  , (==)
+  , (>)
+  , (>=)
+  , (>>=)
+  , (>>>)
+  , (||)
+  , ($)
   )
 import Test.Assert
   (
