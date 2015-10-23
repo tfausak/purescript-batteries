@@ -8,31 +8,49 @@ module Batteries
   , module Control.Bind
   , module Control.Comonad
   , module Control.Comonad.Cofree
+  , module Control.Comonad.Env
+  , module Control.Comonad.Env.Class
+  , module Control.Comonad.Env.Trans
+  , module Control.Comonad.Store
+  , module Control.Comonad.Store.Class
+  , module Control.Comonad.Store.Trans
+  , module Control.Comonad.Traced
+  , module Control.Comonad.Traced.Class
+  , module Control.Comonad.Traced.Trans
+  , module Control.Comonad.Trans
   , module Control.Extend
   , module Control.Lazy
   , module Control.Monad
   , module Control.Monad.Aff
+  , module Control.Monad.Aff.AVar
+  , module Control.Monad.Aff.Class
+  , module Control.Monad.Aff.Console
+  , module Control.Monad.Aff.Par
+  , module Control.Monad.Aff.Unsafe
   , module Control.Monad.Cont.Class
   , module Control.Monad.Cont.Trans
   , module Control.Monad.Eff
   , module Control.Monad.Eff.Class
   , module Control.Monad.Eff.Console
+  , module Control.Monad.Eff.Console.Unsafe
   , module Control.Monad.Eff.Exception
   , module Control.Monad.Eff.Random
   , module Control.Monad.Eff.Ref
   , module Control.Monad.Eff.Ref.Unsafe
+  , module Control.Monad.Eff.Unsafe
   , module Control.Monad.Error.Class
   , module Control.Monad.Except
   , module Control.Monad.Except.Trans
   , module Control.Monad.Free
+  , module Control.Monad.List.Trans
   , module Control.Monad.Maybe.Trans
+  , module Control.Monad.RWS
+  , module Control.Monad.RWS.Class
+  , module Control.Monad.RWS.Trans
   , module Control.Monad.Reader
   , module Control.Monad.Reader.Class
   , module Control.Monad.Reader.Trans
   , module Control.Monad.Rec.Class
-  , module Control.Monad.RWS
-  , module Control.Monad.RWS.Class
-  , module Control.Monad.RWS.Trans
   , module Control.Monad.ST
   , module Control.Monad.State
   , module Control.Monad.State.Class
@@ -45,6 +63,9 @@ module Batteries
   , module Control.MonadPlus
   , module Control.Parallel
   , module Control.Plus
+  , module Data.Array
+  , module Data.Array.ST
+  , module Data.Array.Unsafe
   , module Data.Bifoldable
   , module Data.Bifunctor
   , module Data.Bifunctor.Clown
@@ -54,11 +75,14 @@ module Batteries
   , module Data.Bifunctor.Product
   , module Data.Bifunctor.Wrap
   , module Data.Bitraversable
+  , module Data.CatList
+  , module Data.CatQueue
   , module Data.Char
   , module Data.Comparison
   , module Data.Const
   , module Data.Coyoneda
   , module Data.Date
+  , module Data.Date.Locale
   , module Data.Date.UTC
   , module Data.Distributive
   , module Data.Either
@@ -70,6 +94,11 @@ module Batteries
   , module Data.Foldable
   , module Data.Foreign
   , module Data.Foreign.Class
+  , module Data.Foreign.Index
+  , module Data.Foreign.Keys
+  , module Data.Foreign.Null
+  , module Data.Foreign.NullOrUndefined
+  , module Data.Foreign.Undefined
   , module Data.Function
   , module Data.Functor
   , module Data.Functor.Contravariant
@@ -82,19 +111,34 @@ module Batteries
   , module Data.Int
   , module Data.Int.Bits
   , module Data.Lazy
+  , module Data.List
+  , module Data.List.Lazy
+  , module Data.List.Unsafe
+  , module Data.List.ZipList
+  , module Data.Map
   , module Data.Maybe
   , module Data.Maybe.First
   , module Data.Maybe.Last
   , module Data.Maybe.Unsafe
   , module Data.Monoid
+  , module Data.Monoid.Additive
+  , module Data.Monoid.Conj
+  , module Data.Monoid.Disj
   , module Data.Monoid.Dual
   , module Data.Monoid.Endo
+  , module Data.Monoid.Multiplicative
   , module Data.NaturalTransformation
   , module Data.Nullable
   , module Data.Op
   , module Data.Predicate
+  , module Data.Set
+  , module Data.StrMap
+  , module Data.StrMap.ST
+  , module Data.StrMap.ST.Unsafe
+  , module Data.StrMap.Unsafe
   , module Data.String
   , module Data.String.Regex
+  , module Data.String.Unsafe
   , module Data.These
   , module Data.Time
   , module Data.Traversable
@@ -103,117 +147,470 @@ module Batteries
   , module Data.Unfoldable
   , module Data.Yoneda
   , module Global
+  , module Global.Unsafe
   , module Math
   , module Prelude
   , module Test.Assert
+  , module Type.Proxy
   , module Unsafe.Coerce
   ) where
 
 import Control.Alt
+  (
+  )
 import Control.Alternative
+  (
+  )
 import Control.Apply
+  (
+  )
 import Control.Biapplicative
+  (
+  )
 import Control.Biapply
+  (
+  )
 import Control.Bind
+  (
+  )
 import Control.Comonad
+  (
+  )
 import Control.Comonad.Cofree
+  (
+  )
+import Control.Comonad.Env
+  (
+  )
+import Control.Comonad.Env.Class
+  (
+  )
+import Control.Comonad.Env.Trans
+  (
+  )
+import Control.Comonad.Store
+  (
+  )
+import Control.Comonad.Store.Class
+  (
+  )
+import Control.Comonad.Store.Trans
+  (
+  )
+import Control.Comonad.Traced
+  (
+  )
+import Control.Comonad.Traced.Class
+  (
+  )
+import Control.Comonad.Traced.Trans
+  (
+  )
+import Control.Comonad.Trans
+  (
+  )
 import Control.Extend
+  (
+  )
 import Control.Lazy
+  (
+  )
 import Control.Monad
+  (
+  )
 import Control.Monad.Aff
+  (
+  )
+import Control.Monad.Aff.AVar
+  (
+  )
+import Control.Monad.Aff.Class
+  (
+  )
+import Control.Monad.Aff.Console
+  (
+  )
+import Control.Monad.Aff.Par
+  (
+  )
+import Control.Monad.Aff.Unsafe
+  (
+  )
 import Control.Monad.Cont.Class
+  (
+  )
 import Control.Monad.Cont.Trans
+  (
+  )
 import Control.Monad.Eff
+  (
+  )
 import Control.Monad.Eff.Class
-import Control.Monad.Eff.Console hiding (error, log)
+  (
+  )
+import Control.Monad.Eff.Console
+  (
+  )
+import Control.Monad.Eff.Console.Unsafe
+  (
+  )
 import Control.Monad.Eff.Exception
+  (
+  )
 import Control.Monad.Eff.Random
+  (
+  )
 import Control.Monad.Eff.Ref
+  (
+  )
 import Control.Monad.Eff.Ref.Unsafe
+  (
+  )
+import Control.Monad.Eff.Unsafe
+  (
+  )
 import Control.Monad.Error.Class
+  (
+  )
 import Control.Monad.Except
+  (
+  )
 import Control.Monad.Except.Trans
+  (
+  )
 import Control.Monad.Free
+  (
+  )
+import Control.Monad.List.Trans
+  (
+  )
 import Control.Monad.Maybe.Trans
-import Control.Monad.Reader
-import Control.Monad.Reader.Class
-import Control.Monad.Reader.Trans
-import Control.Monad.Rec.Class
+  (
+  )
 import Control.Monad.RWS
+  (
+  )
 import Control.Monad.RWS.Class
+  (
+  )
 import Control.Monad.RWS.Trans
+  (
+  )
+import Control.Monad.Reader
+  (
+  )
+import Control.Monad.Reader.Class
+  (
+  )
+import Control.Monad.Reader.Trans
+  (
+  )
+import Control.Monad.Rec.Class
+  (
+  )
 import Control.Monad.ST
+  (
+  )
 import Control.Monad.State
+  (
+  )
 import Control.Monad.State.Class
+  (
+  )
 import Control.Monad.State.Trans
+  (
+  )
 import Control.Monad.Trampoline
+  (
+  )
 import Control.Monad.Trans
+  (
+  )
 import Control.Monad.Writer
+  (
+  )
 import Control.Monad.Writer.Class
+  (
+  )
 import Control.Monad.Writer.Trans
+  (
+  )
 import Control.MonadPlus
+  (
+  )
 import Control.Parallel
+  (
+  )
 import Control.Plus
+  (
+  )
+import Data.Array
+  (
+  )
+import Data.Array.ST
+  (
+  )
+import Data.Array.Unsafe
+  (
+  )
 import Data.Bifoldable
+  (
+  )
 import Data.Bifunctor
+  (
+  )
 import Data.Bifunctor.Clown
+  (
+  )
 import Data.Bifunctor.Flip
+  (
+  )
 import Data.Bifunctor.Join
+  (
+  )
 import Data.Bifunctor.Joker
+  (
+  )
 import Data.Bifunctor.Product
+  (
+  )
 import Data.Bifunctor.Wrap
+  (
+  )
 import Data.Bitraversable
-import Data.Char hiding (toLower, toUpper)
+  (
+  )
+import Data.CatList
+  (
+  )
+import Data.CatQueue
+  (
+  )
+import Data.Char
+  (
+  )
 import Data.Comparison
+  (
+  )
 import Data.Const
+  (
+  )
 import Data.Coyoneda
+  (
+  )
 import Data.Date
+  (
+  )
+import Data.Date.Locale
+  (
+  )
 import Data.Date.UTC
+  (
+  )
 import Data.Distributive
+  (
+  )
 import Data.Either
+  (
+  )
 import Data.Either.Nested
+  (
+  )
 import Data.Either.Unsafe
+  (
+  )
 import Data.Enum
+  (
+  )
 import Data.Equivalence
+  (
+  )
 import Data.Exists
+  (
+  )
 import Data.Foldable
+  (
+  )
 import Data.Foreign
+  (
+  )
 import Data.Foreign.Class
+  (
+  )
+import Data.Foreign.Index
+  (
+  )
+import Data.Foreign.Keys
+  (
+  )
+import Data.Foreign.Null
+  (
+  )
+import Data.Foreign.NullOrUndefined
+  (
+  )
+import Data.Foreign.Undefined
+  (
+  )
 import Data.Function
+  (
+  )
 import Data.Functor
+  (
+  )
 import Data.Functor.Contravariant
+  (
+  )
 import Data.Functor.Contravariant.Divisible
+  (
+  )
 import Data.Functor.Coproduct
+  (
+  )
 import Data.Functor.Invariant
+  (
+  )
 import Data.Generic
+  (
+  )
 import Data.Identity
+  (
+  )
 import Data.Inject
-import Data.Int hiding (fromString)
+  (
+  )
+import Data.Int
+  (
+  )
 import Data.Int.Bits
-import Data.Lazy hiding (Lazy (), defer)
+  (
+  )
+import Data.Lazy
+  (
+  )
+import Data.List
+  (
+  )
+import Data.List.Lazy
+  (
+  )
+import Data.List.Unsafe
+  (
+  )
+import Data.List.ZipList
+  (
+  )
+import Data.Map
+  (
+  )
 import Data.Maybe
+  (
+  )
 import Data.Maybe.First
+  (
+  )
 import Data.Maybe.Last
+  (
+  )
 import Data.Maybe.Unsafe
+  (
+  )
 import Data.Monoid
+  (
+  )
+import Data.Monoid.Additive
+  (
+  )
+import Data.Monoid.Conj
+  (
+  )
+import Data.Monoid.Disj
+  (
+  )
 import Data.Monoid.Dual
+  (
+  )
 import Data.Monoid.Endo
+  (
+  )
+import Data.Monoid.Multiplicative
+  (
+  )
 import Data.NaturalTransformation
+  (
+  )
 import Data.Nullable
+  (
+  )
 import Data.Op
+  (
+  )
 import Data.Predicate
-import Data.String hiding (replace, singleton, split)
+  (
+  )
+import Data.Set
+  (
+  )
+import Data.StrMap
+  (
+  )
+import Data.StrMap.ST
+  (
+  )
+import Data.StrMap.ST.Unsafe
+  (
+  )
+import Data.StrMap.Unsafe
+  (
+  )
+import Data.String
+  (
+  )
 import Data.String.Regex
+  (
+  )
+import Data.String.Unsafe
+  (
+  )
 import Data.These
+  (
+  )
 import Data.Time
+  (
+  )
 import Data.Traversable
+  (
+  )
 import Data.Tuple
+  (
+  )
 import Data.Tuple.Nested
+  (
+  )
 import Data.Unfoldable
+  (
+  )
 import Data.Yoneda
-import Global hiding (readInt)
-import Math hiding (ceil, floor, round)
+  (
+  )
+import Global
+  (
+  )
+import Global.Unsafe
+  (
+  )
+import Math
+  (
+  )
 import Prelude
+  (
+  )
 import Test.Assert
-import Type.Proxy hiding (Proxy (Proxy))
+  (
+  )
+import Type.Proxy
+  (
+  )
 import Unsafe.Coerce
+  (
+  )
