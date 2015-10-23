@@ -95,6 +95,7 @@ module Batteries
   , module Data.Enum
   , module Data.Equivalence
   , module Data.Exists
+  , module Data.FingerTree
   , module Data.Foldable
   , module Data.Foreign
   , module Data.Foreign.Class
@@ -140,6 +141,9 @@ module Batteries
   , module Data.Profunctor.Star
   , module Data.Profunctor.Strong
   , module Data.Semiring.Free
+  , module Data.Sequence
+  , module Data.Sequence.NonEmpty
+  , module Data.Sequence.Ordered
   , module Data.Set
   , module Data.StrMap
   , module Data.StrMap.ST
@@ -949,6 +953,50 @@ import Data.Exists
   , mkExists
   , runExists
   )
+import Data.FingerTree
+  ( Digit ()
+  , FingerTree (Deep, Empty, Single)
+  , LazySplit (LazySplit)
+  , Node (Node2, Node3)
+  , Split (Split)
+  , ViewL (ConsL, NilL)
+  , ViewR (NilR, SnocR)
+  , app3
+  -- , append -- NOTE: Prelude
+  , compareFingerTree
+  -- , cons -- TODO
+  , consAll
+  , deep
+  , deepL
+  , deepR
+  , eqFingerTree
+  -- , filter  -- TODO
+  -- , fullyForce -- TODO
+  -- , head -- TODO
+  , headDigit
+  -- , init -- TODO
+  , initDigit
+  -- , isEmpty -- TODO
+  -- , last -- TODO
+  , lastDigit
+  , lazyEmpty
+  , node2
+  , node3
+  , nodes
+  , nodeToDigit
+  -- , snoc -- TODO
+  , snocAll
+  -- , split -- NOTE: Data.String.Regex
+  -- , tail -- TODO
+  , tailDigit
+  , toFingerTree
+  , unfoldLeft
+  , unfoldRight
+  , unsafeSplitDigit
+  , unsafeSplitTree
+  , viewL
+  , viewR
+  )
 import Data.Foldable
   ( Foldable
   , all
@@ -1389,6 +1437,80 @@ import Data.Semiring.Free
   , liftFree
   , lowerFree
   -- , runFree -- NOTE: Control.Monad.Free
+  )
+import Data.Sequence
+  ( Seq ()
+  , adjust
+  -- , append -- NOTE: Prelude
+  -- , concat -- TODO
+  -- , concatMap -- TODO
+  -- , cons -- TODO
+  -- , drop -- TODO
+  -- , empty -- TODO
+  -- , filter -- TODO
+  , fromSeq
+  -- , fullyForce -- TODO
+  -- , head -- TODO
+  , inBounds
+  -- , index -- TODO
+  -- , init -- TODO
+  -- , last -- TODO
+  -- , length -- TODO
+  -- , map -- NOTE: Prelude
+  -- , null -- TODO
+  -- , replace -- NOTE: Data.String.Regex
+  -- , singleton -- NOTE: Data.Unfoldable
+  -- , snoc -- TODO
+  -- , sort -- TODO
+  , splitAt
+  -- , tail -- TODO
+  -- , take -- TODO
+  , toSeq
+  -- , uncons -- TODO
+  , unsnoc
+  )
+import Data.Sequence.NonEmpty
+  ( -- Seq (Seq) -- NOTE: Data.Sequence
+  -- , adjust -- NOTE: Data.Sequence
+  -- , append -- NOTE: Prelude
+  -- , cons -- TODO
+  -- , drop -- TODO
+  -- , filter -- TODO
+  -- , fromSeq -- TODO
+  -- , head -- TODO
+  -- , inBounds -- NOTE: Data.Sequence
+  -- , index -- TODO
+  -- , init -- TODO
+  -- , last -- TODO
+  -- , length -- TODO
+  -- , replace -- NOTE: Data.String.Regex
+  -- , singleton -- NOTE: Data.Unfoldable
+  -- , snoc -- TODO
+  -- , splitAt -- NOTE: Data.Sequence
+  -- , tail -- TODO
+  -- , take -- TODO
+    toPlain
+  -- , uncons -- TODO
+  -- , unsnoc -- NOTE: Data.Sequence
+  )
+import Data.Sequence.Ordered
+  ( OrdSeq ()
+  , deleteAll
+  -- , empty -- NOTE: Control.Plus
+  , fromOrdSeq
+  , fromOrdSeqDescending
+  , greatest
+  -- , insert -- TODO
+  , intersection
+  , least
+  -- , length -- TODO
+  , merge
+  -- , null -- TODO
+  , partition
+  , popGreatest
+  , popLeast
+  -- , sort -- TODO
+  , toOrdSeq
   )
 import Data.Set
   ( Set ()
