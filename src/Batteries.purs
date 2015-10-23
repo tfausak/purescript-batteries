@@ -641,7 +641,22 @@ import Data.Either.Unsafe
   , fromRight
   )
 import Data.Enum
-  (
+  ( Cardinality (Cardinality)
+  , Enum
+  , cardinality
+  , defaultFromEnum
+  , defaultPred
+  , defaultSucc
+  , defaultToEnum
+  , enumFromThenTo
+  , enumFromTo
+  , fromEnum
+  , intFromTo
+  , intStepFromTo
+  , pred
+  , runCardinality
+  , succ
+  , toEnum
   )
 import Data.Equivalence
   (
