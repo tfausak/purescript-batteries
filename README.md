@@ -70,6 +70,7 @@ Batteries includes the following packages:
 - [purescript-nullable](https://github.com/paf31/purescript-nullable)
 - [purescript-parallel](https://github.com/purescript/purescript-parallel)
 - [purescript-prelude](https://github.com/purescript/purescript-prelude)
+- [purescript-profunctor](https://github.com/purescript/purescript-profunctor)
 - [purescript-proxy](https://github.com/purescript/purescript-proxy)
 - [purescript-random](https://github.com/purescript/purescript-random)
 - [purescript-refs](https://github.com/purescript/purescript-refs)

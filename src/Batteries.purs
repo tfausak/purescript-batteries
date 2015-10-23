@@ -131,6 +131,10 @@ module Batteries
   , module Data.Nullable
   , module Data.Op
   , module Data.Predicate
+  , module Data.Profunctor
+  , module Data.Profunctor.Choice
+  , module Data.Profunctor.Star
+  , module Data.Profunctor.Strong
   , module Data.Set
   , module Data.StrMap
   , module Data.StrMap.ST
@@ -1331,6 +1335,26 @@ import Data.Op
 import Data.Predicate
   ( Predicate (Predicate)
   , runPredicate
+  )
+import Data.Profunctor
+  ( Profunctor
+  , arr
+  -- , lmap
+  -- , rmap
+  )
+import Data.Profunctor.Choice
+  ( Choice
+  , (+++)
+  , (|||)
+  )
+import Data.Profunctor.Star
+  ( Star (Star)
+  , runStar
+  )
+import Data.Profunctor.Strong
+  ( Strong
+  , (***)
+  , (&&&)
   )
 import Data.Set
   ( Set ()
