@@ -164,6 +164,13 @@ module Batteries
   , module Global
   , module Global.Unsafe
   , module Math
+  , module Optic.Core
+  , module Optic.Getter
+  , module Optic.Laws.Lens
+  , module Optic.Lens
+  , module Optic.Prism
+  , module Optic.Setter
+  , module Optic.Types
   , module Prelude
   , module Test.Assert
   , module Type.Proxy
@@ -1774,6 +1781,74 @@ import Math
   , sqrt2
   , tan
   , (%)
+  )
+import Optic.Core
+  ( (..)
+  )
+import Optic.Getter
+  ( to
+  , view
+  , (^.)
+  )
+import Optic.Laws.Lens
+  ( getSet
+  , setGet
+  , setSet
+  , validLens
+  )
+import Optic.Lens
+  ( lens
+  , (??)
+  )
+import Optic.Prism
+  ( clonePrism
+  , is
+  , isn't
+  , matching
+  , nearly
+  , only
+  , prism
+  , prism'
+  , withPrism
+  )
+import Optic.Setter
+  ( argument
+  , contramapped
+  , mapped
+  , over
+  , set
+  , set'
+  , sets
+  , (-~)
+  , (?~)
+  , (.~)
+  , (*~)
+  , (//~)
+  , (&&~)
+  , (%~)
+  , (++~)
+  , (+~)
+  , (<>~)
+  , (||~)
+  )
+import Optic.Types
+  ( Accessing ()
+  , APrism ()
+  , APrismP ()
+  , ASetter ()
+  , ASetterP ()
+  , Getter ()
+  , Getting ()
+  , Lens ()
+  , LensP ()
+  , Optical ()
+  , OpticalP ()
+  , Prism ()
+  , PrismP ()
+  , Setter ()
+  , SetterP ()
+  , Setting ()
+  , SettingP ()
   )
 import Prelude
   ( Applicative

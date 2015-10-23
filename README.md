@@ -70,6 +70,7 @@ Batteries includes the following packages:
 - [integers](https://github.com/purescript/purescript-integers)
 - [invariant](https://github.com/purescript/purescript-invariant)
 - [lazy](https://github.com/purescript/purescript-lazy)
+- [lens](https://github.com/purescript-contrib/purescript-lens)
 - [lists](https://github.com/purescript/purescript-lists)
 - [maps](https://github.com/purescript/purescript-maps)
 - [math](https://github.com/purescript/purescript-math)
