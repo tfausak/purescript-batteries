@@ -3,6 +3,10 @@ module Batteries
   , module Control.Alt
   , module Control.Alternative
   , module Control.Apply
+  , module Control.Arrow
+  , module Control.Arrow.Cokleisli
+  , module Control.Arrow.Kleisli
+  , module Control.Arrow.Static
   , module Control.Biapplicative
   , module Control.Biapply
   , module Control.Bind
@@ -174,6 +178,26 @@ import Control.Apply
   , lift5
   , (*>)
   , (<*)
+  )
+import Control.Arrow
+  ( Arrow
+  , ArrowPlus
+  , ArrowZero
+  , aplus
+  , azero
+  , (<+>)
+  )
+import Control.Arrow.Cokleisli
+  ( Cokleisli (Cokleisli)
+  , runCokleisli
+  )
+import Control.Arrow.Kleisli
+  ( Kleisli (Kleisli)
+  , runKleisli
+  )
+import Control.Arrow.Static
+  ( Static (Static)
+  , runStatic
   )
 import Control.Biapplicative
   ( Biapplicative

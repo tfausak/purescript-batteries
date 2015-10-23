@@ -36,6 +36,7 @@ Batteries includes the following packages:
 
 - [purescript-aff](https://github.com/slamdata/purescript-aff)
 - [purescript-arrays](https://github.com/purescript/purescript-arrays)
+- [purescript-arrows](https://github.com/purescript/purescript-arrows)
 - [purescript-assert](https://github.com/purescript/purescript-assert)
 - [purescript-bifunctors](https://github.com/purescript/purescript-bifunctors)
 - [purescript-catenable-lists](https://github.com/purescript/purescript-catenable-lists)
