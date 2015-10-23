@@ -3,6 +3,10 @@ module Batteries
   , module Control.Alt
   , module Control.Alternative
   , module Control.Apply
+  , module Control.Arrow
+  , module Control.Arrow.Cokleisli
+  , module Control.Arrow.Kleisli
+  , module Control.Arrow.Static
   , module Control.Biapplicative
   , module Control.Biapply
   , module Control.Bind
@@ -131,6 +135,11 @@ module Batteries
   , module Data.Nullable
   , module Data.Op
   , module Data.Predicate
+  , module Data.Profunctor
+  , module Data.Profunctor.Choice
+  , module Data.Profunctor.Star
+  , module Data.Profunctor.Strong
+  , module Data.Semiring.Free
   , module Data.Set
   , module Data.StrMap
   , module Data.StrMap.ST
@@ -145,6 +154,8 @@ module Batteries
   , module Data.Tuple
   , module Data.Tuple.Nested
   , module Data.Unfoldable
+  , module Data.Validation
+  , module Data.Validation.Semiring
   , module Data.Yoneda
   , module Global
   , module Global.Unsafe
@@ -170,6 +181,26 @@ import Control.Apply
   , lift5
   , (*>)
   , (<*)
+  )
+import Control.Arrow
+  ( Arrow
+  , ArrowPlus
+  , ArrowZero
+  , aplus
+  , azero
+  , (<+>)
+  )
+import Control.Arrow.Cokleisli
+  ( Cokleisli (Cokleisli)
+  , runCokleisli
+  )
+import Control.Arrow.Kleisli
+  ( Kleisli (Kleisli)
+  , runKleisli
+  )
+import Control.Arrow.Static
+  ( Static (Static)
+  , runStatic
   )
 import Control.Biapplicative
   ( Biapplicative
@@ -1332,6 +1363,33 @@ import Data.Predicate
   ( Predicate (Predicate)
   , runPredicate
   )
+import Data.Profunctor
+  ( Profunctor
+  , arr
+  -- , lmap
+  -- , rmap
+  )
+import Data.Profunctor.Choice
+  ( Choice
+  , (+++)
+  , (|||)
+  )
+import Data.Profunctor.Star
+  ( Star (Star)
+  , runStar
+  )
+import Data.Profunctor.Strong
+  ( Strong
+  , (***)
+  , (&&&)
+  )
+import Data.Semiring.Free
+  ( -- Free ()
+  -- , free
+  -- , liftFree
+  -- , lowerFree
+  -- , runFree
+  )
 import Data.Set
   ( Set ()
   -- , checkValid
@@ -1536,6 +1594,18 @@ import Data.Unfoldable
   , replicateA
   , singleton
   , unfoldr
+  )
+import Data.Validation
+  ( V ()
+  , invalid
+  , isValid
+  , runV
+  )
+import Data.Validation.Semiring
+  ( -- V ()
+  -- , invalid
+  -- , isValid
+  -- , runV
   )
 import Data.Yoneda
   ( Yoneda (Yoneda)
