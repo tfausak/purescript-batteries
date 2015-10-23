@@ -3,29 +3,41 @@
 [![Build status](https://img.shields.io/travis/tfausak/purescript-batteries.svg)](https://travis-ci.org/tfausak/purescript-batteries)
 [![Package version](https://img.shields.io/bower/v/purescript-batteries.svg)](https://github.com/tfausak/purescript-batteries/releases)
 
-A PureScript prelude with more features.
+:battery: A PureScript prelude with more features.
 
-PureScript is a powerful language with a granular package ecosystem. It can
-take tens of lines of imports to accomplish trivial tasks. Batteries makes
-things better by giving you more functionality from a single import.
+PureScript is a powerful language. Unfortunately the package ecosystem is
+excessively granular. That means it can take tens of lines of imports to
+accomplish trivial tasks. Batteries makes things better by giving you more
+functionality from a single import.
 
-To get started, add Batteries as a dependency to your `bower.json`:
+To install Batteries, add it as a dependency to your `bower.json`:
 
-``` json
-{ "dependencies": { "purescript-batteries": "~0.1.0" } }
+``` js
+{
+  "dependencies": {
+    "purescript-batteries": "~0.1.0",
+    // Other dependencies go here.
+  },
+  // Other package stuff goes here.
+}
 ```
 
-Once you install it, use it by importing it unqualified:
+Then run `pulp dep install`. Once that's done, use Batteries like any other
+module by importing it. It is designed to be imported unqualified:
 
 ``` purescript
 import Batteries
 ```
 
-That's it!
+That's all there is to it!
 
-If you know of a package that should be included, please open a pull request.
-And if Batteries doesn't export something that you need from one of the
-included packages, please open an issue.
+If you want to see exactly what Batteries exports, check out [the source][]. If
+it's missing something or including something it shouldn't, please open [an
+issue][]!
+
+The other way to use Batteries is to *not* import it. Instead, simply add it as
+a dependency and use the packages that it includes. In this way it is similar
+to [purescript-base][].
 
 Batteries includes the following packages:
 
@@ -82,3 +94,11 @@ Batteries includes the following packages:
 - [unfoldable](https://github.com/purescript/purescript-unfoldable)
 - [unsafe-coerce](https://github.com/purescript_TODO_contrib/purescript-unsafe-coerce)
 - [validation](https://github.com/purescript/purescript-validation)
+
+To see the exact versions that Batteries depends on, look at the
+[`bower.json`][].
+
+[the source]: ./src/Batteries.purs
+[an issue]: https://github.com/tfausak/purescript-batteries/issues
+[purescript-base]: https://github.com/purescript-contrib/purescript-base
+[`bower.json`]: ./bower.json
