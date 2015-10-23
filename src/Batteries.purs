@@ -761,16 +761,137 @@ import Data.Lazy
   -- , defer
   )
 import Data.List
-  (
+  ( List (Cons, Nil)
+  -- , alterAt
+  -- , catMaybes
+  -- , concat
+  -- , concatMap
+  -- , delete
+  -- , deleteAt
+  -- , deleteBy
+  -- , drop
+  -- , dropWhile
+  -- , elemIndex
+  -- , elemLastIndex
+  -- , filter
+  -- , filterM
+  -- , findIndex
+  -- , findLastIndex
+  -- , foldM
+  , fromList
+  -- , group
+  -- , group'
+  -- , groupBy
+  -- , head
+  -- , index
+  -- , init
+  -- , insert
+  -- , insertAt
+  -- , insertBy
+  -- , intersect
+  -- , intersectBy
+  -- , last
+  -- , length
+  -- , many
+  -- , mapMaybe
+  -- , modifyAt
+  -- , nub
+  -- , nubBy
+  -- , null
+  -- , range
+  -- , replicate
+  -- , replicateM
+  -- , reverse
+  -- , singleton
+  -- , slice
+  -- , snoc
+  -- , some
+  -- , sort
+  -- , sortBy
+  -- , span
+  -- , tail
+  -- , take
+  -- , takeWhile
+  , toList
+  -- , uncons
+  -- , union
+  -- , unionBy
+  -- , unzip
+  -- , updateAt
+  -- , zip
+  -- , zipWith
+  -- , zipWithA
+  -- , (:)
+  -- , (!!)
+  -- , (..)
+  -- , (\\)
   )
 import Data.List.Lazy
-  (
+  ( -- List (..)
+  -- , Step (..)
+  -- , alterAt
+  -- , catMaybes
+  -- , concat
+  -- , concatMap
+  -- , cons
+  -- , cycle
+  -- , delete
+  -- , deleteAt
+  -- , deleteBy
+  -- , drop
+  -- , dropWhile
+  -- , filter
+  -- , fromList
+  -- , group
+  -- , groupBy
+  -- , head
+  -- , index
+  -- , init
+  -- , insert
+  -- , insertAt
+  -- , insertBy
+  -- , intersect
+  -- , intersectBy
+  -- , iterate
+  -- , last
+  -- , length
+  -- , mapMaybe
+  -- , modifyAt
+  -- , nil
+  -- , nub
+  -- , nubBy
+  -- , null
+  -- , range
+  -- , repeat
+  -- , reverse
+  -- , runList
+  -- , singleton
+  -- , span
+  -- , step
+  -- , tail
+  -- , take
+  -- , takeWhile
+  -- , toList
+  -- , uncons
+  -- , union
+  -- , unionBy
+  -- , updateAt
+  -- , zip
+  -- , zipWith
+  -- , (:)
+  -- , (!!)
+  -- , (..)
+  -- , (\\)
   )
 import Data.List.Unsafe
-  (
+  ( -- head
+  -- , init
+  -- , last
+  -- , tail
   )
 import Data.List.ZipList
-  (
+  ( ZipList (ZipList)
+  , runZipList
   )
 import Data.Map
   (
