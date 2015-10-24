@@ -1938,7 +1938,7 @@ import Test.Assert
   )
 import Type.Proxy
   ( -- Proxy (Proxy) -- NOTE: Data.Generic
-  Proxy2 (Proxy2)
+    Proxy2 (Proxy2)
   , Proxy3 (Proxy3)
   )
 import Unsafe.Coerce
