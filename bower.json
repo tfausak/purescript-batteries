@@ -55,7 +55,7 @@
     "purescript-st": "~0.1.1",
     "purescript-strings": "~0.7.0",
     "purescript-tailrec": "~0.3.1",
-    "purescript-these": "~0.3.1",
+    "purescript-these": "tfausak/purescript-these#1173df88f940bfd6790056d55708a59857957205",
     "purescript-transformers": "~0.8.1",
     "purescript-tuples": "~0.4.0",
     "purescript-unfoldable": "~0.4.1",
