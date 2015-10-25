@@ -202,15 +202,15 @@ import Control.Arrow
   , (<+>)
   )
 import Control.Arrow.Cokleisli
-  ( Cokleisli (Cokleisli)
+  ( Cokleisli(Cokleisli)
   , runCokleisli
   )
 import Control.Arrow.Kleisli
-  ( Kleisli (Kleisli)
+  ( Kleisli(Kleisli)
   , runKleisli
   )
 import Control.Arrow.Static
-  ( Static (Static)
+  ( Static(Static)
   , runStatic
   )
 import Control.Biapplicative
@@ -237,13 +237,13 @@ import Control.Comonad
   , extract
   )
 import Control.Comonad.Cofree
-  ( Cofree ()
+  ( Cofree()
   -- , head -- TODO
   , mkCofree
   -- , tail -- TODO
   )
 import Control.Comonad.Env
-  ( Env ()
+  ( Env()
   , env
   , mapEnv
   , runEnv
@@ -256,13 +256,13 @@ import Control.Comonad.Env.Class
   -- , local -- TODO
   )
 import Control.Comonad.Env.Trans
-  ( EnvT (EnvT)
+  ( EnvT(EnvT)
   , mapEnvT
   , runEnvT
   , withEnvT
   )
 import Control.Comonad.Store
-  ( Store ()
+  ( Store()
   , runStore
   , store
   )
@@ -276,11 +276,11 @@ import Control.Comonad.Store.Class
   , seeks
   )
 import Control.Comonad.Store.Trans
-  ( StoreT (StoreT)
+  ( StoreT(StoreT)
   , runStoreT
   )
 import Control.Comonad.Traced
-  ( Traced ()
+  ( Traced()
   , runTraced
   , traced
   )
@@ -293,7 +293,7 @@ import Control.Comonad.Traced.Class
   , tracks
   )
 import Control.Comonad.Traced.Trans
-  ( TracedT (TracedT)
+  ( TracedT(TracedT)
   , runTracedT
   )
 import Control.Comonad.Trans
@@ -320,8 +320,8 @@ import Control.Monad
   )
 import Control.Monad.Aff
   ( Aff()
-  , Canceler (Canceler)
-  , PureAff ()
+  , Canceler(Canceler)
+  , PureAff()
   , apathize
   , attempt
   , cancel
@@ -338,9 +338,9 @@ import Control.Monad.Aff
   , runAff
   )
 import Control.Monad.Aff.AVar
-  ( AffAVar ()
-  , AVAR ()
-  , AVar ()
+  ( AffAVar()
+  , AVAR()
+  , AVar()
   , killVar
   , makeVar
   , makeVar'
@@ -357,7 +357,7 @@ import Control.Monad.Aff.Console
   -- , print -- NOTE: Control.Monad.Eff.Console
   )
 import Control.Monad.Aff.Par
-  ( Par (Par)
+  ( Par(Par)
   , runPar
   )
 import Control.Monad.Aff.Unsafe
@@ -369,14 +369,14 @@ import Control.Monad.Cont.Class
   , callCC
   )
 import Control.Monad.Cont.Trans
-  ( ContT (ContT)
+  ( ContT(ContT)
   , mapContT
   , runContT
   , withContT
   )
 import Control.Monad.Eff
-  ( Eff ()
-  , Pure ()
+  ( Eff()
+  , Pure()
   , forE
   , foreachE
   , runPure
@@ -388,7 +388,7 @@ import Control.Monad.Eff.Class
   , liftEff
   )
 import Control.Monad.Eff.Console
-  ( CONSOLE ()
+  ( CONSOLE()
   -- , error -- NOTE: Control.Monad.Eff.Exception
   -- , log -- NOTE: Math
   , print
@@ -398,23 +398,23 @@ import Control.Monad.Eff.Console.Unsafe
   , logAny
   )
 import Control.Monad.Eff.Exception
-  ( EXCEPTION ()
-  , Error ()
+  ( EXCEPTION()
+  , Error()
   , catchException
   , error
   , message
   , throwException
   )
 import Control.Monad.Eff.Random
-  ( RANDOM ()
+  ( RANDOM()
   , random
   , randomBool
   , randomInt
   , randomRange
   )
 import Control.Monad.Eff.Ref
-  ( REF ()
-  , Ref ()
+  ( REF()
+  , Ref()
   , modifyRef
   , modifyRef'
   , newRef
@@ -434,20 +434,20 @@ import Control.Monad.Error.Class
   , throwError
   )
 import Control.Monad.Except
-  ( Except ()
+  ( Except()
   , except
   , mapExcept
   , runExcept
   , withExcept
   )
 import Control.Monad.Except.Trans
-  ( ExceptT (ExceptT)
+  ( ExceptT(ExceptT)
   , mapExceptT
   , runExceptT
   , withExceptT
   )
 import Control.Monad.Free
-  ( Free ()
+  ( Free()
   , foldFree
   , injF
   , liftF
@@ -458,7 +458,7 @@ import Control.Monad.Free
   , suspendF
   )
 import Control.Monad.List.Trans
-  ( ListT ()
+  ( ListT()
   -- , catMaybes -- TODO
   -- , cons -- TODO
   -- , drop -- TODO
@@ -487,12 +487,12 @@ import Control.Monad.List.Trans
   , zipWith'
   )
 import Control.Monad.Maybe.Trans
-  ( MaybeT (MaybeT)
+  ( MaybeT(MaybeT)
   , mapMaybeT
   , runMaybeT
   )
 import Control.Monad.RWS
-  ( RWS ()
+  ( RWS()
   , evalRWS
   , execRWS
   , mapRWS
@@ -504,8 +504,8 @@ import Control.Monad.RWS.Class
   ( MonadRWS
   )
 import Control.Monad.RWS.Trans
-  ( RWSResult (RWSResult)
-  , RWST (RWST)
+  ( RWSResult(RWSResult)
+  , RWST(RWST)
   , evalRWST
   , execRWST
   , mapRWST
@@ -513,7 +513,7 @@ import Control.Monad.RWS.Trans
   , withRWST
   )
 import Control.Monad.Reader
-  ( Reader ()
+  ( Reader()
   , mapReader
   , runReader
   , withReader
@@ -525,7 +525,7 @@ import Control.Monad.Reader.Class
   , reader
   )
 import Control.Monad.Reader.Trans
-  ( ReaderT (ReaderT)
+  ( ReaderT(ReaderT)
   , mapReaderT
   , runReaderT
   , withReaderT
@@ -539,8 +539,8 @@ import Control.Monad.Rec.Class
   , tailRecM3
   )
 import Control.Monad.ST
-  ( ST ()
-  , STRef ()
+  ( ST()
+  , STRef()
   , modifySTRef
   , newSTRef
   , pureST
@@ -549,7 +549,7 @@ import Control.Monad.ST
   , writeSTRef
   )
 import Control.Monad.State
-  ( State ()
+  ( State()
   , evalState
   , execState
   , mapState
@@ -565,7 +565,7 @@ import Control.Monad.State.Class
   , state
   )
 import Control.Monad.State.Trans
-  ( StateT (StateT)
+  ( StateT(StateT)
   , evalStateT
   , execStateT
   , mapStateT
@@ -585,7 +585,7 @@ import Control.Monad.Trans
   , lift
   )
 import Control.Monad.Writer
-  ( Writer ()
+  ( Writer()
   , execWriter
   , mapWriter
   , runWriter
@@ -600,7 +600,7 @@ import Control.Monad.Writer.Class
   , writer
   )
 import Control.Monad.Writer.Trans
-  ( WriterT (WriterT)
+  ( WriterT(WriterT)
   , execWriterT
   , mapWriterT
   , runWriterT
@@ -610,7 +610,7 @@ import Control.MonadPlus
   , guard
   )
 import Control.Parallel
-  ( Parallel ()
+  ( Parallel()
   , inParallel
   , par
   , race
@@ -687,8 +687,8 @@ import Data.Array
   -- , (\\) -- TODO
   )
 import Data.Array.ST
-  ( Assoc ()
-  , STArray ()
+  ( Assoc()
+  , STArray()
   , emptySTArray
   , freeze
   , peekSTArray
@@ -725,26 +725,26 @@ import Data.Bifunctor
   , rmap
   )
 import Data.Bifunctor.Clown
-  ( Clown (Clown)
+  ( Clown(Clown)
   , runClown
   )
 import Data.Bifunctor.Flip
-  ( Flip (Flip)
+  ( Flip(Flip)
   , runFlip
   )
 import Data.Bifunctor.Join
-  ( Join (Join)
+  ( Join(Join)
   , runJoin
   )
 import Data.Bifunctor.Joker
-  ( Joker (Joker)
+  ( Joker(Joker)
   , runJoker
   )
 import Data.Bifunctor.Product
-  ( Product (Pair)
+  ( Product(Pair)
   )
 import Data.Bifunctor.Wrap
-  ( Wrap (Wrap)
+  ( Wrap(Wrap)
   , unwrap
   )
 import Data.Bitraversable
@@ -754,7 +754,7 @@ import Data.Bitraversable
   , bitraverse
   )
 import Data.CatList
-  ( CatList (CatCons, CatNil)
+  ( CatList(CatCons, CatNil)
   -- , append -- NOTE: Prelude
   -- , cons -- TODO
   -- , empty -- NOTE: Control.Plus
@@ -763,7 +763,7 @@ import Data.CatList
   -- , uncons -- TODO
   )
 import Data.CatQueue
-  ( CatQueue (CatQueue)
+  ( CatQueue(CatQueue)
   -- , empty -- NOTE: Control.Plus
   -- , null -- TODO
   -- , snoc -- TODO
@@ -777,17 +777,17 @@ import Data.Char
   -- , toUpper -- NOTE: Data.String
   )
 import Data.Comparison
-  ( Comparison (Comparison)
+  ( Comparison(Comparison)
   , defaultComparison
   , runComparison
   )
 import Data.Const
-  ( Const (Const)
+  ( Const(Const)
   , getConst
   )
 import Data.Coyoneda
-  ( Coyoneda (Coyoneda)
-  , CoyonedaF (CoyonedaF)
+  ( Coyoneda(Coyoneda)
+  , CoyonedaF(CoyonedaF)
   , coyoneda
   , liftCoyoneda
   , liftCoyonedaT
@@ -795,14 +795,14 @@ import Data.Coyoneda
   , lowerCoyoneda
   )
 import Data.Date
-  ( Date ()
-  , DayOfMonth (DayOfMonth)
-  , DayOfWeek (Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday)
-  , JSDate ()
-  , LocaleOffset (LocaleOffset)
-  , Month (April, August, December, February, January, July, June, March, May, November, October, September)
-  , Now ()
-  , Year (Year)
+  ( Date()
+  , DayOfMonth(DayOfMonth)
+  , DayOfWeek(Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday)
+  , JSDate()
+  , LocaleOffset(LocaleOffset)
+  , Month(April, August, December, February, January, July, June, March, May, November, October, September)
+  , Now()
+  , Year(Year)
   , fromEpochMilliseconds
   , fromJSDate
   -- , fromString -- TODO
@@ -814,7 +814,7 @@ import Data.Date
   , toJSDate
   )
 import Data.Date.Locale
-  ( Locale ()
+  ( Locale()
   -- , date -- NOTE: Data.Date.UTC
   -- , dateTime -- NOTE: Data.Date.UTC
   -- , dayOfMonth -- NOTE: Data.Date.UTC
@@ -848,21 +848,21 @@ import Data.Distributive
   , distribute
   )
 import Data.Either
-  ( Either (Left, Right)
+  ( Either(Left, Right)
   , either
   , isLeft
   , isRight
   )
 import Data.Either.Nested
-  ( Either10 ()
-  , Either2 ()
-  , Either3 ()
-  , Either4 ()
-  , Either5 ()
-  , Either6 ()
-  , Either7 ()
-  , Either8 ()
-  , Either9 ()
+  ( Either10()
+  , Either2()
+  , Either3()
+  , Either4()
+  , Either5()
+  , Either6()
+  , Either7()
+  , Either8()
+  , Either9()
   , either10
   , either10of10
   , either1of10
@@ -932,7 +932,7 @@ import Data.Either.Unsafe
   , fromRight
   )
 import Data.Enum
-  ( Cardinality (Cardinality)
+  ( Cardinality(Cardinality)
   , Enum
   , cardinality
   , defaultFromEnum
@@ -950,24 +950,24 @@ import Data.Enum
   , toEnum
   )
 import Data.Equivalence
-  ( Equivalence (Equivalence)
+  ( Equivalence(Equivalence)
   , comparisonEquivalence
   , defaultEquivalence
   , runEquivalence
   )
 import Data.Exists
-  ( Exists ()
+  ( Exists()
   , mkExists
   , runExists
   )
 import Data.FingerTree
-  ( Digit ()
-  , FingerTree (Deep, Empty, Single)
-  , LazySplit (LazySplit)
-  , Node (Node2, Node3)
-  , Split (Split)
-  , ViewL (ConsL, NilL)
-  , ViewR (NilR, SnocR)
+  ( Digit()
+  , FingerTree(Deep, Empty, Single)
+  , LazySplit(LazySplit)
+  , Node(Node2, Node3)
+  , Split(Split)
+  , ViewL(ConsL, NilL)
+  , ViewR(NilR, SnocR)
   , app3
   -- , append -- NOTE: Prelude
   , compareFingerTree
@@ -1026,9 +1026,9 @@ import Data.Foldable
   , traverse_
   )
 import Data.Foreign
-  ( Foreign ()
-  , ForeignError (ErrorAtIndex, ErrorAtProperty, JSONError, TypeMismatch)
-  , F ()
+  ( Foreign()
+  , ForeignError(ErrorAtIndex, ErrorAtProperty, JSONError, TypeMismatch)
+  , F()
   , isArray
   , isNull
   , isUndefined
@@ -1066,32 +1066,32 @@ import Data.Foreign.Keys
   ( -- keys -- TODO
   )
 import Data.Foreign.Null
-  ( Null (Null)
+  ( Null(Null)
   , readNull
   , runNull
   )
 import Data.Foreign.NullOrUndefined
-  ( NullOrUndefined (NullOrUndefined)
+  ( NullOrUndefined(NullOrUndefined)
   , readNullOrUndefined
   , runNullOrUndefined
   )
 import Data.Foreign.Undefined
-  ( Undefined (Undefined)
+  ( Undefined(Undefined)
   , readUndefined
   , runUndefined
   )
 import Data.Function
-  ( Fn0 ()
-  , Fn1 ()
-  , Fn10 ()
-  , Fn2 ()
-  , Fn3 ()
-  , Fn4 ()
-  , Fn5 ()
-  , Fn6 ()
-  , Fn7 ()
-  , Fn8 ()
-  , Fn9 ()
+  ( Fn0()
+  , Fn1()
+  , Fn10()
+  , Fn2()
+  , Fn3()
+  , Fn4()
+  , Fn5()
+  , Fn6()
+  , Fn7()
+  , Fn8()
+  , Fn9()
   , mkFn0
   , mkFn1
   , mkFn10
@@ -1139,7 +1139,7 @@ import Data.Functor.Contravariant.Divisible
   , lose
   )
 import Data.Functor.Coproduct
-  ( Coproduct (Coproduct)
+  ( Coproduct(Coproduct)
   , coproduct
   , left
   , right
@@ -1152,9 +1152,9 @@ import Data.Functor.Invariant
   )
 import Data.Generic
   ( Generic
-  , GenericSignature (SigArray, SigBoolean, SigChar, SigInt, SigNumber, SigProd, SigRecord, SigString)
-  , GenericSpine (SArray, SBoolean, SChar, SInt, SNumber, SProd, SRecord, SString)
-  , Proxy (Proxy)
+  , GenericSignature(SigArray, SigBoolean, SigChar, SigInt, SigNumber, SigProd, SigRecord, SigString)
+  , GenericSpine(SArray, SBoolean, SChar, SInt, SNumber, SProd, SRecord, SString)
+  , Proxy(Proxy)
   , anyProxy
   , fromSpine
   , gCompare
@@ -1165,7 +1165,7 @@ import Data.Generic
   , toSpine
   )
 import Data.Identity
-  ( Identity (Identity)
+  ( Identity(Identity)
   , runIdentity
   )
 import Data.Inject
@@ -1193,12 +1193,12 @@ import Data.Int.Bits
   , (.|.)
   )
 import Data.Lazy
-  ( -- Lazy () -- NOTE: Control.Lazy
+  ( -- Lazy() -- NOTE: Control.Lazy
   -- , defer -- NOTE: Control.Lazy
     force
   )
 import Data.List
-  ( List (Cons, Nil)
+  ( List(Cons, Nil)
   -- , alterAt -- TODO
   -- , catMaybes -- TODO
   -- , concat -- TODO
@@ -1264,8 +1264,8 @@ import Data.List
   -- , (\\) -- TODO
   )
 import Data.List.Lazy
-  ( -- List (List) -- NOTE: Data.List
-  -- , Step (Cons, NIl) -- NOTE: Data.List
+  ( -- List(List) -- NOTE: Data.List
+  -- , Step(Cons, NIl) -- NOTE: Data.List
   -- , alterAt -- TODO
   -- , catMaybes -- TODO
   -- , concat -- TODO
@@ -1327,11 +1327,11 @@ import Data.List.Unsafe
   -- , tail -- TODO
   )
 import Data.List.ZipList
-  ( ZipList (ZipList)
+  ( ZipList(ZipList)
   , runZipList
   )
 import Data.Map
-  ( Map ()
+  ( Map()
   -- , alter -- TODO
   -- , checkValid -- TODO
   -- , delete -- TODO
@@ -1354,7 +1354,7 @@ import Data.Map
   -- , values -- TODO
   )
 import Data.Maybe
-  ( Maybe (Nothing, Just)
+  ( Maybe(Nothing, Just)
   , fromMaybe
   , isJust
   , isNothing
@@ -1362,11 +1362,11 @@ import Data.Maybe
   , maybe'
   )
 import Data.Maybe.First
-  ( First (First)
+  ( First(First)
   , runFirst
   )
 import Data.Maybe.Last
-  ( Last (Last)
+  ( Last(Last)
   , runLast
   )
 import Data.Maybe.Unsafe
@@ -1378,44 +1378,44 @@ import Data.Monoid
   , mempty
   )
 import Data.Monoid.Additive
-  ( Additive (Additive)
+  ( Additive(Additive)
   , runAdditive
   )
 import Data.Monoid.Conj
-  ( Conj (Conj)
+  ( Conj(Conj)
   , runConj
   )
 import Data.Monoid.Disj
-  ( Disj (Disj)
+  ( Disj(Disj)
   , runDisj
   )
 import Data.Monoid.Dual
-  ( Dual (Dual)
+  ( Dual(Dual)
   , runDual
   )
 import Data.Monoid.Endo
-  ( Endo (Endo)
+  ( Endo(Endo)
   , runEndo
   )
 import Data.Monoid.Multiplicative
-  ( Multiplicative (Multiplicative)
+  ( Multiplicative(Multiplicative)
   , runMultiplicative
   )
 import Data.NaturalTransformation
-  ( NaturalTransformation ()
-  , Natural ()
+  ( NaturalTransformation()
+  , Natural()
   )
 import Data.Nullable
-  ( Nullable ()
+  ( Nullable()
   , toMaybe
   , toNullable
   )
 import Data.Op
-  ( Op (Op)
+  ( Op(Op)
   , runOp
   )
 import Data.Predicate
-  ( Predicate (Predicate)
+  ( Predicate(Predicate)
   , runPredicate
   )
 import Data.Profunctor
@@ -1430,7 +1430,7 @@ import Data.Profunctor.Choice
   , (|||)
   )
 import Data.Profunctor.Star
-  ( Star (Star)
+  ( Star(Star)
   , runStar
   )
 import Data.Profunctor.Strong
@@ -1439,14 +1439,14 @@ import Data.Profunctor.Strong
   , (&&&)
   )
 import Data.Semiring.Free
-  ( -- Free () -- NOTE: Control.Monad.Free
+  ( -- Free() -- NOTE: Control.Monad.Free
     free
   , liftFree
   , lowerFree
   -- , runFree -- NOTE: Control.Monad.Free
   )
 import Data.Sequence
-  ( Seq ()
+  ( Seq()
   , adjust
   -- , append -- NOTE: Prelude
   -- , concat -- TODO
@@ -1477,7 +1477,7 @@ import Data.Sequence
   , unsnoc
   )
 import Data.Sequence.NonEmpty
-  ( -- Seq (Seq) -- NOTE: Data.Sequence
+  ( -- Seq(Seq) -- NOTE: Data.Sequence
   -- , adjust -- NOTE: Data.Sequence
   -- , append -- NOTE: Prelude
   -- , cons -- TODO
@@ -1501,7 +1501,7 @@ import Data.Sequence.NonEmpty
   -- , unsnoc -- NOTE: Data.Sequence
   )
 import Data.Sequence.Ordered
-  ( OrdSeq ()
+  ( OrdSeq()
   , deleteAll
   -- , empty -- NOTE: Control.Plus
   , fromOrdSeq
@@ -1520,7 +1520,7 @@ import Data.Sequence.Ordered
   , toOrdSeq
   )
 import Data.Set
-  ( Set ()
+  ( Set()
   -- , checkValid -- TODO
   -- , delete -- TODO
   , difference
@@ -1536,7 +1536,7 @@ import Data.Set
   -- , unions -- TODO
   )
 import Data.StrMap
-  ( StrMap ()
+  ( StrMap()
   -- , all -- NOTE: Data.Foldable
   -- , alter -- TODO
   -- , delete -- TODO
@@ -1565,7 +1565,7 @@ import Data.StrMap
   -- , values -- TODO
   )
 import Data.StrMap.ST
-  ( STStrMap ()
+  ( STStrMap()
   -- , delete -- TODO
   , new
   -- , peek -- TODO
@@ -1609,8 +1609,8 @@ import Data.String
   -- , uncons -- TODO
   )
 import Data.String.Regex
-  ( Regex ()
-  , RegexFlags ()
+  ( Regex()
+  , RegexFlags()
   , flags
   , match
   , noFlags
@@ -1630,7 +1630,7 @@ import Data.String.Unsafe
   -- , charCodeAt -- NOTE: Data.String
   )
 import Data.These
-  ( These (Both, That, This)
+  ( These(Both, That, This)
   , fromThese
   , thatOrBoth
   , these
@@ -1639,14 +1639,14 @@ import Data.These
   , thisOrBoth
   )
 import Data.Time
-  ( HourOfDay (HourOfDay)
-  , Hours (Hours)
-  , MillisecondOfSecond (MillisecondOfSecond)
-  , Milliseconds (Milliseconds)
-  , MinuteOfHour (MinuteOfHour)
-  , Minutes (Minutes)
-  , SecondOfMinute (SecondOfMinute)
-  , Seconds (Seconds)
+  ( HourOfDay(HourOfDay)
+  , Hours(Hours)
+  , MillisecondOfSecond(MillisecondOfSecond)
+  , Milliseconds(Milliseconds)
+  , MinuteOfHour(MinuteOfHour)
+  , Minutes(Minutes)
+  , SecondOfMinute(SecondOfMinute)
+  , Seconds(Seconds)
   , TimeValue
   , fromHours
   , fromMilliseconds
@@ -1658,7 +1658,7 @@ import Data.Time
   , toSeconds
   )
 import Data.Traversable
-  ( Accum ()
+  ( Accum()
   , Traversable
   , for
   , mapAccumL
@@ -1669,7 +1669,7 @@ import Data.Traversable
   , traverse
   )
 import Data.Tuple
-  ( Tuple (Tuple)
+  ( Tuple(Tuple)
   , curry
   , fst
   -- , lookup -- TODO
@@ -1678,15 +1678,15 @@ import Data.Tuple
   , uncurry
   )
 import Data.Tuple.Nested
-  ( Tuple10 ()
-  , Tuple2 ()
-  , Tuple3 ()
-  , Tuple4 ()
-  , Tuple5 ()
-  , Tuple6 ()
-  , Tuple7 ()
-  , Tuple8 ()
-  , Tuple9 ()
+  ( Tuple10()
+  , Tuple2()
+  , Tuple3()
+  , Tuple4()
+  , Tuple5()
+  , Tuple6()
+  , Tuple7()
+  , Tuple8()
+  , Tuple9()
   , curry10
   , curry2
   , curry3
@@ -1725,19 +1725,19 @@ import Data.Unfoldable
   , unfoldr
   )
 import Data.Validation
-  ( V ()
+  ( V()
   , invalid
   , isValid
   , runV
   )
 import Data.Validation.Semiring
-  ( -- V () -- NOTE: Data.Validation
+  ( -- V() -- NOTE: Data.Validation
   -- , invalid -- NOTE: Data.Validation
   -- , isValid -- NOTE: Data.Validation
   -- , runV -- NOTE: Data.Validation
   )
 import Data.Yoneda
-  ( Yoneda (Yoneda)
+  ( Yoneda(Yoneda)
   , runYoneda
   , liftYoneda
   , lowerYoneda
@@ -1754,7 +1754,7 @@ import Global.Unsafe
   ( unsafeStringify
   )
 import Math
-  ( Radians ()
+  ( Radians()
   , abs
   , acos
   , asin
@@ -1832,23 +1832,23 @@ import Optic.Setter
   , (||~)
   )
 import Optic.Types
-  ( Accessing ()
-  , APrism ()
-  , APrismP ()
-  , ASetter ()
-  , ASetterP ()
-  , Getter ()
-  , Getting ()
-  , Lens ()
-  , LensP ()
-  , Optical ()
-  , OpticalP ()
-  , Prism ()
-  , PrismP ()
-  , Setter ()
-  , SetterP ()
-  , Setting ()
-  , SettingP ()
+  ( Accessing()
+  , APrism()
+  , APrismP()
+  , ASetter()
+  , ASetterP()
+  , Getter()
+  , Getting()
+  , Lens()
+  , LensP()
+  , Optical()
+  , OpticalP()
+  , Prism()
+  , PrismP()
+  , Setter()
+  , SetterP()
+  , Setting()
+  , SettingP()
   )
 import Prelude
   ( Applicative
@@ -1865,13 +1865,13 @@ import Prelude
   , Monad
   , Num
   , Ord
-  , Ordering (LT, EQ, GT)
+  , Ordering(LT, EQ, GT)
   , Ring
   , Semigroup
   , Semigroupoid
   , Semiring
   , Show
-  , Unit ()
+  , Unit()
   , add
   , ap
   , append
@@ -1930,16 +1930,16 @@ import Prelude
   , ($)
   )
 import Test.Assert
-  ( ASSERT ()
+  ( ASSERT()
   , assert
   , assert'
   , assertThrows
   , assertThrows'
   )
 import Type.Proxy
-  ( -- Proxy (Proxy) -- NOTE: Data.Generic
-  Proxy2 (Proxy2)
-  , Proxy3 (Proxy3)
+  ( -- Proxy(Proxy) -- NOTE: Data.Generic
+    Proxy2(Proxy2)
+  , Proxy3(Proxy3)
   )
 import Unsafe.Coerce
   ( unsafeCoerce
