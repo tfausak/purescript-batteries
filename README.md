@@ -15,7 +15,7 @@ To install Batteries, add it as a dependency to your `bower.json`:
 ``` js
 {
   "dependencies": {
-    "purescript-batteries": "~0.2.1",
+    "purescript-batteries": "~0.2.2",
     // Other dependencies go here.
   },
   // Other package stuff goes here.
