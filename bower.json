@@ -78,7 +78,9 @@
     "purescript"
   ],
   "license": "MIT",
-  "main": "src/Batteries.purs",
+  "main": [
+    "src/Batteries.purs"
+  ],
   "name": "purescript-batteries",
   "repository": {
     "type": "git",
