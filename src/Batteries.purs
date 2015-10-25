@@ -1,3 +1,9 @@
+-- | 🔋 A PureScript prelude with more features.
+-- |
+-- | Unfortunately the generated documentation does not include anything
+-- | useful. To learn more about Batteries, please see [the README][].
+-- |
+-- | [the readme]: https://github.com/tfausak/purescript-batteries#readme
 module Batteries
   ( module Batteries
   , module Control.Alt
