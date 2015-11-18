@@ -43,6 +43,7 @@
     "purescript-maybe": "~0.3.5",
     "purescript-monoid": "~0.3.2",
     "purescript-nullable": "~0.2.1",
+    "purescript-orders": "~0.1.1",
     "purescript-parallel": "~0.5.1",
     "purescript-prelude": "~0.1.3",
     "purescript-profunctor": "~0.3.1",

@@ -124,6 +124,7 @@
 -- | - DayOfWeek(Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday)
 -- | - Digit()
 -- | - Disj(Disj)
+-- | - Down(Down)
 -- | - Dual(Dual)
 -- | - Eff()
 -- | - Either(Left, Right)
@@ -181,10 +182,12 @@
 -- | - ListT()
 -- | - LocaleOffset(LocaleOffset)
 -- | - Map()
+-- | - Max(Max)
 -- | - Maybe(Nothing, Just)
 -- | - MaybeT(MaybeT)
 -- | - MillisecondOfSecond(MillisecondOfSecond)
 -- | - Milliseconds(Milliseconds)
+-- | - Min(Min)
 -- | - MinuteOfHour(MinuteOfHour)
 -- | - Minutes(Minutes)
 -- | - Month(April, August, December, February, January, July, June, March, May, November, October, September)
@@ -295,6 +298,7 @@
 -- | - atan2
 -- | - attempt
 -- | - azero
+-- | - between
 -- | - biall
 -- | - biany
 -- | - bifold
@@ -322,11 +326,13 @@
 -- | - char
 -- | - charAt
 -- | - charCodeAt
+-- | - clamp
 -- | - clonePrism
 -- | - cmap
 -- | - collect
 -- | - compare
 -- | - compareFingerTree
+-- | - comparing
 -- | - comparisonEquivalence
 -- | - complement
 -- | - compose
@@ -546,6 +552,7 @@
 -- | - intercalate
 -- | - intersection
 -- | - invalid
+-- | - invert
 -- | - is
 -- | - isArray
 -- | - isFinite
@@ -784,7 +791,9 @@
 -- | - runKleisli
 -- | - runLast
 -- | - runList
+-- | - runMax
 -- | - runMaybeT
+-- | - runMin
 -- | - runMultiplicative
 -- | - runNull
 -- | - runNullOrUndefined
@@ -1189,6 +1198,7 @@ module Batteries
   , module Data.NaturalTransformation
   , module Data.Nullable
   , module Data.Op
+  , module Data.Ord
   , module Data.Predicate
   , module Data.Profunctor
   , module Data.Profunctor.Choice
@@ -2468,6 +2478,19 @@ import Data.Op
   ( Op(Op)
   , runOp
   )
+import Data.Ord
+  ( Down(Down)
+  , Max(Max)
+  , Min(Min)
+  , between
+  , clamp
+  , comparing
+  , invert
+  , max
+  , min
+  , runMax
+  , runMin
+  )
 import Data.Predicate
   ( Predicate(Predicate)
   , runPredicate
@@ -2824,8 +2847,8 @@ import Math
   , log
   , log10e
   , log2e
-  , max
-  , min
+  -- , max -- NOTE: Data.Ord
+  -- , min -- NOTE: Data.Ord
   , pi
   , pow
   -- , round -- NOTE: Data.Int
