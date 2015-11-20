@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "bower": "1.6.5",
-    "pulp": "bodil/pulp#7e70ab96ef4d948ff6b5ef9ef8e72cfcd5d3a4c7",
+    "pulp": "4.5.0",
     "purescript": "0.7.5"
   },
   "scripts": {
