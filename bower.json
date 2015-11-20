@@ -56,7 +56,7 @@
     "purescript-st": "~0.1.1",
     "purescript-strings": "~0.7.1",
     "purescript-tailrec": "~0.3.1",
-    "purescript-these": "~0.3.2",
+    "purescript-these": "~0.3.3",
     "purescript-transformers": "~0.8.2",
     "purescript-tuples": "~0.4.0",
     "purescript-unfoldable": "~0.4.1",
