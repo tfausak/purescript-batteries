@@ -1,14 +1,14 @@
 {
-  "private": true,
-  "engines": {
-    "node": "5.0.0",
-    "npm": "3.3.9"
-  },
   "dependencies": {
     "bower": "1.6.5",
     "pulp": "4.5.0",
     "purescript": "0.7.6-rc.1"
   },
+  "engines": {
+    "node": "5.0.0",
+    "npm": "3.3.9"
+  },
+  "private": true,
   "scripts": {
     "postinstall": "pulp dep install",
     "psc-publish": "psc-publish",
