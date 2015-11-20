@@ -10,21 +10,6 @@ excessively granular. That means it can take tens of lines of imports to
 accomplish trivial tasks. Batteries makes things better by giving you more
 functionality from a single import.
 
-To install Batteries, add it as a dependency to your `bower.json`:
-
-``` js
-{
-  "dependencies": {
-    "purescript-batteries": "~0.2.4",
-    // Other dependencies go here.
-  },
-  // Other package stuff goes here.
-}
-```
-
-Then run `pulp dep install`. Once that's done, use Batteries like any other
-module by importing it. It is designed to be imported unqualified:
-
 ``` purescript
 import Batteries
 ```
