@@ -68,6 +68,7 @@
   "ignore": [
     "/.psci",
     "/.psci_modules/",
+    "/.pulp-cache/",
     "/bower_components/",
     "/node_modules/",
     "/npm-debug.log",
