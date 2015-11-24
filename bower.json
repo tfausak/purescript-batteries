@@ -30,7 +30,7 @@
     "purescript-free": "~0.9.0",
     "purescript-functions": "~0.1.0",
     "purescript-generics": "~0.6.2",
-    "purescript-globals": "~0.2.1",
+    "purescript-globals": "~0.2.2",
     "purescript-identity": "~0.4.1",
     "purescript-inject": "~0.3.0",
     "purescript-integers": "~0.2.1",
