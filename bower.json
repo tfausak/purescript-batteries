@@ -25,7 +25,7 @@
     "purescript-enums": "~0.7.0",
     "purescript-exceptions": "~0.3.2",
     "purescript-exists": "~0.2.0",
-    "purescript-foldable-traversable": "~0.4.1",
+    "purescript-foldable-traversable": "~0.4.2",
     "purescript-foreign": "~0.7.2",
     "purescript-free": "~0.9.0",
     "purescript-functions": "~0.1.0",
