@@ -38,7 +38,7 @@
     "purescript-lazy": "~0.4.0",
     "purescript-lens": "~0.9.1",
     "purescript-lists": "~0.7.7",
-    "purescript-maps": "~0.5.2",
+    "purescript-maps": "~0.5.4",
     "purescript-math": "~0.2.0",
     "purescript-maybe": "~0.3.5",
     "purescript-monoid": "~0.3.2",
