@@ -2082,7 +2082,11 @@ import Data.Foldable
   , foldr
   , for_
   , intercalate
+  , maximum
+  , maximumBy
   , mconcat
+  , minimum
+  , minimumBy
   , notElem
   , or
   , product
