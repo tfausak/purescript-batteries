@@ -2823,7 +2823,11 @@ import Data.Yoneda
   , lowerYoneda
   )
 import Global
-  ( infinity
+  ( decodeURI
+  , decodeURIComponent
+  , encodeURI
+  , encodeURIComponent
+  , infinity
   , isFinite
   , isNaN
   , nan
