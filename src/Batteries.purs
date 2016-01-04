@@ -1467,6 +1467,7 @@ import Control.Monad.Eff.Exception
   , catchException
   , error
   , message
+  , stack
   , throwException
   )
 import Control.Monad.Eff.Random
