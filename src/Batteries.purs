@@ -2403,6 +2403,8 @@ import Data.Map
   -- , checkValid -- TODO
   -- , delete -- TODO
   -- , empty -- NOTE: Control.Plus
+  -- , fromFoldable -- TODO
+  -- , fromFoldableWith -- TODO
   -- , fromList -- TODO
   -- , fromListWith -- TODO
   -- , insert -- TODO
@@ -2626,6 +2628,8 @@ import Data.StrMap
   -- , foldMap -- NOTE: Data.Foldable
   , foldMaybe
   , freezeST
+  -- , fromFoldable -- TODO
+  -- , fromFoldableWith -- TODO
   -- , fromList -- TODO
   -- , fromListWith -- TODO
   -- , insert -- TODO
