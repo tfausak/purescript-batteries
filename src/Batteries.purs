@@ -2218,8 +2218,6 @@ import Data.Generic
   ( Generic
   , GenericSignature(SigArray, SigBoolean, SigChar, SigInt, SigNumber, SigProd, SigRecord, SigString)
   , GenericSpine(SArray, SBoolean, SChar, SInt, SNumber, SProd, SRecord, SString)
-  , Proxy(Proxy)
-  , anyProxy
   , fromSpine
   , gCompare
   , gEq
@@ -3014,8 +3012,8 @@ import Test.Assert
   , assertThrows'
   )
 import Type.Proxy
-  ( -- Proxy(Proxy) -- NOTE: Data.Generic
-    Proxy2(Proxy2)
+  ( Proxy(Proxy)
+  , Proxy2(Proxy2)
   , Proxy3(Proxy3)
   )
 import Unsafe.Coerce
