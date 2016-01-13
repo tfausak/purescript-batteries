@@ -46,7 +46,7 @@
     "purescript-orders": "~0.1.1",
     "purescript-parallel": "~0.5.1",
     "purescript-prelude": "~0.1.3",
-    "purescript-profunctor": "~0.3.1",
+    "purescript-profunctor": "~0.3.2",
     "purescript-proxy": "~0.1.0",
     "purescript-random": "~0.2.3",
     "purescript-refs": "~0.2.0",
