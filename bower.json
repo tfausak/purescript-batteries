@@ -51,7 +51,7 @@
     "purescript-random": "~0.2.3",
     "purescript-refs": "~0.2.0",
     "purescript-semirings": "~0.2.0",
-    "purescript-sequences": "~0.4.2",
+    "purescript-sequences": "~0.5.0",
     "purescript-sets": "~0.5.5",
     "purescript-st": "~0.1.1",
     "purescript-strings": "~0.7.1",
