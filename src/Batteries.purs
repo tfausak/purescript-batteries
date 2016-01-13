@@ -1202,6 +1202,9 @@ module Batteries
   , module Data.Predicate
   , module Data.Profunctor
   , module Data.Profunctor.Choice
+  , module Data.Profunctor.Closed
+  , module Data.Profunctor.Cochoice
+  , module Data.Profunctor.Costrong
   , module Data.Profunctor.Star
   , module Data.Profunctor.Strong
   , module Data.Semiring.Free
@@ -2511,6 +2514,20 @@ import Data.Profunctor.Choice
   , (+++)
   , (|||)
   )
+import Data.Profunctor.Closed
+  ( Closed
+  , closed
+  )
+import Data.Profunctor.Cochoice
+  ( Cochoice
+  , unleft
+  , unright
+  )
+import Data.Profunctor.Costrong
+  ( Costrong
+  , unfirst
+  , unsecond
+  )
 import Data.Profunctor.Star
   ( Star(Star)
   , runStar
@@ -2537,7 +2554,6 @@ import Data.Sequence
   -- , drop -- TODO
   -- , empty -- TODO
   -- , filter -- TODO
-  , fromSeq
   -- , fullyForce -- TODO
   -- , head -- TODO
   , inBounds
@@ -2554,7 +2570,6 @@ import Data.Sequence
   , splitAt
   -- , tail -- TODO
   -- , take -- TODO
-  , toSeq
   -- , uncons -- TODO
   , unsnoc
   )
@@ -2586,11 +2601,9 @@ import Data.Sequence.Ordered
   ( OrdSeq()
   , deleteAll
   -- , empty -- NOTE: Control.Plus
-  , fromOrdSeq
-  , fromOrdSeqDescending
   , greatest
   -- , insert -- TODO
-  , intersection
+  -- , intersection -- TODO: Data.Set
   , least
   -- , length -- TODO
   , merge
@@ -2599,7 +2612,6 @@ import Data.Sequence.Ordered
   , popGreatest
   , popLeast
   -- , sort -- TODO
-  , toOrdSeq
   )
 import Data.Set
   ( Set()
@@ -2609,10 +2621,13 @@ import Data.Set
   -- , empty -- NOTE: Control.Plus
   -- , fromList -- TODO
   -- , insert -- TODO
+  , intersection
   -- , isEmpty -- TODO
   -- , member -- TODO
+  , properSubset
   -- , singleton -- NOTE: Data.Unfoldable
   -- , size -- TODO
+  , subset
   -- , toList -- TODO
   -- , union -- TODO
   -- , unions -- TODO
