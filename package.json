@@ -8,11 +8,17 @@
     "node": "5.4.0",
     "npm": "3.3.12"
   },
+  "license": "MIT",
+  "name": "purescript-batteries",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tfausak/purescript-neon.git"
+  },
   "scripts": {
     "postinstall": "pulp dep install",
     "psc-publish": "psc-publish",
     "pulp": "pulp",
-    "test": "pulp test"
+    "test": "pulp test --force && psc-publish --dry-run"
   }
 }
