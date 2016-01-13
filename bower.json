@@ -7,7 +7,7 @@
     }
   ],
   "dependencies": {
-    "purescript-aff": "~0.13.0",
+    "purescript-aff": "~0.14.0",
     "purescript-arrays": "~0.4.4",
     "purescript-arrows": "~0.6.2",
     "purescript-assert": "~0.1.1",
