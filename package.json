@@ -19,6 +19,6 @@
     "postinstall": "pulp dep install",
     "psc-publish": "psc-publish",
     "pulp": "pulp",
-    "test": "pulp test --force && psc-publish --dry-run"
+    "test": "pulp test && psc-publish --dry-run"
   }
 }
