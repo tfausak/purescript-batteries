@@ -29,7 +29,7 @@
     "purescript-foreign": "~0.7.2",
     "purescript-free": "~0.9.1",
     "purescript-functions": "~0.1.0",
-    "purescript-generics": "~0.7.1",
+    "purescript-generics": "~0.7.2",
     "purescript-globals": "~0.2.2",
     "purescript-identity": "~0.4.1",
     "purescript-inject": "~0.3.0",
