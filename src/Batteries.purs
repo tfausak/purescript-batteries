@@ -29,7 +29,7 @@ module Batteries
   , module Control.Monad.Aff
   , module Control.Monad.Aff.AVar
   , module Control.Monad.Aff.Class
-  , module Control.Monad.Aff.Console
+  -- , module Control.Monad.Aff.Console
   , module Control.Monad.Aff.Par
   , module Control.Monad.Aff.Unsafe
   , module Control.Monad.Cont.Class
@@ -68,9 +68,9 @@ module Batteries
   , module Control.MonadPlus
   , module Control.Parallel
   , module Control.Plus
-  , module Data.Array
+  -- , module Data.Array
   , module Data.Array.ST
-  , module Data.Array.Unsafe
+  -- , module Data.Array.Unsafe
   , module Data.Bifoldable
   , module Data.Bifunctor
   , module Data.Bifunctor.Clown
@@ -101,7 +101,7 @@ module Batteries
   , module Data.Foreign
   , module Data.Foreign.Class
   , module Data.Foreign.Index
-  , module Data.Foreign.Keys
+  -- , module Data.Foreign.Keys
   , module Data.Foreign.Null
   , module Data.Foreign.NullOrUndefined
   , module Data.Foreign.Undefined
@@ -119,7 +119,7 @@ module Batteries
   , module Data.Lazy
   , module Data.List
   , module Data.List.Lazy
-  , module Data.List.Unsafe
+  -- , module Data.List.Unsafe
   , module Data.List.ZipList
   , module Data.Map
   , module Data.Maybe
@@ -153,7 +153,7 @@ module Batteries
   , module Data.StrMap
   , module Data.StrMap.ST
   , module Data.StrMap.ST.Unsafe
-  , module Data.StrMap.Unsafe
+  -- , module Data.StrMap.Unsafe
   , module Data.String
   , module Data.String.Regex
   , module Data.String.Unsafe
@@ -164,7 +164,7 @@ module Batteries
   , module Data.Tuple.Nested
   , module Data.Unfoldable
   , module Data.Validation
-  , module Data.Validation.Semiring
+  -- , module Data.Validation.Semiring
   , module Data.Yoneda
   , module Global
   , module Global.Unsafe
@@ -183,12 +183,12 @@ module Batteries
   ) where
 
 import Control.Alt
-  ( Alt
+  ( class Alt
   , alt
   , (<|>)
   )
 import Control.Alternative
-  ( Alternative
+  ( class Alternative
   )
 import Control.Apply
   ( lift2
@@ -199,9 +199,9 @@ import Control.Apply
   , (<*)
   )
 import Control.Arrow
-  ( Arrow
-  , ArrowPlus
-  , ArrowZero
+  ( class Arrow
+  , class ArrowPlus
+  , class ArrowZero
   , aplus
   , azero
   , (<+>)
@@ -219,10 +219,10 @@ import Control.Arrow.Static
   , runStatic
   )
 import Control.Biapplicative
-  ( Biapplicative
+  ( class Biapplicative
   )
 import Control.Biapply
-  ( Biapply
+  ( class Biapply
   , bilift2
   , bilift3
   , (*>>)
@@ -238,7 +238,7 @@ import Control.Bind
   , (>=>)
   )
 import Control.Comonad
-  ( Comonad
+  ( class Comonad
   , extract
   )
 import Control.Comonad.Cofree
@@ -255,7 +255,7 @@ import Control.Comonad.Env
   , withEnv
   )
 import Control.Comonad.Env.Class
-  ( ComonadEnv
+  ( class ComonadEnv
   -- , ask -- TODO
   , asks
   -- , local -- TODO
@@ -272,7 +272,7 @@ import Control.Comonad.Store
   , store
   )
 import Control.Comonad.Store.Class
-  ( ComonadStore
+  ( class ComonadStore
   , experiment
   -- , peek -- TODO
   , peeks
@@ -290,7 +290,7 @@ import Control.Comonad.Traced
   , traced
   )
 import Control.Comonad.Traced.Class
-  ( ComonadTraced
+  ( class ComonadTraced
   -- , censor -- TODO
   -- , listen -- TODO
   -- , listens -- TODO
@@ -302,11 +302,11 @@ import Control.Comonad.Traced.Trans
   , runTracedT
   )
 import Control.Comonad.Trans
-  ( ComonadTrans
+  ( class ComonadTrans
   , lower
   )
 import Control.Extend
-  ( Extend
+  ( class Extend
   , duplicate
   , extend
   , (<<=)
@@ -315,7 +315,7 @@ import Control.Extend
   , (=>>)
   )
 import Control.Lazy
-  ( Lazy
+  ( class Lazy
   , defer
   , fix
   )
@@ -354,13 +354,10 @@ import Control.Monad.Aff.AVar
   , takeVar
   )
 import Control.Monad.Aff.Class
-  ( MonadAff
+  ( class MonadAff
   , liftAff
   )
-import Control.Monad.Aff.Console
-  ( -- log -- NOTE: Math
-  -- , print -- NOTE: Control.Monad.Eff.Console
-  )
+-- import Control.Monad.Aff.Console -- NOTE: Math, Control.Monad.Eff.Console
 import Control.Monad.Aff.Par
   ( Par(Par)
   , runPar
@@ -370,7 +367,7 @@ import Control.Monad.Aff.Unsafe
   , unsafeTrace
   )
 import Control.Monad.Cont.Class
-  ( MonadCont
+  ( class MonadCont
   , callCC
   )
 import Control.Monad.Cont.Trans
@@ -389,7 +386,7 @@ import Control.Monad.Eff
   , whileE
   )
 import Control.Monad.Eff.Class
-  ( MonadEff
+  ( class MonadEff
   , liftEff
   )
 import Control.Monad.Eff.Console
@@ -434,7 +431,7 @@ import Control.Monad.Eff.Unsafe
   ( unsafeInterleaveEff
   )
 import Control.Monad.Error.Class
-  ( MonadError
+  ( class MonadError
   , catchError
   , catchJust
   , throwError
@@ -507,7 +504,7 @@ import Control.Monad.RWS
   , withRWS
   )
 import Control.Monad.RWS.Class
-  ( MonadRWS
+  ( class MonadRWS
   )
 import Control.Monad.RWS.Trans
   ( RWSResult(RWSResult)
@@ -525,7 +522,7 @@ import Control.Monad.Reader
   , withReader
   )
 import Control.Monad.Reader.Class
-  ( MonadReader
+  ( class MonadReader
   -- , ask -- TODO
   -- , local -- TODO
   , reader
@@ -537,7 +534,7 @@ import Control.Monad.Reader.Trans
   , withReaderT
   )
 import Control.Monad.Rec.Class
-  ( MonadRec
+  ( class MonadRec
   , forever
   , tailRec
   , tailRecM
@@ -563,7 +560,7 @@ import Control.Monad.State
   , withState
   )
 import Control.Monad.State.Class
-  ( MonadState
+  ( class MonadState
   , get
   , gets
   , modify
@@ -587,7 +584,7 @@ import Control.Monad.Trampoline
   , suspend
   )
 import Control.Monad.Trans
-  ( MonadTrans
+  ( class MonadTrans
   , lift
   )
 import Control.Monad.Writer
@@ -597,7 +594,7 @@ import Control.Monad.Writer
   , runWriter
   )
 import Control.Monad.Writer.Class
-  ( MonadWriter
+  ( class MonadWriter
   -- , censor -- TODO
   -- , listen -- TODO
   -- , listens -- TODO
@@ -612,7 +609,7 @@ import Control.Monad.Writer.Trans
   , runWriterT
   )
 import Control.MonadPlus
-  ( MonadPlus
+  ( class MonadPlus
   , guard
   )
 import Control.Parallel
@@ -625,73 +622,10 @@ import Control.Parallel
   , withCallback
   )
 import Control.Plus
-  ( Plus
+  ( class Plus
   , empty
   )
-import Data.Array
-  ( -- alterAt -- TODO
-  -- , catMaybes -- TODO
-  -- , concat -- TODO
-  -- , concatMap -- TODO
-  -- , cons -- TODO
-  -- , delete -- TODO
-  -- , deleteAt -- TODO
-  -- , deleteBy -- TODO
-  -- , drop -- TODO
-  -- , dropWhile -- TODO
-  -- , elemIndex -- TODO
-  -- , elemLastIndex -- TODO
-  -- , filter -- TODO
-  -- , filterM -- TODO
-  -- , findIndex -- TODO
-  -- , findLastIndex -- TODO
-  -- , foldM -- TODO
-  -- , group -- TODO
-  -- , group' -- TODO
-  -- , groupBy -- TODO
-  -- , head -- TODO
-  -- , index -- TODO
-  -- , init -- TODO
-  -- , insert -- TODO
-  -- , insertAt -- TODO
-  -- , insertBy -- TODO
-  -- , intersect -- TODO
-  -- , intersectBy -- TODO
-  -- , last -- TODO
-  -- , length -- TODO
-  -- , many -- TODO
-  -- , mapMaybe -- TODO
-  -- , modifyAt -- TODO
-  -- , nub -- TODO
-  -- , nubBy -- TODO
-  -- , null -- TODO
-  -- , range -- TODO
-  -- , replicate -- NOTE: Data.Unfoldable
-  -- , replicateM -- TODO
-  -- , reverse -- TODO
-  -- , singleton -- NOTE: Data.Unfoldable
-  -- , slice -- TODO
-  -- , snoc -- TODO
-  -- , some -- TODO
-  -- , sort -- TODO
-  -- , sortBy -- TODO
-  -- , span -- TODO
-  -- , tail -- TODO
-  -- , take -- TODO
-  -- , takeWhile -- TODO
-  -- , uncons -- TODO
-  -- , union -- TODO
-  -- , unionBy -- TODO
-  -- , unzip -- TODO
-  -- , updateAt -- TODO
-  -- , zip -- TODO
-  -- , zipWith -- TODO
-  -- , zipWithA -- TODO
-  -- , (:) -- TODO
-  -- , (!!) -- TODO
-  -- , (..) -- TODO
-  -- , (\\) -- TODO
-  )
+-- import Data.Array -- TODO
 import Data.Array.ST
   ( Assoc()
   , STArray()
@@ -706,15 +640,9 @@ import Data.Array.ST
   , thaw
   , toAssocArray
   )
-import Data.Array.Unsafe
-  ( -- unsafeIndex -- TODO
-  -- , head -- TODO
-  -- , init -- TODO
-  -- , last -- TODO
-  -- , tail -- TODO
-  )
+-- import Data.Array.Unsafe -- TODO
 import Data.Bifoldable
-  ( Bifoldable
+  ( class Bifoldable
   , biall
   , biany
   , bifold
@@ -726,7 +654,7 @@ import Data.Bifoldable
   , bitraverse_
   )
 import Data.Bifunctor
-  ( Bifunctor
+  ( class Bifunctor
   , lmap
   , rmap
   )
@@ -754,7 +682,7 @@ import Data.Bifunctor.Wrap
   , unwrap
   )
 import Data.Bitraversable
-  ( Bitraversable
+  ( class Bitraversable
   , bifor
   , bisequence
   , bitraverse
@@ -848,7 +776,7 @@ import Data.Date.UTC
   , year
   )
 import Data.Distributive
-  ( Distributive
+  ( class Distributive
   , collect
   , cotraverse
   , distribute
@@ -939,7 +867,7 @@ import Data.Either.Unsafe
   )
 import Data.Enum
   ( Cardinality(Cardinality)
-  , Enum
+  , class Enum
   , cardinality
   , defaultFromEnum
   , defaultPred
@@ -1011,7 +939,7 @@ import Data.FingerTree
   , viewR
   )
 import Data.Foldable
-  ( Foldable
+  ( class Foldable
   , all
   , and
   , any
@@ -1056,14 +984,14 @@ import Data.Foreign
   , unsafeReadTagged
   )
 import Data.Foreign.Class
-  ( IsForeign
+  ( class IsForeign
   , read
   , readJSON
   , readProp
   , readWith
   )
 import Data.Foreign.Index
-  ( Index
+  ( class Index
   , errorAt
   , hasOwnProperty
   , hasProperty
@@ -1072,9 +1000,7 @@ import Data.Foreign.Index
   , prop
   , (!)
   )
-import Data.Foreign.Keys
-  ( -- keys -- TODO
-  )
+-- import Data.Foreign.Keys -- TODO
 import Data.Foreign.Null
   ( Null(Null)
   , readNull
@@ -1131,16 +1057,16 @@ import Data.Functor
   , ($>)
   )
 import Data.Functor.Contravariant
-  ( Contravariant
+  ( class Contravariant
   , cmap
   , (>#<)
   , (>$<)
   )
 import Data.Functor.Contravariant.Divisible
-  ( Decidable
-  , Decide
-  , Divide
-  , Divisible
+  ( class Decidable
+  , class Decide
+  , class Divide
+  , class Divisible
   , conquer
   , decide
   , decided
@@ -1156,12 +1082,12 @@ import Data.Functor.Coproduct
   , runCoproduct
   )
 import Data.Functor.Invariant
-  ( Invariant
+  ( class Invariant
   , imap
   , imapF
   )
 import Data.Generic
-  ( Generic
+  ( class Generic
   , GenericSignature(SigArray, SigBoolean, SigChar, SigInt, SigNumber, SigProd, SigRecord, SigString)
   , GenericSpine(SArray, SBoolean, SChar, SInt, SNumber, SProd, SRecord, SString)
   , fromSpine
@@ -1177,7 +1103,7 @@ import Data.Identity
   , runIdentity
   )
 import Data.Inject
-  ( Inject
+  ( class Inject
   , inj
   , prj
   )
@@ -1328,12 +1254,7 @@ import Data.List.Lazy
   -- , (..) -- TODO
   -- , (\\) -- TODO
   )
-import Data.List.Unsafe
-  ( -- head -- TODO
-  -- , init -- TODO
-  -- , last -- TODO
-  -- , tail -- TODO
-  )
+-- import Data.List.Unsafe -- TODO
 import Data.List.ZipList
   ( ZipList(ZipList)
   , runZipList
@@ -1384,7 +1305,7 @@ import Data.Maybe.Unsafe
   , unsafeThrow
   )
 import Data.Monoid
-  ( Monoid
+  ( class Monoid
   , mempty
   )
 import Data.Monoid.Additive
@@ -1442,27 +1363,27 @@ import Data.Predicate
   , runPredicate
   )
 import Data.Profunctor
-  ( Profunctor
+  ( class Profunctor
   , arr
   -- , lmap -- NOTE: Data.Bifunctor
   -- , rmap -- NOTE: Data.Bifunctor
   )
 import Data.Profunctor.Choice
-  ( Choice
+  ( class Choice
   , (+++)
   , (|||)
   )
 import Data.Profunctor.Closed
-  ( Closed
+  ( class Closed
   , closed
   )
 import Data.Profunctor.Cochoice
-  ( Cochoice
+  ( class Cochoice
   , unleft
   , unright
   )
 import Data.Profunctor.Costrong
-  ( Costrong
+  ( class Costrong
   , unfirst
   , unsecond
   )
@@ -1471,7 +1392,7 @@ import Data.Profunctor.Star
   , runStar
   )
 import Data.Profunctor.Strong
-  ( Strong
+  ( class Strong
   , (***)
   , (&&&)
   )
@@ -1611,9 +1532,7 @@ import Data.StrMap.ST
 import Data.StrMap.ST.Unsafe
   ( unsafeGet
   )
-import Data.StrMap.Unsafe
-  ( -- unsafeIndex -- TODO
-  )
+-- import Data.StrMap.Unsafe -- TODO
 import Data.String
   ( charAt
   , charCodeAt
@@ -1684,7 +1603,7 @@ import Data.Time
   , Minutes(Minutes)
   , SecondOfMinute(SecondOfMinute)
   , Seconds(Seconds)
-  , TimeValue
+  , class TimeValue
   , fromHours
   , fromMilliseconds
   , fromMinutes
@@ -1696,7 +1615,7 @@ import Data.Time
   )
 import Data.Traversable
   ( Accum()
-  , Traversable
+  , class Traversable
   , for
   , mapAccumL
   , mapAccumR
@@ -1754,7 +1673,7 @@ import Data.Tuple.Nested
   , (/\)
   )
 import Data.Unfoldable
-  ( Unfoldable
+  ( class Unfoldable
   , none
   , replicate
   , replicateA
@@ -1767,12 +1686,7 @@ import Data.Validation
   , isValid
   , runV
   )
-import Data.Validation.Semiring
-  ( -- V() -- NOTE: Data.Validation
-  -- , invalid -- NOTE: Data.Validation
-  -- , isValid -- NOTE: Data.Validation
-  -- , runV -- NOTE: Data.Validation
-  )
+-- import Data.Validation.Semiring -- NOTE: Data.Validation
 import Data.Yoneda
   ( Yoneda(Yoneda)
   , runYoneda
@@ -1892,26 +1806,26 @@ import Optic.Types
   , SettingP()
   )
 import Prelude
-  ( Applicative
-  , Apply
-  , Bind
-  , BooleanAlgebra
-  , Bounded
-  , BoundedOrd
-  , Category
-  , DivisionRing
-  , Eq
-  , Functor
-  , ModuloSemiring
-  , Monad
-  , Num
-  , Ord
+  ( class Applicative
+  , class Apply
+  , class Bind
+  , class BooleanAlgebra
+  , class Bounded
+  , class BoundedOrd
+  , class Category
+  , class DivisionRing
+  , class Eq
+  , class Functor
+  , class ModuloSemiring
+  , class Monad
+  , class Num
+  , class Ord
   , Ordering(LT, EQ, GT)
-  , Ring
-  , Semigroup
-  , Semigroupoid
-  , Semiring
-  , Show
+  , class Ring
+  , class Semigroup
+  , class Semigroupoid
+  , class Semiring
+  , class Show
   , Unit()
   , add
   , ap
