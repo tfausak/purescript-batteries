@@ -4,10 +4,6 @@ module Batteries
   , module Control.Alt
   , module Control.Alternative
   , module Control.Apply
-  , module Control.Arrow
-  , module Control.Arrow.Cokleisli
-  , module Control.Arrow.Kleisli
-  , module Control.Arrow.Static
   , module Control.Biapplicative
   , module Control.Biapply
   , module Control.Bind
@@ -25,19 +21,16 @@ module Batteries
   , module Control.Comonad.Trans
   , module Control.Extend
   , module Control.Lazy
-  , module Control.Monad
   , module Control.Monad.Aff
   , module Control.Monad.Aff.AVar
   , module Control.Monad.Aff.Class
   -- , module Control.Monad.Aff.Console
-  , module Control.Monad.Aff.Par
   , module Control.Monad.Aff.Unsafe
   , module Control.Monad.Cont.Class
   , module Control.Monad.Cont.Trans
   , module Control.Monad.Eff
   , module Control.Monad.Eff.Class
   , module Control.Monad.Eff.Console
-  , module Control.Monad.Eff.Console.Unsafe
   , module Control.Monad.Eff.Exception
   , module Control.Monad.Eff.Random
   , module Control.Monad.Eff.Ref
@@ -66,8 +59,9 @@ module Batteries
   , module Control.Monad.Writer.Class
   , module Control.Monad.Writer.Trans
   , module Control.MonadPlus
-  , module Control.Parallel
+  , module Control.Parallel.Class
   , module Control.Plus
+  , module Control.Semigroupoid
   -- , module Data.Array
   , module Data.Array.ST
   -- , module Data.Array.Unsafe
@@ -86,17 +80,20 @@ module Batteries
   , module Data.Comparison
   , module Data.Const
   , module Data.Coyoneda
-  , module Data.Date
-  , module Data.Date.Locale
-  , module Data.Date.UTC
+  , module Data.DateTime
+  , module Data.DateTime.Instant
+  , module Data.DateTime.Locale
+  , module Data.Decide
+  , module Data.Decidable
   , module Data.Distributive
+  , module Data.Divide
+  , module Data.Divisible
   , module Data.Either
   , module Data.Either.Nested
-  , module Data.Either.Unsafe
   , module Data.Enum
   , module Data.Equivalence
   , module Data.Exists
-  , module Data.FingerTree
+  -- , module Data.FingerTree
   , module Data.Foldable
   , module Data.Foreign
   , module Data.Foreign.Class
@@ -106,12 +103,13 @@ module Batteries
   , module Data.Foreign.NullOrUndefined
   , module Data.Foreign.Undefined
   , module Data.Function
+  , module Data.Function.Uncurried
   , module Data.Functor
   , module Data.Functor.Contravariant
-  , module Data.Functor.Contravariant.Divisible
   , module Data.Functor.Coproduct
   , module Data.Functor.Invariant
   , module Data.Generic
+  , module Data.HeytingAlgebra
   , module Data.Identity
   , module Data.Inject
   , module Data.Int
@@ -125,7 +123,6 @@ module Batteries
   , module Data.Maybe
   , module Data.Maybe.First
   , module Data.Maybe.Last
-  , module Data.Maybe.Unsafe
   , module Data.Monoid
   , module Data.Monoid.Additive
   , module Data.Monoid.Conj
@@ -137,18 +134,24 @@ module Batteries
   , module Data.Nullable
   , module Data.Op
   , module Data.Ord
+  , module Data.Ord.Down
+  , module Data.Ord.Max
+  , module Data.Ord.Min
+  , module Data.Ord.Unsafe
+  , module Data.Ordering
   , module Data.Predicate
   , module Data.Profunctor
   , module Data.Profunctor.Choice
   , module Data.Profunctor.Closed
   , module Data.Profunctor.Cochoice
+  , module Data.Profunctor.Costar
   , module Data.Profunctor.Costrong
   , module Data.Profunctor.Star
   , module Data.Profunctor.Strong
   , module Data.Semiring.Free
-  , module Data.Sequence
-  , module Data.Sequence.NonEmpty
-  , module Data.Sequence.Ordered
+  -- , module Data.Sequence
+  -- , module Data.Sequence.NonEmpty
+  -- , module Data.Sequence.Ordered
   , module Data.Set
   , module Data.StrMap
   , module Data.StrMap.ST
@@ -158,14 +161,14 @@ module Batteries
   , module Data.String.Regex
   , module Data.String.Unsafe
   , module Data.These
-  , module Data.Time
   , module Data.Traversable
   , module Data.Tuple
   , module Data.Tuple.Nested
   , module Data.Unfoldable
-  , module Data.Validation
+  , module Data.Validation.Semigroup
   -- , module Data.Validation.Semiring
   , module Data.Yoneda
+  , module Debug.Trace
   , module Global
   , module Global.Unsafe
   , module Math
@@ -191,32 +194,12 @@ import Control.Alternative
   ( class Alternative
   )
 import Control.Apply
-  ( lift2
+  ( applyFirst
+  , applySecond
+  , lift2
   , lift3
   , lift4
   , lift5
-  , (*>)
-  , (<*)
-  )
-import Control.Arrow
-  ( class Arrow
-  , class ArrowPlus
-  , class ArrowZero
-  , aplus
-  , azero
-  , (<+>)
-  )
-import Control.Arrow.Cokleisli
-  ( Cokleisli(Cokleisli)
-  , runCokleisli
-  )
-import Control.Arrow.Kleisli
-  ( Kleisli(Kleisli)
-  , runKleisli
-  )
-import Control.Arrow.Static
-  ( Static(Static)
-  , runStatic
   )
 import Control.Biapplicative
   ( class Biapplicative
@@ -231,24 +214,24 @@ import Control.Biapply
   , (<<$>>)
   )
 import Control.Bind
-  ( ifM
+  ( bindFlipped
+  , composeKleisli
+  , composeKleisliFlipped
+  , ifM
   , join
-  , (<=<)
-  , (=<<)
-  , (>=>)
   )
 import Control.Comonad
   ( class Comonad
   , extract
   )
 import Control.Comonad.Cofree
-  ( Cofree()
+  ( Cofree
   -- , head -- TODO
   , mkCofree
   -- , tail -- TODO
   )
 import Control.Comonad.Env
-  ( Env()
+  ( Env
   , env
   , mapEnv
   , runEnv
@@ -267,7 +250,7 @@ import Control.Comonad.Env.Trans
   , withEnvT
   )
 import Control.Comonad.Store
-  ( Store()
+  ( Store
   , runStore
   , store
   )
@@ -285,7 +268,7 @@ import Control.Comonad.Store.Trans
   , runStoreT
   )
 import Control.Comonad.Traced
-  ( Traced()
+  ( Traced
   , runTraced
   , traced
   )
@@ -319,20 +302,17 @@ import Control.Lazy
   , defer
   , fix
   )
-import Control.Monad
-  ( unless
-  , when
-  )
 import Control.Monad.Aff
-  ( Aff()
+  ( Aff
   , Canceler(Canceler)
-  , PureAff()
+  , PureAff
   , apathize
   , attempt
   , cancel
   , cancelWith
   , finally
   , forkAff
+  , forkAll
   , later
   , later'
   , launchAff
@@ -343,9 +323,9 @@ import Control.Monad.Aff
   , runAff
   )
 import Control.Monad.Aff.AVar
-  ( AffAVar()
-  , AVAR()
-  , AVar()
+  ( AffAVar
+  , AVAR
+  , AVar
   , killVar
   , makeVar
   , makeVar'
@@ -357,11 +337,7 @@ import Control.Monad.Aff.Class
   ( class MonadAff
   , liftAff
   )
--- import Control.Monad.Aff.Console -- NOTE: Math, Control.Monad.Eff.Console
-import Control.Monad.Aff.Par
-  ( Par(Par)
-  , runPar
-  )
+-- import Control.Monad.Aff.Console -- NOTE: Control.Monad.Eff.Console
 import Control.Monad.Aff.Unsafe
   ( unsafeInterleaveAff
   , unsafeTrace
@@ -377,8 +353,8 @@ import Control.Monad.Cont.Trans
   , withContT
   )
 import Control.Monad.Eff
-  ( Eff()
-  , Pure()
+  ( Eff
+  , Pure
   , forE
   , foreachE
   , runPure
@@ -390,18 +366,15 @@ import Control.Monad.Eff.Class
   , liftEff
   )
 import Control.Monad.Eff.Console
-  ( CONSOLE()
-  -- , error -- NOTE: Control.Monad.Eff.Exception
-  -- , log -- NOTE: Math
-  , print
-  )
-import Control.Monad.Eff.Console.Unsafe
-  ( errorAny
-  , logAny
+  ( CONSOLE
+  , errorShow
+  , infoShow
+  , logShow
+  , warnShow
   )
 import Control.Monad.Eff.Exception
-  ( EXCEPTION()
-  , Error()
+  ( EXCEPTION
+  , Error
   , catchException
   , error
   , message
@@ -409,15 +382,15 @@ import Control.Monad.Eff.Exception
   , throwException
   )
 import Control.Monad.Eff.Random
-  ( RANDOM()
+  ( RANDOM
   , random
   , randomBool
   , randomInt
   , randomRange
   )
 import Control.Monad.Eff.Ref
-  ( REF()
-  , Ref()
+  ( REF
+  , Ref
   , modifyRef
   , modifyRef'
   , newRef
@@ -437,7 +410,7 @@ import Control.Monad.Error.Class
   , throwError
   )
 import Control.Monad.Except
-  ( Except()
+  ( Except
   , except
   , mapExcept
   , runExcept
@@ -450,18 +423,18 @@ import Control.Monad.Except.Trans
   , withExceptT
   )
 import Control.Monad.Free
-  ( Free()
+  ( Free
+  , hoistFree
   , foldFree
   , injF
   , liftF
   , liftFI
-  , mapF
   , runFree
   , runFreeM
   , suspendF
   )
 import Control.Monad.List.Trans
-  ( ListT()
+  ( ListT
   -- , catMaybes -- TODO
   -- , cons -- TODO
   -- , drop -- TODO
@@ -495,7 +468,7 @@ import Control.Monad.Maybe.Trans
   , runMaybeT
   )
 import Control.Monad.RWS
-  ( RWS()
+  ( RWS
   , evalRWS
   , execRWS
   , mapRWS
@@ -516,7 +489,7 @@ import Control.Monad.RWS.Trans
   , withRWST
   )
 import Control.Monad.Reader
-  ( Reader()
+  ( Reader
   , mapReader
   , runReader
   , withReader
@@ -542,8 +515,8 @@ import Control.Monad.Rec.Class
   , tailRecM3
   )
 import Control.Monad.ST
-  ( ST()
-  , STRef()
+  ( ST
+  , STRef
   , modifySTRef
   , newSTRef
   , pureST
@@ -552,7 +525,7 @@ import Control.Monad.ST
   , writeSTRef
   )
 import Control.Monad.State
-  ( State()
+  ( State
   , evalState
   , execState
   , mapState
@@ -576,7 +549,7 @@ import Control.Monad.State.Trans
   , withStateT
   )
 import Control.Monad.Trampoline
-  ( Trampoline()
+  ( Trampoline
   , delay
   , delay'
   , done
@@ -588,7 +561,7 @@ import Control.Monad.Trans
   , lift
   )
 import Control.Monad.Writer
-  ( Writer()
+  ( Writer
   , execWriter
   , mapWriter
   , runWriter
@@ -612,23 +585,29 @@ import Control.MonadPlus
   ( class MonadPlus
   , guard
   )
-import Control.Parallel
-  ( Parallel()
-  , inParallel
+import Control.Parallel.Class
+  ( class MonadPar
+  , class MonadRace
+  , Parallel
   , par
+  , parTraverse
+  , parTraverse_
+  , parallel
   , race
   , runParallel
-  , runParallelWith
-  , withCallback
+  , stall
   )
 import Control.Plus
   ( class Plus
   , empty
   )
+import Control.Semigroupoid
+  ( composeFlipped
+  )
 -- import Data.Array -- TODO
 import Data.Array.ST
-  ( Assoc()
-  , STArray()
+  ( Assoc
+  , STArray
   , emptySTArray
   , freeze
   , peekSTArray
@@ -707,7 +686,6 @@ import Data.Char
   ( fromCharCode
   , toCharCode
   -- , toLower -- NOTE: Data.String
-  , toString
   -- , toUpper -- NOTE: Data.String
   )
 import Data.Comparison
@@ -721,65 +699,82 @@ import Data.Const
   )
 import Data.Coyoneda
   ( Coyoneda(Coyoneda)
-  , CoyonedaF(CoyonedaF)
+  , CoyonedaF
   , coyoneda
+  , hoistCoyoneda
   , liftCoyoneda
-  , liftCoyonedaT
-  , liftCoyonedaTF
   , lowerCoyoneda
   )
-import Data.Date
-  ( Date()
-  , DayOfMonth(DayOfMonth)
-  , DayOfWeek(Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday)
-  , JSDate()
-  , LocaleOffset(LocaleOffset)
+import Data.DateTime
+  ( Date
+  , DateTime(DateTime)
+  , Day
+  , Hour
+  , Millisecond
+  , Minute
   , Month(April, August, December, February, January, July, June, March, May, November, October, September)
-  , Now()
-  , Year(Year)
-  , fromEpochMilliseconds
-  , fromJSDate
-  -- , fromString -- TODO
-  , fromStringStrict
-  , now
-  , nowEpochMilliseconds
-  , timezoneOffset
-  , toEpochMilliseconds
-  , toJSDate
-  )
-import Data.Date.Locale
-  ( Locale()
-  -- , date -- NOTE: Data.Date.UTC
-  -- , dateTime -- NOTE: Data.Date.UTC
-  -- , dayOfMonth -- NOTE: Data.Date.UTC
-  -- , dayOfWeek -- NOTE: Data.Date.UTC
-  -- , hourOfDay -- NOTE: Data.Date.UTC
-  -- , millisecondOfSecond -- NOTE: Data.Date.UTC
-  -- , minuteOfHour -- NOTE: Data.Date.UTC
-  -- , month -- NOTE: Data.Date.UTC
-  -- , secondOfMinute -- NOTE: Data.Date.UTC
-  , toLocaleDateString
-  , toLocaleString
-  , toLocaleTimeString
-  -- , year -- NOTE: Data.Date.UTC
-  )
-import Data.Date.UTC
-  ( date
-  , dateTime
-  , dayOfMonth
-  , dayOfWeek
-  , hourOfDay
-  , millisecondOfSecond
-  , minuteOfHour
+  , Second
+  , Time(Time)
+  , Weekday(Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday)
+  , Year
+  -- , adjust -- NOTE: Data.Sequence
+  , canonicalDate
+  , date
+  , day
+  , diff
+  , exactDate
+  , hour
+  , millisecond
+  , minute
   , month
-  , secondOfMinute
+  -- , second -- NOTE: Data.Profunctor.Strong
+  , setHour
+  , setMillisecond
+  , setMinute
+  , setSecond
+  , time
+  , weekday
   , year
+  )
+import Data.DateTime.Instant
+  ( Instant
+  , fromDateTime
+  , instant
+  , toDateTime
+  , unInstant
+  )
+import Data.DateTime.Locale
+  ( LocalDate
+  , LocalDateTime
+  , LocalTime
+  , LocalValue(LocalValue)
+  , Locale(Locale)
+  , LocaleName(LocaleName)
+  )
+import Data.Decide
+  ( class Decide
+  , choose
+  , chosen
+  )
+import Data.Decidable
+  ( class Decidable
+  , lose
+  , lost
   )
 import Data.Distributive
   ( class Distributive
   , collect
   , cotraverse
   , distribute
+  )
+import Data.Divide
+  ( class Divide
+  , divide
+  , divided
+  )
+import Data.Divisible
+  ( class Divisible
+  , conquer
   )
 import Data.Either
   ( Either(Left, Right)
@@ -788,15 +783,15 @@ import Data.Either
   , isRight
   )
 import Data.Either.Nested
-  ( Either10()
-  , Either2()
-  , Either3()
-  , Either4()
-  , Either5()
-  , Either6()
-  , Either7()
-  , Either8()
-  , Either9()
+  ( Either10
+  , Either2
+  , Either3
+  , Either4
+  , Either5
+  , Either6
+  , Either7
+  , Either8
+  , Either9
   , either10
   , either10of10
   , either1of10
@@ -861,27 +856,25 @@ import Data.Either.Nested
   , either9of10
   , either9of9
   )
-import Data.Either.Unsafe
-  ( fromLeft
-  , fromRight
-  )
 import Data.Enum
-  ( Cardinality(Cardinality)
+  ( class BoundedEnum
   , class Enum
+  , Cardinality(Cardinality)
   , cardinality
+  , defaultCardinality
   , defaultFromEnum
   , defaultPred
   , defaultSucc
   , defaultToEnum
+  , downFrom
   , enumFromThenTo
   , enumFromTo
   , fromEnum
-  , intFromTo
-  , intStepFromTo
   , pred
   , runCardinality
   , succ
   , toEnum
+  , upFrom
   )
 import Data.Equivalence
   ( Equivalence(Equivalence)
@@ -890,54 +883,54 @@ import Data.Equivalence
   , runEquivalence
   )
 import Data.Exists
-  ( Exists()
+  ( Exists
   , mkExists
   , runExists
   )
-import Data.FingerTree
-  ( Digit()
-  , FingerTree(Deep, Empty, Single)
-  , LazySplit(LazySplit)
-  , Node(Node2, Node3)
-  , Split(Split)
-  , ViewL(ConsL, NilL)
-  , ViewR(NilR, SnocR)
-  , app3
+-- import Data.FingerTree -- FIXME: update upstream
+  -- ( Digit
+  -- , FingerTree(Deep, Empty, Single)
+  -- , LazySplit(LazySplit)
+  -- , Node(Node2, Node3)
+  -- , Split(Split)
+  -- , ViewL(ConsL, NilL)
+  -- , ViewR(NilR, SnocR)
+  -- , app3
   -- , append -- NOTE: Prelude
-  , compareFingerTree
+  -- , compareFingerTree
   -- , cons -- TODO
-  , consAll
-  , deep
-  , deepL
-  , deepR
-  , eqFingerTree
+  -- , consAll
+  -- , deep
+  -- , deepL
+  -- , deepR
+  -- , eqFingerTree
   -- , filter  -- TODO
   -- , fullyForce -- TODO
   -- , head -- TODO
-  , headDigit
+  -- , headDigit
   -- , init -- TODO
-  , initDigit
+  -- , initDigit
   -- , isEmpty -- TODO
   -- , last -- TODO
-  , lastDigit
-  , lazyEmpty
-  , node2
-  , node3
-  , nodes
-  , nodeToDigit
+  -- , lastDigit
+  -- , lazyEmpty
+  -- , node2
+  -- , node3
+  -- , nodes
+  -- , nodeToDigit
   -- , snoc -- TODO
-  , snocAll
+  -- , snocAll
   -- , split -- NOTE: Data.String.Regex
   -- , tail -- TODO
-  , tailDigit
-  , toFingerTree
-  , unfoldLeft
-  , unfoldRight
-  , unsafeSplitDigit
-  , unsafeSplitTree
-  , viewL
-  , viewR
-  )
+  -- , tailDigit
+  -- , toFingerTree
+  -- , unfoldLeft
+  -- , unfoldRight
+  -- , unsafeSplitDigit
+  -- , unsafeSplitTree
+  -- , viewL
+  -- , viewR
+  -- )
 import Data.Foldable
   ( class Foldable
   , all
@@ -953,7 +946,6 @@ import Data.Foldable
   , intercalate
   , maximum
   , maximumBy
-  , mconcat
   , minimum
   , minimumBy
   , notElem
@@ -964,9 +956,9 @@ import Data.Foldable
   , traverse_
   )
 import Data.Foreign
-  ( Foreign()
+  ( Foreign
   , ForeignError(ErrorAtIndex, ErrorAtProperty, JSONError, TypeMismatch)
-  , F()
+  , F
   , isArray
   , isNull
   , isUndefined
@@ -1004,30 +996,34 @@ import Data.Foreign.Index
 import Data.Foreign.Null
   ( Null(Null)
   , readNull
-  , runNull
+  , unNull
   )
 import Data.Foreign.NullOrUndefined
   ( NullOrUndefined(NullOrUndefined)
   , readNullOrUndefined
-  , runNullOrUndefined
+  , unNullOrUndefined
   )
 import Data.Foreign.Undefined
   ( Undefined(Undefined)
   , readUndefined
-  , runUndefined
+  , unUndefined
   )
 import Data.Function
-  ( Fn0()
-  , Fn1()
-  , Fn10()
-  , Fn2()
-  , Fn3()
-  , Fn4()
-  , Fn5()
-  , Fn6()
-  , Fn7()
-  , Fn8()
-  , Fn9()
+  ( applyFlipped
+  , on
+  )
+import Data.Function.Uncurried
+  ( Fn0
+  , Fn1
+  , Fn10
+  , Fn2
+  , Fn3
+  , Fn4
+  , Fn5
+  , Fn6
+  , Fn7
+  , Fn8
+  , Fn9
   , mkFn0
   , mkFn1
   , mkFn10
@@ -1039,7 +1035,6 @@ import Data.Function
   , mkFn7
   , mkFn8
   , mkFn9
-  , on
   , runFn0
   , runFn1
   , runFn10
@@ -1053,8 +1048,9 @@ import Data.Function
   , runFn9
   )
 import Data.Functor
-  ( (<$)
-  , ($>)
+  ( mapFlipped
+  , voidLeft
+  , voidRight
   )
 import Data.Functor.Contravariant
   ( class Contravariant
@@ -1062,24 +1058,12 @@ import Data.Functor.Contravariant
   , (>#<)
   , (>$<)
   )
-import Data.Functor.Contravariant.Divisible
-  ( class Decidable
-  , class Decide
-  , class Divide
-  , class Divisible
-  , conquer
-  , decide
-  , decided
-  , divide
-  , divided
-  , lose
-  )
 import Data.Functor.Coproduct
   ( Coproduct(Coproduct)
   , coproduct
   , left
   , right
-  , runCoproduct
+  , unCoproduct
   )
 import Data.Functor.Invariant
   ( class Invariant
@@ -1097,6 +1081,11 @@ import Data.Generic
   , isValidSpine
   , toSignature
   , toSpine
+  )
+import Data.HeytingAlgebra
+  ( ff
+  , implies
+  , tt
   )
 import Data.Identity
   ( Identity(Identity)
@@ -1127,7 +1116,7 @@ import Data.Int.Bits
   , (.|.)
   )
 import Data.Lazy
-  ( -- Lazy() -- NOTE: Control.Lazy
+  ( -- Lazy -- NOTE: Control.Lazy
   -- , defer -- NOTE: Control.Lazy
     force
   )
@@ -1260,7 +1249,7 @@ import Data.List.ZipList
   , runZipList
   )
 import Data.Map
-  ( Map()
+  ( Map
   -- , alter -- TODO
   -- , checkValid -- TODO
   -- , delete -- TODO
@@ -1300,10 +1289,6 @@ import Data.Maybe.Last
   ( Last(Last)
   , runLast
   )
-import Data.Maybe.Unsafe
-  ( fromJust
-  , unsafeThrow
-  )
 import Data.Monoid
   ( class Monoid
   , mempty
@@ -1333,11 +1318,10 @@ import Data.Monoid.Multiplicative
   , runMultiplicative
   )
 import Data.NaturalTransformation
-  ( NaturalTransformation()
-  , Natural()
+  ( NaturalTransformation
   )
 import Data.Nullable
-  ( Nullable()
+  ( Nullable
   , toMaybe
   , toNullable
   )
@@ -1346,16 +1330,28 @@ import Data.Op
   , runOp
   )
 import Data.Ord
+  ( abs
+  , greaterThan
+  , greaterThanOrEq
+  , lessThan
+  , lessThanOrEq
+  , signum
+  )
+import Data.Ordering
+  ( invert
+  )
+import Data.Ord.Unsafe
+  ( unsafeCompare
+  )
+import Data.Ord.Down
   ( Down(Down)
-  , Max(Max)
-  , Min(Min)
-  , between
-  , clamp
-  , comparing
-  , invert
-  , max
-  , min
+  )
+import Data.Ord.Max
+  ( Max(Max)
   , runMax
+  )
+import Data.Ord.Min
+  ( Min(Min)
   , runMin
   )
 import Data.Predicate
@@ -1365,11 +1361,16 @@ import Data.Predicate
 import Data.Profunctor
   ( class Profunctor
   , arr
+  , dimap
   -- , lmap -- NOTE: Data.Bifunctor
   -- , rmap -- NOTE: Data.Bifunctor
   )
 import Data.Profunctor.Choice
   ( class Choice
+  , fanin
+  -- , left -- NOTE: Data.Functor.Coproduct
+  -- , right -- NOTE: Data.Functor.Coproduct
+  , splitChoice
   , (+++)
   , (|||)
   )
@@ -1382,6 +1383,10 @@ import Data.Profunctor.Cochoice
   , unleft
   , unright
   )
+import Data.Profunctor.Costar
+  ( Costar(Costar)
+  , unCostar
+  )
 import Data.Profunctor.Costrong
   ( class Costrong
   , unfirst
@@ -1389,23 +1394,27 @@ import Data.Profunctor.Costrong
   )
 import Data.Profunctor.Star
   ( Star(Star)
-  , runStar
+  , unStar
   )
 import Data.Profunctor.Strong
   ( class Strong
+  , fanout
+  , first
+  , second
+  , splitStrong
   , (***)
   , (&&&)
   )
 import Data.Semiring.Free
-  ( -- Free() -- NOTE: Control.Monad.Free
+  ( -- Free -- NOTE: Control.Monad.Free
     free
   , liftFree
   , lowerFree
   -- , runFree -- NOTE: Control.Monad.Free
   )
-import Data.Sequence
-  ( Seq()
-  , adjust
+-- import Data.Sequence -- FIXME: update upstream
+  -- ( Seq
+  -- , adjust
   -- , append -- NOTE: Prelude
   -- , concat -- TODO
   -- , concatMap -- TODO
@@ -1415,7 +1424,7 @@ import Data.Sequence
   -- , filter -- TODO
   -- , fullyForce -- TODO
   -- , head -- TODO
-  , inBounds
+  -- , inBounds
   -- , index -- TODO
   -- , init -- TODO
   -- , last -- TODO
@@ -1426,14 +1435,14 @@ import Data.Sequence
   -- , singleton -- NOTE: Data.Unfoldable
   -- , snoc -- TODO
   -- , sort -- TODO
-  , splitAt
+  -- , splitAt
   -- , tail -- TODO
   -- , take -- TODO
   -- , uncons -- TODO
-  , unsnoc
-  )
-import Data.Sequence.NonEmpty
-  ( -- Seq(Seq) -- NOTE: Data.Sequence
+  -- , unsnoc
+  -- )
+-- import Data.Sequence.NonEmpty -- FIXME: update upstream
+  -- ( -- Seq(Seq) -- NOTE: Data.Sequence
   -- , adjust -- NOTE: Data.Sequence
   -- , append -- NOTE: Prelude
   -- , cons -- TODO
@@ -1452,28 +1461,28 @@ import Data.Sequence.NonEmpty
   -- , splitAt -- NOTE: Data.Sequence
   -- , tail -- TODO
   -- , take -- TODO
-    toPlain
+  -- toPlain
   -- , uncons -- TODO
   -- , unsnoc -- NOTE: Data.Sequence
-  )
-import Data.Sequence.Ordered
-  ( OrdSeq()
-  , deleteAll
+  -- )
+-- import Data.Sequence.Ordered -- FIXME: update upstream
+  -- ( OrdSeq
+  -- , deleteAll
   -- , empty -- NOTE: Control.Plus
-  , greatest
+  -- , greatest
   -- , insert -- TODO
   -- , intersection -- TODO: Data.Set
-  , least
+  -- , least
   -- , length -- TODO
-  , merge
+  -- , merge
   -- , null -- TODO
-  , partition
-  , popGreatest
-  , popLeast
+  -- , partition
+  -- , popGreatest
+  -- , popLeast
   -- , sort -- TODO
-  )
+  -- )
 import Data.Set
-  ( Set()
+  ( Set
   -- , checkValid -- TODO
   -- , delete -- TODO
   , difference
@@ -1492,7 +1501,7 @@ import Data.Set
   -- , unions -- TODO
   )
 import Data.StrMap
-  ( StrMap()
+  ( StrMap
   -- , all -- NOTE: Data.Foldable
   -- , alter -- TODO
   -- , delete -- TODO
@@ -1523,7 +1532,7 @@ import Data.StrMap
   -- , values -- TODO
   )
 import Data.StrMap.ST
-  ( STStrMap()
+  ( STStrMap
   -- , delete -- TODO
   , new
   -- , peek -- TODO
@@ -1537,10 +1546,8 @@ import Data.String
   ( charAt
   , charCodeAt
   , contains
-  , count
   -- , drop -- TODO
   -- , dropWhile -- TODO
-  , fromChar
   , fromCharArray
   , indexOf
   , indexOf'
@@ -1565,8 +1572,8 @@ import Data.String
   -- , uncons -- TODO
   )
 import Data.String.Regex
-  ( Regex()
-  , RegexFlags()
+  ( Regex
+  , RegexFlags
   , flags
   , match
   , noFlags
@@ -1594,28 +1601,9 @@ import Data.These
   , theseRight
   , thisOrBoth
   )
-import Data.Time
-  ( HourOfDay(HourOfDay)
-  , Hours(Hours)
-  , MillisecondOfSecond(MillisecondOfSecond)
-  , Milliseconds(Milliseconds)
-  , MinuteOfHour(MinuteOfHour)
-  , Minutes(Minutes)
-  , SecondOfMinute(SecondOfMinute)
-  , Seconds(Seconds)
-  , class TimeValue
-  , fromHours
-  , fromMilliseconds
-  , fromMinutes
-  , fromSeconds
-  , toHours
-  , toMilliseconds
-  , toMinutes
-  , toSeconds
-  )
 import Data.Traversable
-  ( Accum()
-  , class Traversable
+  ( class Traversable
+  , Accum
   , for
   , mapAccumL
   , mapAccumR
@@ -1634,15 +1622,15 @@ import Data.Tuple
   , uncurry
   )
 import Data.Tuple.Nested
-  ( Tuple10()
-  , Tuple2()
-  , Tuple3()
-  , Tuple4()
-  , Tuple5()
-  , Tuple6()
-  , Tuple7()
-  , Tuple8()
-  , Tuple9()
+  ( Tuple10
+  , Tuple2
+  , Tuple3
+  , Tuple4
+  , Tuple5
+  , Tuple6
+  , Tuple7
+  , Tuple8
+  , Tuple9
   , curry10
   , curry2
   , curry3
@@ -1680,18 +1668,29 @@ import Data.Unfoldable
   , singleton
   , unfoldr
   )
-import Data.Validation
-  ( V()
+import Data.Validation.Semigroup
+  ( V
   , invalid
   , isValid
-  , runV
+  , unV
   )
--- import Data.Validation.Semiring -- NOTE: Data.Validation
+-- import Data.Validation.Semiring -- NOTE: Data.Validation.Semigroup
 import Data.Yoneda
   ( Yoneda(Yoneda)
   , runYoneda
   , liftYoneda
   , lowerYoneda
+  )
+import Debug.Trace
+  ( spy
+  , trace
+  , traceA
+  , traceAny
+  , traceAnyA
+  , traceAnyM
+  , traceShow
+  , traceShowA
+  , traceShowM
   )
 import Global
   ( decodeURI
@@ -1709,8 +1708,8 @@ import Global.Unsafe
   ( unsafeStringify
   )
 import Math
-  ( Radians()
-  , abs
+  ( Radians
+  -- , abs -- NOTE: Prelude
   , acos
   , asin
   , atan
@@ -1725,8 +1724,8 @@ import Math
   , log
   , log10e
   , log2e
-  -- , max -- NOTE: Data.Ord
-  -- , min -- NOTE: Data.Ord
+  -- , max -- NOTE: Prelude
+  -- , min -- NOTE: Prelude
   , pi
   , pow
   -- , round -- NOTE: Data.Int
@@ -1743,6 +1742,7 @@ import Optic.Core
 import Optic.Getter
   ( to
   , view
+  , weiv
   , (^.)
   )
 import Optic.Laws.Lens
@@ -1752,7 +1752,8 @@ import Optic.Laws.Lens
   , validLens
   )
 import Optic.Lens
-  ( lens
+  ( flip'
+  , lens
   , (??)
   )
 import Optic.Prism
@@ -1767,43 +1768,50 @@ import Optic.Prism
   , withPrism
   )
 import Optic.Setter
+  -- ( add -- NOTE: Prelude
+  -- , and -- NOTE: Prelude
   ( argument
+  -- , concat -- NOTE: Data.List
   , contramapped
+  -- , div -- NOTE: Prelude
   , mapped
+  -- , mul -- NOTE: Prelude
+  -- , or -- NOTE: Prelude
   , over
   , set
   , set'
+  , setJust
   , sets
+  -- , sub -- NOTE: Prelude
   , (-~)
   , (?~)
   , (.~)
   , (*~)
-  , (//~)
+  , (/~)
   , (&&~)
   , (%~)
-  , (++~)
   , (+~)
   , (<>~)
   , (||~)
   )
 import Optic.Types
-  ( Accessing()
-  , APrism()
-  , APrismP()
-  , ASetter()
-  , ASetterP()
-  , Getter()
-  , Getting()
-  , Lens()
-  , LensP()
-  , Optical()
-  , OpticalP()
-  , Prism()
-  , PrismP()
-  , Setter()
-  , SetterP()
-  , Setting()
-  , SettingP()
+  ( Accessing
+  , APrism
+  , APrism'
+  , ASetter
+  , ASetter'
+  , Getter
+  , Getting
+  , Lens
+  , Lens'
+  , Optical
+  , Optical'
+  , Prism
+  , Prism'
+  , Setter
+  , Setter'
+  , Setting
+  , Setting'
   )
 import Prelude
   ( class Applicative
@@ -1811,33 +1819,38 @@ import Prelude
   , class Bind
   , class BooleanAlgebra
   , class Bounded
-  , class BoundedOrd
   , class Category
-  , class DivisionRing
+  , class CommutativeRing
   , class Eq
+  , class EuclideanRing
+  , class Field
   , class Functor
-  , class ModuloSemiring
+  , class HeytingAlgebra
   , class Monad
-  , class Num
   , class Ord
-  , Ordering(LT, EQ, GT)
   , class Ring
   , class Semigroup
   , class Semigroupoid
   , class Semiring
   , class Show
-  , Unit()
+  , Ordering(LT, EQ, GT)
+  , Unit
+  , Void
+  , absurd
   , add
   , ap
   , append
   , apply
-  , asTypeOf
+  , between
   , bind
   , bottom
+  , clamp
   , compare
+  , comparing
   , compose
   , conj
   , const
+  , degree
   , disj
   , div
   , eq
@@ -1846,46 +1859,55 @@ import Prelude
   , liftA1
   , liftM1
   , map
+  , max
+  , min
   , mod
   , mul
   , negate
   , not
+  , notEq
   , one
   , otherwise
   , pure
-  , return
   , show
   , sub
   , top
   , unit
-  , unsafeCompare
+  , unless
   , void
   , zero
+  , type (~>)
   , (-)
   , (*)
+  , (*>)
   , (/)
   , (/=)
   , (&&)
   , (#)
   , (+)
-  , (++)
   , (<)
+  , (<*)
   , (<*>)
   , (<#>)
   , (<<<)
   , (<=)
+  , (<=<)
   , (<>)
+  , (<$)
   , (<$>)
+  , (=<<)
   , (==)
   , (>)
   , (>=)
+  , (>=>)
   , (>>=)
   , (>>>)
   , (||)
   , ($)
+  , ($>)
   )
 import Test.Assert
-  ( ASSERT()
+  ( ASSERT
   , assert
   , assert'
   , assertThrows
