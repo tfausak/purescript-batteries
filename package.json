@@ -5,8 +5,8 @@
     "purescript": "0.9.1"
   },
   "engines": {
-    "node": "5.10.1",
-    "npm": "3.8.3"
+    "node": "6.3.0",
+    "npm": "3.10.3"
   },
   "license": "MIT",
   "name": "purescript-batteries",
