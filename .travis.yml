@@ -4,8 +4,7 @@ node_js:
 after_success:
 - >-
   test $TRAVIS_TAG &&
-  npm run psc-publish \
-    | tail -n 1 \
+  npm run -s psc-publish \
     > output/purescript-batteries-${TRAVIS_TAG}.json &&
   curl -X POST http://pursuit.purescript.org/packages \
     -d @output/purescript-batteries-${TRAVIS_TAG}.json \
