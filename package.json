@@ -13,7 +13,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/tfausak/purescript-neon.git"
+    "url": "git://github.com/tfausak/purescript-batteries.git"
   },
   "scripts": {
     "bower": "bower",
