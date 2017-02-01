@@ -18,7 +18,7 @@ module Batteries
   , module Control.Comonad.Traced
   , module Control.Comonad.Traced.Class
   , module Control.Comonad.Traced.Trans
-  , module Control.Comonad.Trans
+  , module Control.Comonad.Trans.Class
   , module Control.Extend
   , module Control.Lazy
   , module Control.Monad.Aff
@@ -43,7 +43,6 @@ module Batteries
   , module Control.Monad.List.Trans
   , module Control.Monad.Maybe.Trans
   , module Control.Monad.RWS
-  , module Control.Monad.RWS.Class
   , module Control.Monad.RWS.Trans
   , module Control.Monad.Reader
   , module Control.Monad.Reader.Class
@@ -54,7 +53,7 @@ module Batteries
   , module Control.Monad.State.Class
   , module Control.Monad.State.Trans
   , module Control.Monad.Trampoline
-  , module Control.Monad.Trans
+  , module Control.Monad.Trans.Class
   , module Control.Monad.Writer
   , module Control.Monad.Writer.Class
   , module Control.Monad.Writer.Trans
@@ -240,7 +239,7 @@ import Control.Comonad.Env
 import Control.Comonad.Env.Class
   ( class ComonadEnv
   -- , ask -- TODO
-  , asks
+  -- , asks -- TODO
   -- , local -- TODO
   )
 import Control.Comonad.Env.Trans
@@ -284,7 +283,7 @@ import Control.Comonad.Traced.Trans
   ( TracedT(TracedT)
   , runTracedT
   )
-import Control.Comonad.Trans
+import Control.Comonad.Trans.Class
   ( class ComonadTrans
   , lower
   )
@@ -339,8 +338,7 @@ import Control.Monad.Aff.Class
   )
 -- import Control.Monad.Aff.Console -- NOTE: Control.Monad.Eff.Console
 import Control.Monad.Aff.Unsafe
-  ( unsafeInterleaveAff
-  , unsafeTrace
+  ( unsafeCoerceAff
   )
 import Control.Monad.Cont.Class
   ( class MonadCont
@@ -401,7 +399,8 @@ import Control.Monad.Eff.Ref.Unsafe
   ( unsafeRunRef
   )
 import Control.Monad.Eff.Unsafe
-  ( unsafeInterleaveEff
+  ( unsafePerformEff
+  , unsafeCoerceEff
   )
 import Control.Monad.Error.Class
   ( class MonadError
@@ -476,9 +475,6 @@ import Control.Monad.RWS
   , rws
   , withRWS
   )
-import Control.Monad.RWS.Class
-  ( class MonadRWS
-  )
 import Control.Monad.RWS.Trans
   ( RWSResult(RWSResult)
   , RWST(RWST)
@@ -496,9 +492,10 @@ import Control.Monad.Reader
   )
 import Control.Monad.Reader.Class
   ( class MonadReader
-  -- , ask -- TODO
-  -- , local -- TODO
-  , reader
+  , class MonadAsk
+  , ask
+  , asks
+  , local
   )
 import Control.Monad.Reader.Trans
   ( ReaderT(ReaderT)
@@ -556,7 +553,7 @@ import Control.Monad.Trampoline
   , runTrampoline
   , suspend
   )
-import Control.Monad.Trans
+import Control.Monad.Trans.Class
   ( class MonadTrans
   , lift
   )
@@ -568,12 +565,12 @@ import Control.Monad.Writer
   )
 import Control.Monad.Writer.Class
   ( class MonadWriter
-  -- , censor -- TODO
-  -- , listen -- TODO
-  -- , listens -- TODO
-  , pass
+  , class MonadTell
   , tell
-  , writer
+  , censor
+  , listen
+  , pass
+  , listens
   )
 import Control.Monad.Writer.Trans
   ( WriterT(WriterT)
@@ -586,16 +583,10 @@ import Control.MonadPlus
   , guard
   )
 import Control.Parallel.Class
-  ( class MonadPar
-  , class MonadRace
-  , Parallel
-  , par
-  , parTraverse
-  , parTraverse_
+  ( class Parallel
   , parallel
-  , race
-  , runParallel
-  , stall
+  , sequential
+  , ParCont(..)
   )
 import Control.Plus
   ( class Plus
@@ -639,26 +630,21 @@ import Data.Bifunctor
   )
 import Data.Bifunctor.Clown
   ( Clown(Clown)
-  , runClown
   )
 import Data.Bifunctor.Flip
   ( Flip(Flip)
-  , runFlip
   )
 import Data.Bifunctor.Join
   ( Join(Join)
-  , runJoin
   )
 import Data.Bifunctor.Joker
   ( Joker(Joker)
-  , runJoker
   )
 import Data.Bifunctor.Product
-  ( Product(Pair)
+  ( Product(Product)
   )
 import Data.Bifunctor.Wrap
   ( Wrap(Wrap)
-  , unwrap
   )
 import Data.Bitraversable
   ( class Bitraversable
@@ -691,11 +677,9 @@ import Data.Char
 import Data.Comparison
   ( Comparison(Comparison)
   , defaultComparison
-  , runComparison
   )
 import Data.Const
   ( Const(Const)
-  , getConst
   )
 import Data.Coyoneda
   ( Coyoneda(Coyoneda)
@@ -783,104 +767,30 @@ import Data.Either
   , isRight
   )
 import Data.Either.Nested
-  ( Either10
-  , Either2
-  , Either3
-  , Either4
-  , Either5
-  , Either6
-  , Either7
-  , Either8
-  , Either9
-  , either10
-  , either10of10
-  , either1of10
-  , either1of2
-  , either1of3
-  , either1of4
-  , either1of5
-  , either1of6
-  , either1of7
-  , either1of8
-  , either1of9
-  , either2
-  , either2of10
-  , either2of2
-  , either2of3
-  , either2of4
-  , either2of5
-  , either2of6
-  , either2of7
-  , either2of8
-  , either2of9
-  , either3
-  , either3of10
-  , either3of3
-  , either3of4
-  , either3of5
-  , either3of6
-  , either3of7
-  , either3of8
-  , either3of9
-  , either4
-  , either4of10
-  , either4of4
-  , either4of5
-  , either4of6
-  , either4of7
-  , either4of8
-  , either4of9
-  , either5
-  , either5of10
-  , either5of5
-  , either5of6
-  , either5of7
-  , either5of8
-  , either5of9
-  , either6
-  , either6of10
-  , either6of6
-  , either6of7
-  , either6of8
-  , either6of9
-  , either7
-  , either7of10
-  , either7of7
-  , either7of8
-  , either7of9
-  , either8
-  , either8of10
-  , either8of8
-  , either8of9
-  , either9
-  , either9of10
-  , either9of9
+  ( in1, in2, in3, in4, in5, in6, in7, in8, in9, in10
+  , at1, at2, at3, at4, at5, at6, at7, at8, at9, at10
+  , Either1, Either2, Either3, Either4, Either5, Either6, Either7, Either8, Either9, Either10
+  , either1, either2, either3, either4, either5, either6, either7, either8, either9, either10
+  , E2, E3, E4, E5, E6, E7, E8, E9, E10, E11
   )
 import Data.Enum
-  ( class BoundedEnum
-  , class Enum
-  , Cardinality(Cardinality)
-  , cardinality
-  , defaultCardinality
-  , defaultFromEnum
-  , defaultPred
+  ( class Enum, succ, pred
   , defaultSucc
-  , defaultToEnum
-  , downFrom
-  , enumFromThenTo
+  , defaultPred
   , enumFromTo
-  , fromEnum
-  , pred
-  , runCardinality
-  , succ
-  , toEnum
+  , enumFromThenTo
   , upFrom
+  , downFrom
+  , Cardinality(..)
+  , class BoundedEnum, cardinality, toEnum, fromEnum, toEnumWithDefaults
+  , defaultCardinality
+  , defaultToEnum
+  , defaultFromEnum
   )
 import Data.Equivalence
   ( Equivalence(Equivalence)
   , comparisonEquivalence
   , defaultEquivalence
-  , runEquivalence
   )
 import Data.Exists
   ( Exists
@@ -1063,7 +973,6 @@ import Data.Functor.Coproduct
   , coproduct
   , left
   , right
-  , unCoproduct
   )
 import Data.Functor.Invariant
   ( class Invariant
@@ -1089,7 +998,6 @@ import Data.HeytingAlgebra
   )
 import Data.Identity
   ( Identity(Identity)
-  , runIdentity
   )
 import Data.Inject
   ( class Inject
@@ -1224,7 +1132,6 @@ import Data.List.Lazy
   -- , range -- TODO
   -- , repeat -- TODO
   -- , reverse -- TODO
-  , runList
   -- , singleton -- NOTE: Data.Unfoldable
   -- , span -- TODO
   , step
@@ -1246,7 +1153,6 @@ import Data.List.Lazy
 -- import Data.List.Unsafe -- TODO
 import Data.List.ZipList
   ( ZipList(ZipList)
-  , runZipList
   )
 import Data.Map
   ( Map
@@ -1283,11 +1189,9 @@ import Data.Maybe
   )
 import Data.Maybe.First
   ( First(First)
-  , runFirst
   )
 import Data.Maybe.Last
   ( Last(Last)
-  , runLast
   )
 import Data.Monoid
   ( class Monoid
@@ -1295,27 +1199,21 @@ import Data.Monoid
   )
 import Data.Monoid.Additive
   ( Additive(Additive)
-  , runAdditive
   )
 import Data.Monoid.Conj
   ( Conj(Conj)
-  , runConj
   )
 import Data.Monoid.Disj
   ( Disj(Disj)
-  , runDisj
   )
 import Data.Monoid.Dual
   ( Dual(Dual)
-  , runDual
   )
 import Data.Monoid.Endo
   ( Endo(Endo)
-  , runEndo
   )
 import Data.Monoid.Multiplicative
   ( Multiplicative(Multiplicative)
-  , runMultiplicative
   )
 import Data.NaturalTransformation
   ( NaturalTransformation
@@ -1327,7 +1225,6 @@ import Data.Nullable
   )
 import Data.Op
   ( Op(Op)
-  , runOp
   )
 import Data.Ord
   ( abs
@@ -1348,15 +1245,12 @@ import Data.Ord.Down
   )
 import Data.Ord.Max
   ( Max(Max)
-  , runMax
   )
 import Data.Ord.Min
   ( Min(Min)
-  , runMin
   )
 import Data.Predicate
   ( Predicate(Predicate)
-  , runPredicate
   )
 import Data.Profunctor
   ( class Profunctor
@@ -1385,7 +1279,6 @@ import Data.Profunctor.Cochoice
   )
 import Data.Profunctor.Costar
   ( Costar(Costar)
-  , unCostar
   )
 import Data.Profunctor.Costrong
   ( class Costrong
@@ -1394,7 +1287,6 @@ import Data.Profunctor.Costrong
   )
 import Data.Profunctor.Star
   ( Star(Star)
-  , unStar
   )
 import Data.Profunctor.Strong
   ( class Strong
@@ -1573,19 +1465,17 @@ import Data.String
   )
 import Data.String.Regex
   ( Regex
-  , RegexFlags
-  , flags
-  , match
-  , noFlags
-  , parseFlags
   , regex
+  , source
+  , flags
   , renderFlags
+  , parseFlags
+  , test
+  , match
   , replace
   , replace'
   , search
-  , source
   , split
-  , test
   )
 import Data.String.Unsafe
   ( char
@@ -1677,9 +1567,9 @@ import Data.Validation.Semigroup
 -- import Data.Validation.Semiring -- NOTE: Data.Validation.Semigroup
 import Data.Yoneda
   ( Yoneda(Yoneda)
-  , runYoneda
   , liftYoneda
   , lowerYoneda
+  , runYoneda
   )
 import Debug.Trace
   ( spy
