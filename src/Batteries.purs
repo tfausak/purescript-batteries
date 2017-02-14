@@ -171,13 +171,6 @@ module Batteries
   , module Global
   , module Global.Unsafe
   , module Math
-  , module Optic.Core
-  , module Optic.Getter
-  , module Optic.Laws.Lens
-  , module Optic.Lens
-  , module Optic.Prism
-  , module Optic.Setter
-  , module Optic.Types
   , module Prelude
   , module Test.Assert
   , module Type.Proxy
@@ -1625,83 +1618,6 @@ import Math
   , sqrt2
   , tan
   , (%)
-  )
-import Optic.Core
-  ( (..)
-  )
-import Optic.Getter
-  ( to
-  , view
-  , weiv
-  , (^.)
-  )
-import Optic.Laws.Lens
-  ( getSet
-  , setGet
-  , setSet
-  , validLens
-  )
-import Optic.Lens
-  ( flip'
-  , lens
-  , (??)
-  )
-import Optic.Prism
-  ( clonePrism
-  , is
-  , isn't
-  , matching
-  , nearly
-  , only
-  , prism
-  , prism'
-  , withPrism
-  )
-import Optic.Setter
-  -- ( add -- NOTE: Prelude
-  -- , and -- NOTE: Prelude
-  ( argument
-  -- , concat -- NOTE: Data.List
-  , contramapped
-  -- , div -- NOTE: Prelude
-  , mapped
-  -- , mul -- NOTE: Prelude
-  -- , or -- NOTE: Prelude
-  , over
-  , set
-  , set'
-  , setJust
-  , sets
-  -- , sub -- NOTE: Prelude
-  , (-~)
-  , (?~)
-  , (.~)
-  , (*~)
-  , (/~)
-  , (&&~)
-  , (%~)
-  , (+~)
-  , (<>~)
-  , (||~)
-  )
-import Optic.Types
-  ( Accessing
-  , APrism
-  , APrism'
-  , ASetter
-  , ASetter'
-  , Getter
-  , Getting
-  , Lens
-  , Lens'
-  , Optical
-  , Optical'
-  , Prism
-  , Prism'
-  , Setter
-  , Setter'
-  , Setting
-  , Setting'
   )
 import Prelude
   ( class Applicative
