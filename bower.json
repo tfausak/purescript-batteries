@@ -35,7 +35,6 @@
     "purescript-integers": "~2.1.0",
     "purescript-invariant": "~2.0.0",
     "purescript-lazy": "~2.0.0",
-    "purescript-lens": "~2.0.0",
     "purescript-lists": "~3.4.0",
     "purescript-maps": "~2.1.1",
     "purescript-math": "~2.0.0",
